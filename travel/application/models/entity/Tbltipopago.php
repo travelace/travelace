@@ -28,5 +28,18 @@ class Tbltipopago
      */
     private $nombrepago;
 
+    function getCodpago() {
+        return $this->codpago;
+    }
+
+    function getNombrepago() {
+        return $this->nombrepago;
+    }
+
+    function setNombrepago($nombrepago) {
+        $this->nombrepago = $nombrepago;
+    }
+
+
 
 }

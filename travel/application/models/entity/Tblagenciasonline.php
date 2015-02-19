@@ -42,5 +42,34 @@ class Tblagenciasonline
      */
     private $idagenciavigas;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getAgenciaonline() {
+        return $this->agenciaonline;
+    }
+
+    function getAgenteonline() {
+        return $this->agenteonline;
+    }
+
+    function getIdagenciavigas() {
+        return $this->idagenciavigas;
+    }
+
+
+    function setAgenciaonline($agenciaonline) {
+        $this->agenciaonline = $agenciaonline;
+    }
+
+    function setAgenteonline($agenteonline) {
+        $this->agenteonline = $agenteonline;
+    }
+
+    function setIdagenciavigas($idagenciavigas) {
+        $this->idagenciavigas = $idagenciavigas;
+    }
+
 
 }

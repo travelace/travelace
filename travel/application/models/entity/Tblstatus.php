@@ -28,5 +28,18 @@ class Tblstatus
      */
     private $nombrestatus;
 
+    function getCodstatus() {
+        return $this->codstatus;
+    }
+
+    function getNombrestatus() {
+        return $this->nombrestatus;
+    }
+
+    function setNombrestatus($nombrestatus) {
+        $this->nombrestatus = $nombrestatus;
+    }
+
+
 
 }

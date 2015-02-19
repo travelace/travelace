@@ -49,5 +49,42 @@ class Tbllogin
      */
     private $codperfil;
 
+    function getCodusuario() {
+        return $this->codusuario;
+    }
+
+    function getUser() {
+        return $this->user;
+    }
+
+    function getPassword() {
+        return $this->password;
+    }
+
+    function getNombreusuario() {
+        return $this->nombreusuario;
+    }
+
+    function getCodperfil() {
+        return $this->codperfil;
+    }
+
+    function setUser($user) {
+        $this->user = $user;
+    }
+
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function setNombreusuario($nombreusuario) {
+        $this->nombreusuario = $nombreusuario;
+    }
+
+    function setCodperfil($codperfil) {
+        $this->codperfil = $codperfil;
+    }
+
+
 
 }

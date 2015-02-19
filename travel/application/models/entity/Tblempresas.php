@@ -77,5 +77,74 @@ class Tblempresas
      */
     private $cambioespecial;
 
+    function getCodempresa() {
+        return $this->codempresa;
+    }
+
+    function getNombreempresa() {
+        return $this->nombreempresa;
+    }
+
+    function getAbreviaturaempresa() {
+        return $this->abreviaturaempresa;
+    }
+
+    function getIva() {
+        return $this->iva;
+    }
+
+    function getLimiteretencion() {
+        return $this->limiteretencion;
+    }
+
+    function getPorcentajeretencion() {
+        return $this->porcentajeretencion;
+    }
+
+    function getCambiooficial() {
+        return $this->cambiooficial;
+    }
+
+    function getCambiomercado() {
+        return $this->cambiomercado;
+    }
+
+    function getCambioespecial() {
+        return $this->cambioespecial;
+    }
+
+    function setNombreempresa($nombreempresa) {
+        $this->nombreempresa = $nombreempresa;
+    }
+
+    function setAbreviaturaempresa($abreviaturaempresa) {
+        $this->abreviaturaempresa = $abreviaturaempresa;
+    }
+
+    function setIva($iva) {
+        $this->iva = $iva;
+    }
+
+    function setLimiteretencion($limiteretencion) {
+        $this->limiteretencion = $limiteretencion;
+    }
+
+    function setPorcentajeretencion($porcentajeretencion) {
+        $this->porcentajeretencion = $porcentajeretencion;
+    }
+
+    function setCambiooficial($cambiooficial) {
+        $this->cambiooficial = $cambiooficial;
+    }
+
+    function setCambiomercado($cambiomercado) {
+        $this->cambiomercado = $cambiomercado;
+    }
+
+    function setCambioespecial($cambioespecial) {
+        $this->cambioespecial = $cambioespecial;
+    }
+
+
 
 }

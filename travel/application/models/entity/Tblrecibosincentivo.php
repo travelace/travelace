@@ -119,5 +119,122 @@ class Tblrecibosincentivo
      */
     private $status;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getIdrecibo() {
+        return $this->idrecibo;
+    }
+
+    function getCompania() {
+        return $this->compania;
+    }
+
+    function getNacionalidad() {
+        return $this->nacionalidad;
+    }
+
+    function getNrocedula() {
+        return $this->nrocedula;
+    }
+
+    function getNrocuenta() {
+        return $this->nrocuenta;
+    }
+
+    function getMonto() {
+        return $this->monto;
+    }
+
+    function getNombreagente() {
+        return $this->nombreagente;
+    }
+
+    function getNrorecibo() {
+        return $this->nrorecibo;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getDescripcion() {
+        return $this->descripcion;
+    }
+
+    function getNrolote() {
+        return $this->nrolote;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getFecharecibo() {
+        return $this->fecharecibo;
+    }
+
+    function getStatus() {
+        return $this->status;
+    }
+
+    function setIdrecibo($idrecibo) {
+        $this->idrecibo = $idrecibo;
+    }
+
+    function setCompania($compania) {
+        $this->compania = $compania;
+    }
+
+    function setNacionalidad($nacionalidad) {
+        $this->nacionalidad = $nacionalidad;
+    }
+
+    function setNrocedula($nrocedula) {
+        $this->nrocedula = $nrocedula;
+    }
+
+    function setNrocuenta($nrocuenta) {
+        $this->nrocuenta = $nrocuenta;
+    }
+
+    function setMonto(decimal $monto) {
+        $this->monto = $monto;
+    }
+
+    function setNombreagente($nombreagente) {
+        $this->nombreagente = $nombreagente;
+    }
+
+    function setNrorecibo($nrorecibo) {
+        $this->nrorecibo = $nrorecibo;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setDescripcion($descripcion) {
+        $this->descripcion = $descripcion;
+    }
+
+    function setNrolote($nrolote) {
+        $this->nrolote = $nrolote;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setFecharecibo(date $fecharecibo) {
+        $this->fecharecibo = $fecharecibo;
+    }
+
+    function setStatus($status) {
+        $this->status = $status;
+    }
+
+
 
 }

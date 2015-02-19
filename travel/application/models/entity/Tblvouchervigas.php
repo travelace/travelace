@@ -343,5 +343,378 @@ class Tblvouchervigas
      */
     private $fpcadiagteVoucher;
 
+    function getIdVoucher() {
+        return $this->idVoucher;
+    }
+
+    function getCodagVoucher() {
+        return $this->codagVoucher;
+    }
+
+    function getAgciaVoucher() {
+        return $this->agciaVoucher;
+    }
+
+    function getNroVoucher() {
+        return $this->nroVoucher;
+    }
+
+    function getGrupoVoucher() {
+        return $this->grupoVoucher;
+    }
+
+    function getNperVoucher() {
+        return $this->nperVoucher;
+    }
+
+    function getFecemVoucher() {
+        return $this->fecemVoucher;
+    }
+
+    function getDesdeVoucher() {
+        return $this->desdeVoucher;
+    }
+
+    function getHastaVoucher() {
+        return $this->hastaVoucher;
+    }
+
+    function getAreaVoucher() {
+        return $this->areaVoucher;
+    }
+
+    function getDiasVoucher() {
+        return $this->diasVoucher;
+    }
+
+    function getPlanVoucher() {
+        return $this->planVoucher;
+    }
+
+    function getTarifaVoucher() {
+        return $this->tarifaVoucher;
+    }
+
+    function getFamiliVoucher() {
+        return $this->familiVoucher;
+    }
+
+    function getAgteVoucher() {
+        return $this->agteVoucher;
+    }
+
+    function getComagciaVoucher() {
+        return $this->comagciaVoucher;
+    }
+
+    function getComagteVoucher() {
+        return $this->comagteVoucher;
+    }
+
+    function getStatusVoucher() {
+        return $this->statusVoucher;
+    }
+
+    function getComenVoucher() {
+        return $this->comenVoucher;
+    }
+
+    function getRelpreVoucher() {
+        return $this->relpreVoucher;
+    }
+
+    function getFecrelVoucher() {
+        return $this->fecrelVoucher;
+    }
+
+    function getRelacVoucher() {
+        return $this->relacVoucher;
+    }
+
+    function getEstrelVoucher() {
+        return $this->estrelVoucher;
+    }
+
+    function getNrelVoucher() {
+        return $this->nrelVoucher;
+    }
+
+    function getFrelVoucher() {
+        return $this->frelVoucher;
+    }
+
+    function getEsfactVoucher() {
+        return $this->esfactVoucher;
+    }
+
+    function getNfactVoucher() {
+        return $this->nfactVoucher;
+    }
+
+    function getFfactVoucher() {
+        return $this->ffactVoucher;
+    }
+
+    function getFproVoucher() {
+        return $this->fproVoucher;
+    }
+
+    function getUserVoucher() {
+        return $this->userVoucher;
+    }
+
+    function getNegVoucher() {
+        return $this->negVoucher;
+    }
+
+    function getNvouscVoucher() {
+        return $this->nvouscVoucher;
+    }
+
+    function getTitgruVoucher() {
+        return $this->titgruVoucher;
+    }
+
+    function getSelporVoucher() {
+        return $this->selporVoucher;
+    }
+
+    function getSelrelacVoucher() {
+        return $this->selrelacVoucher;
+    }
+
+    function getDesc50Voucher() {
+        return $this->desc50Voucher;
+    }
+
+    function getTarifadolVoucher() {
+        return $this->tarifadolVoucher;
+    }
+
+    function getSolodolVoucher() {
+        return $this->solodolVoucher;
+    }
+
+    function getPromocVoucher() {
+        return $this->promocVoucher;
+    }
+
+    function getTvtaVoucher() {
+        return $this->tvtaVoucher;
+    }
+
+    function getCiaVoucher() {
+        return $this->ciaVoucher;
+    }
+
+    function getCadivi() {
+        return $this->cadivi;
+    }
+
+    function getTarifanorVoucher() {
+        return $this->tarifanorVoucher;
+    }
+
+    function getPcadiagciaVoucher() {
+        return $this->pcadiagciaVoucher;
+    }
+
+    function getFpcadiagciaVoucher() {
+        return $this->fpcadiagciaVoucher;
+    }
+
+    function getPcadiagteVoucher() {
+        return $this->pcadiagteVoucher;
+    }
+
+    function getFpcadiagteVoucher() {
+        return $this->fpcadiagteVoucher;
+    }
+
+    function setCodagVoucher(text $codagVoucher) {
+        $this->codagVoucher = $codagVoucher;
+    }
+
+    function setAgciaVoucher(text $agciaVoucher) {
+        $this->agciaVoucher = $agciaVoucher;
+    }
+
+    function setNroVoucher(text $nroVoucher) {
+        $this->nroVoucher = $nroVoucher;
+    }
+
+    function setGrupoVoucher($grupoVoucher) {
+        $this->grupoVoucher = $grupoVoucher;
+    }
+
+    function setNperVoucher($nperVoucher) {
+        $this->nperVoucher = $nperVoucher;
+    }
+
+    function setFecemVoucher(date $fecemVoucher) {
+        $this->fecemVoucher = $fecemVoucher;
+    }
+
+    function setDesdeVoucher(date $desdeVoucher) {
+        $this->desdeVoucher = $desdeVoucher;
+    }
+
+    function setHastaVoucher(date $hastaVoucher) {
+        $this->hastaVoucher = $hastaVoucher;
+    }
+
+    function setAreaVoucher(text $areaVoucher) {
+        $this->areaVoucher = $areaVoucher;
+    }
+
+    function setDiasVoucher(text $diasVoucher) {
+        $this->diasVoucher = $diasVoucher;
+    }
+
+    function setPlanVoucher(text $planVoucher) {
+        $this->planVoucher = $planVoucher;
+    }
+
+    function setTarifaVoucher(decimal $tarifaVoucher) {
+        $this->tarifaVoucher = $tarifaVoucher;
+    }
+
+    function setFamiliVoucher($familiVoucher) {
+        $this->familiVoucher = $familiVoucher;
+    }
+
+    function setAgteVoucher(text $agteVoucher) {
+        $this->agteVoucher = $agteVoucher;
+    }
+
+    function setComagciaVoucher(decimal $comagciaVoucher) {
+        $this->comagciaVoucher = $comagciaVoucher;
+    }
+
+    function setComagteVoucher(decimal $comagteVoucher) {
+        $this->comagteVoucher = $comagteVoucher;
+    }
+
+    function setStatusVoucher(text $statusVoucher) {
+        $this->statusVoucher = $statusVoucher;
+    }
+
+    function setComenVoucher(text $comenVoucher) {
+        $this->comenVoucher = $comenVoucher;
+    }
+
+    function setRelpreVoucher($relpreVoucher) {
+        $this->relpreVoucher = $relpreVoucher;
+    }
+
+    function setFecrelVoucher(date $fecrelVoucher) {
+        $this->fecrelVoucher = $fecrelVoucher;
+    }
+
+    function setRelacVoucher($relacVoucher) {
+        $this->relacVoucher = $relacVoucher;
+    }
+
+    function setEstrelVoucher($estrelVoucher) {
+        $this->estrelVoucher = $estrelVoucher;
+    }
+
+    function setNrelVoucher(text $nrelVoucher) {
+        $this->nrelVoucher = $nrelVoucher;
+    }
+
+    function setFrelVoucher(date $frelVoucher) {
+        $this->frelVoucher = $frelVoucher;
+    }
+
+    function setEsfactVoucher($esfactVoucher) {
+        $this->esfactVoucher = $esfactVoucher;
+    }
+
+    function setNfactVoucher(text $nfactVoucher) {
+        $this->nfactVoucher = $nfactVoucher;
+    }
+
+    function setFfactVoucher(date $ffactVoucher) {
+        $this->ffactVoucher = $ffactVoucher;
+    }
+
+    function setFproVoucher(date $fproVoucher) {
+        $this->fproVoucher = $fproVoucher;
+    }
+
+    function setUserVoucher(text $userVoucher) {
+        $this->userVoucher = $userVoucher;
+    }
+
+    function setNegVoucher($negVoucher) {
+        $this->negVoucher = $negVoucher;
+    }
+
+    function setNvouscVoucher(text $nvouscVoucher) {
+        $this->nvouscVoucher = $nvouscVoucher;
+    }
+
+    function setTitgruVoucher(text $titgruVoucher) {
+        $this->titgruVoucher = $titgruVoucher;
+    }
+
+    function setSelporVoucher(text $selporVoucher) {
+        $this->selporVoucher = $selporVoucher;
+    }
+
+    function setSelrelacVoucher($selrelacVoucher) {
+        $this->selrelacVoucher = $selrelacVoucher;
+    }
+
+    function setDesc50Voucher($desc50Voucher) {
+        $this->desc50Voucher = $desc50Voucher;
+    }
+
+    function setTarifadolVoucher($tarifadolVoucher) {
+        $this->tarifadolVoucher = $tarifadolVoucher;
+    }
+
+    function setSolodolVoucher($solodolVoucher) {
+        $this->solodolVoucher = $solodolVoucher;
+    }
+
+    function setPromocVoucher(decimal $promocVoucher) {
+        $this->promocVoucher = $promocVoucher;
+    }
+
+    function setTvtaVoucher($tvtaVoucher) {
+        $this->tvtaVoucher = $tvtaVoucher;
+    }
+
+    function setCiaVoucher(text $ciaVoucher) {
+        $this->ciaVoucher = $ciaVoucher;
+    }
+
+    function setCadivi($cadivi) {
+        $this->cadivi = $cadivi;
+    }
+
+    function setTarifanorVoucher(decimal $tarifanorVoucher) {
+        $this->tarifanorVoucher = $tarifanorVoucher;
+    }
+
+    function setPcadiagciaVoucher($pcadiagciaVoucher) {
+        $this->pcadiagciaVoucher = $pcadiagciaVoucher;
+    }
+
+    function setFpcadiagciaVoucher(date $fpcadiagciaVoucher) {
+        $this->fpcadiagciaVoucher = $fpcadiagciaVoucher;
+    }
+
+    function setPcadiagteVoucher($pcadiagteVoucher) {
+        $this->pcadiagteVoucher = $pcadiagteVoucher;
+    }
+
+    function setFpcadiagteVoucher(date $fpcadiagteVoucher) {
+        $this->fpcadiagteVoucher = $fpcadiagteVoucher;
+    }
+
+
 
 }

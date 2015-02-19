@@ -35,5 +35,26 @@ class Tblpromotores
      */
     private $activo;
 
+    function getCodpromotor() {
+        return $this->codpromotor;
+    }
+
+    function getNombrepromotor() {
+        return $this->nombrepromotor;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+    function setNombrepromotor($nombrepromotor) {
+        $this->nombrepromotor = $nombrepromotor;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+
 
 }

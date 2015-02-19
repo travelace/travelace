@@ -308,5 +308,338 @@ class Tblvoucher
      */
     private $tipoventa;
 
+    function getIdvoucher() {
+        return $this->idvoucher;
+    }
+
+    function getIdvouchervigas() {
+        return $this->idvouchervigas;
+    }
+
+    function getCodvoucher() {
+        return $this->codvoucher;
+    }
+
+    function getCodagenciavoucher() {
+        return $this->codagenciavoucher;
+    }
+
+    function getCodagentevoucher() {
+        return $this->codagentevoucher;
+    }
+
+    function getNumeropasajerosvoucher() {
+        return $this->numeropasajerosvoucher;
+    }
+
+    function getFechaemesionvoucher() {
+        return $this->fechaemesionvoucher;
+    }
+
+    function getFechadesdevoucher() {
+        return $this->fechadesdevoucher;
+    }
+
+    function getFechahastavoucher() {
+        return $this->fechahastavoucher;
+    }
+
+    function getFechareportevoucher() {
+        return $this->fechareportevoucher;
+    }
+
+    function getFecharelacionvoucher() {
+        return $this->fecharelacionvoucher;
+    }
+
+    function getFechaprovoucher() {
+        return $this->fechaprovoucher;
+    }
+
+    function getFechafacturacionvoucher() {
+        return $this->fechafacturacionvoucher;
+    }
+
+    function getCodproductovoucher() {
+        return $this->codproductovoucher;
+    }
+
+    function getDestinovoucher() {
+        return $this->destinovoucher;
+    }
+
+    function getCodtipovoucher() {
+        return $this->codtipovoucher;
+    }
+
+    function getComisionagenciavoucher() {
+        return $this->comisionagenciavoucher;
+    }
+
+    function getNegociadovoucher() {
+        return $this->negociadovoucher;
+    }
+
+    function getComisionagentevoucher() {
+        return $this->comisionagentevoucher;
+    }
+
+    function getEmisorvoucher() {
+        return $this->emisorvoucher;
+    }
+
+    function getObservacionesvoucher() {
+        return $this->observacionesvoucher;
+    }
+
+    function getStatusvoucher() {
+        return $this->statusvoucher;
+    }
+
+    function getNetocobrovoucher() {
+        return $this->netocobrovoucher;
+    }
+
+    function getTitulogrupovoucher() {
+        return $this->titulogrupovoucher;
+    }
+
+    function getCodtipodescuentovoucher() {
+        return $this->codtipodescuentovoucher;
+    }
+
+    function getPorcentajevoucher() {
+        return $this->porcentajevoucher;
+    }
+
+    function getCodtipopagovoucher() {
+        return $this->codtipopagovoucher;
+    }
+
+    function getTarifabolivarvoucher() {
+        return $this->tarifabolivarvoucher;
+    }
+
+    function getTarifadolarvoucher() {
+        return $this->tarifadolarvoucher;
+    }
+
+    function getTarifanormalvoucher() {
+        return $this->tarifanormalvoucher;
+    }
+
+    function getNumerorelacionvoucher() {
+        return $this->numerorelacionvoucher;
+    }
+
+    function getNumerofacturavoucher() {
+        return $this->numerofacturavoucher;
+    }
+
+    function getNumerotcvoucher() {
+        return $this->numerotcvoucher;
+    }
+
+    function getDiasanualvoucher() {
+        return $this->diasanualvoucher;
+    }
+
+    function getMayor70voucher() {
+        return $this->mayor70voucher;
+    }
+
+    function getServicioadicionalvoucher() {
+        return $this->servicioadicionalvoucher;
+    }
+
+    function getTipocambiovoucher() {
+        return $this->tipocambiovoucher;
+    }
+
+    function getNrovouchersiebel() {
+        return $this->nrovouchersiebel;
+    }
+
+    function getFechaprocesosiebel() {
+        return $this->fechaprocesosiebel;
+    }
+
+    function getIdprecomprasiebel() {
+        return $this->idprecomprasiebel;
+    }
+
+    function getFechaanulacionsiebel() {
+        return $this->fechaanulacionsiebel;
+    }
+
+    function getTipoventa() {
+        return $this->tipoventa;
+    }
+
+    function setIdvouchervigas($idvouchervigas) {
+        $this->idvouchervigas = $idvouchervigas;
+    }
+
+    function setCodvoucher($codvoucher) {
+        $this->codvoucher = $codvoucher;
+    }
+
+    function setCodagenciavoucher($codagenciavoucher) {
+        $this->codagenciavoucher = $codagenciavoucher;
+    }
+
+    function setCodagentevoucher($codagentevoucher) {
+        $this->codagentevoucher = $codagentevoucher;
+    }
+
+    function setNumeropasajerosvoucher($numeropasajerosvoucher) {
+        $this->numeropasajerosvoucher = $numeropasajerosvoucher;
+    }
+
+    function setFechaemesionvoucher(date $fechaemesionvoucher) {
+        $this->fechaemesionvoucher = $fechaemesionvoucher;
+    }
+
+    function setFechadesdevoucher(date $fechadesdevoucher) {
+        $this->fechadesdevoucher = $fechadesdevoucher;
+    }
+
+    function setFechahastavoucher(date $fechahastavoucher) {
+        $this->fechahastavoucher = $fechahastavoucher;
+    }
+
+    function setFechareportevoucher(date $fechareportevoucher) {
+        $this->fechareportevoucher = $fechareportevoucher;
+    }
+
+    function setFecharelacionvoucher(date $fecharelacionvoucher) {
+        $this->fecharelacionvoucher = $fecharelacionvoucher;
+    }
+
+    function setFechaprovoucher(date $fechaprovoucher) {
+        $this->fechaprovoucher = $fechaprovoucher;
+    }
+
+    function setFechafacturacionvoucher(date $fechafacturacionvoucher) {
+        $this->fechafacturacionvoucher = $fechafacturacionvoucher;
+    }
+
+    function setCodproductovoucher($codproductovoucher) {
+        $this->codproductovoucher = $codproductovoucher;
+    }
+
+    function setDestinovoucher($destinovoucher) {
+        $this->destinovoucher = $destinovoucher;
+    }
+
+    function setCodtipovoucher($codtipovoucher) {
+        $this->codtipovoucher = $codtipovoucher;
+    }
+
+    function setComisionagenciavoucher(decimal $comisionagenciavoucher) {
+        $this->comisionagenciavoucher = $comisionagenciavoucher;
+    }
+
+    function setNegociadovoucher($negociadovoucher) {
+        $this->negociadovoucher = $negociadovoucher;
+    }
+
+    function setComisionagentevoucher(decimal $comisionagentevoucher) {
+        $this->comisionagentevoucher = $comisionagentevoucher;
+    }
+
+    function setEmisorvoucher($emisorvoucher) {
+        $this->emisorvoucher = $emisorvoucher;
+    }
+
+    function setObservacionesvoucher(text $observacionesvoucher) {
+        $this->observacionesvoucher = $observacionesvoucher;
+    }
+
+    function setStatusvoucher($statusvoucher) {
+        $this->statusvoucher = $statusvoucher;
+    }
+
+    function setNetocobrovoucher(decimal $netocobrovoucher) {
+        $this->netocobrovoucher = $netocobrovoucher;
+    }
+
+    function setTitulogrupovoucher(text $titulogrupovoucher) {
+        $this->titulogrupovoucher = $titulogrupovoucher;
+    }
+
+    function setCodtipodescuentovoucher($codtipodescuentovoucher) {
+        $this->codtipodescuentovoucher = $codtipodescuentovoucher;
+    }
+
+    function setPorcentajevoucher($porcentajevoucher) {
+        $this->porcentajevoucher = $porcentajevoucher;
+    }
+
+    function setCodtipopagovoucher($codtipopagovoucher) {
+        $this->codtipopagovoucher = $codtipopagovoucher;
+    }
+
+    function setTarifabolivarvoucher(decimal $tarifabolivarvoucher) {
+        $this->tarifabolivarvoucher = $tarifabolivarvoucher;
+    }
+
+    function setTarifadolarvoucher(decimal $tarifadolarvoucher) {
+        $this->tarifadolarvoucher = $tarifadolarvoucher;
+    }
+
+    function setTarifanormalvoucher(decimal $tarifanormalvoucher) {
+        $this->tarifanormalvoucher = $tarifanormalvoucher;
+    }
+
+    function setNumerorelacionvoucher($numerorelacionvoucher) {
+        $this->numerorelacionvoucher = $numerorelacionvoucher;
+    }
+
+    function setNumerofacturavoucher($numerofacturavoucher) {
+        $this->numerofacturavoucher = $numerofacturavoucher;
+    }
+
+    function setNumerotcvoucher($numerotcvoucher) {
+        $this->numerotcvoucher = $numerotcvoucher;
+    }
+
+    function setDiasanualvoucher($diasanualvoucher) {
+        $this->diasanualvoucher = $diasanualvoucher;
+    }
+
+    function setMayor70voucher($mayor70voucher) {
+        $this->mayor70voucher = $mayor70voucher;
+    }
+
+    function setServicioadicionalvoucher($servicioadicionalvoucher) {
+        $this->servicioadicionalvoucher = $servicioadicionalvoucher;
+    }
+
+    function setTipocambiovoucher($tipocambiovoucher) {
+        $this->tipocambiovoucher = $tipocambiovoucher;
+    }
+
+    function setNrovouchersiebel($nrovouchersiebel) {
+        $this->nrovouchersiebel = $nrovouchersiebel;
+    }
+
+    function setFechaprocesosiebel(date $fechaprocesosiebel) {
+        $this->fechaprocesosiebel = $fechaprocesosiebel;
+    }
+
+    function setIdprecomprasiebel($idprecomprasiebel) {
+        $this->idprecomprasiebel = $idprecomprasiebel;
+    }
+
+    function setFechaanulacionsiebel(date $fechaanulacionsiebel) {
+        $this->fechaanulacionsiebel = $fechaanulacionsiebel;
+    }
+
+    function setTipoventa($tipoventa) {
+        $this->tipoventa = $tipoventa;
+    }
+
+
 
 }

@@ -224,5 +224,242 @@ class Tblfactura
      */
     private $numerocontrolfactura;
 
+    function getIdfactura() {
+        return $this->idfactura;
+    }
+
+    function getNumerorelacionpagofactura() {
+        return $this->numerorelacionpagofactura;
+    }
+
+    function getNumerofactura() {
+        return $this->numerofactura;
+    }
+
+    function getCodagenciafactura() {
+        return $this->codagenciafactura;
+    }
+
+    function getRiffactura() {
+        return $this->riffactura;
+    }
+
+    function getNumeronitfactura() {
+        return $this->numeronitfactura;
+    }
+
+    function getFechafactura() {
+        return $this->fechafactura;
+    }
+
+    function getTarifafactura() {
+        return $this->tarifafactura;
+    }
+
+    function getSobreivafactura() {
+        return $this->sobreivafactura;
+    }
+
+    function getPorcentajeivafactura() {
+        return $this->porcentajeivafactura;
+    }
+
+    function getMontoporcentajeivafactura() {
+        return $this->montoporcentajeivafactura;
+    }
+
+    function getPorcentajeagenciafactura() {
+        return $this->porcentajeagenciafactura;
+    }
+
+    function getMontoporcentajeagenciafactura() {
+        return $this->montoporcentajeagenciafactura;
+    }
+
+    function getPorcentajeivacomisionfactura() {
+        return $this->porcentajeivacomisionfactura;
+    }
+
+    function getMontoporcentajecomisionfactura() {
+        return $this->montoporcentajecomisionfactura;
+    }
+
+    function getRetencioncomisionfactura() {
+        return $this->retencioncomisionfactura;
+    }
+
+    function getMontorelacioncomisionfactura() {
+        return $this->montorelacioncomisionfactura;
+    }
+
+    function getTotalrelacionpagofactura() {
+        return $this->totalrelacionpagofactura;
+    }
+
+    function getTotalfacturabolivares() {
+        return $this->totalfacturabolivares;
+    }
+
+    function getTipocambiofactura() {
+        return $this->tipocambiofactura;
+    }
+
+    function getStatusfactura() {
+        return $this->statusfactura;
+    }
+
+    function getDetallesfactura() {
+        return $this->detallesfactura;
+    }
+
+    function getStatuspagadofactura() {
+        return $this->statuspagadofactura;
+    }
+
+    function getAgenteelaboracionfactura() {
+        return $this->agenteelaboracionfactura;
+    }
+
+    function getFechaelaboracionfactura() {
+        return $this->fechaelaboracionfactura;
+    }
+
+    function getFechapagofactura() {
+        return $this->fechapagofactura;
+    }
+
+    function getFacturadolar() {
+        return $this->facturadolar;
+    }
+
+    function getEmpresafactura() {
+        return $this->empresafactura;
+    }
+
+    function getIncobrablefactura() {
+        return $this->incobrablefactura;
+    }
+
+    function getNumerocontrolfactura() {
+        return $this->numerocontrolfactura;
+    }
+
+    function setNumerorelacionpagofactura($numerorelacionpagofactura) {
+        $this->numerorelacionpagofactura = $numerorelacionpagofactura;
+    }
+
+    function setNumerofactura($numerofactura) {
+        $this->numerofactura = $numerofactura;
+    }
+
+    function setCodagenciafactura($codagenciafactura) {
+        $this->codagenciafactura = $codagenciafactura;
+    }
+
+    function setRiffactura($riffactura) {
+        $this->riffactura = $riffactura;
+    }
+
+    function setNumeronitfactura($numeronitfactura) {
+        $this->numeronitfactura = $numeronitfactura;
+    }
+
+    function setFechafactura(date $fechafactura) {
+        $this->fechafactura = $fechafactura;
+    }
+
+    function setTarifafactura(decimal $tarifafactura) {
+        $this->tarifafactura = $tarifafactura;
+    }
+
+    function setSobreivafactura(decimal $sobreivafactura) {
+        $this->sobreivafactura = $sobreivafactura;
+    }
+
+    function setPorcentajeivafactura(decimal $porcentajeivafactura) {
+        $this->porcentajeivafactura = $porcentajeivafactura;
+    }
+
+    function setMontoporcentajeivafactura(decimal $montoporcentajeivafactura) {
+        $this->montoporcentajeivafactura = $montoporcentajeivafactura;
+    }
+
+    function setPorcentajeagenciafactura(decimal $porcentajeagenciafactura) {
+        $this->porcentajeagenciafactura = $porcentajeagenciafactura;
+    }
+
+    function setMontoporcentajeagenciafactura(decimal $montoporcentajeagenciafactura) {
+        $this->montoporcentajeagenciafactura = $montoporcentajeagenciafactura;
+    }
+
+    function setPorcentajeivacomisionfactura(decimal $porcentajeivacomisionfactura) {
+        $this->porcentajeivacomisionfactura = $porcentajeivacomisionfactura;
+    }
+
+    function setMontoporcentajecomisionfactura(decimal $montoporcentajecomisionfactura) {
+        $this->montoporcentajecomisionfactura = $montoporcentajecomisionfactura;
+    }
+
+    function setRetencioncomisionfactura(decimal $retencioncomisionfactura) {
+        $this->retencioncomisionfactura = $retencioncomisionfactura;
+    }
+
+    function setMontorelacioncomisionfactura(decimal $montorelacioncomisionfactura) {
+        $this->montorelacioncomisionfactura = $montorelacioncomisionfactura;
+    }
+
+    function setTotalrelacionpagofactura(decimal $totalrelacionpagofactura) {
+        $this->totalrelacionpagofactura = $totalrelacionpagofactura;
+    }
+
+    function setTotalfacturabolivares(decimal $totalfacturabolivares) {
+        $this->totalfacturabolivares = $totalfacturabolivares;
+    }
+
+    function setTipocambiofactura(decimal $tipocambiofactura) {
+        $this->tipocambiofactura = $tipocambiofactura;
+    }
+
+    function setStatusfactura($statusfactura) {
+        $this->statusfactura = $statusfactura;
+    }
+
+    function setDetallesfactura($detallesfactura) {
+        $this->detallesfactura = $detallesfactura;
+    }
+
+    function setStatuspagadofactura($statuspagadofactura) {
+        $this->statuspagadofactura = $statuspagadofactura;
+    }
+
+    function setAgenteelaboracionfactura($agenteelaboracionfactura) {
+        $this->agenteelaboracionfactura = $agenteelaboracionfactura;
+    }
+
+    function setFechaelaboracionfactura(date $fechaelaboracionfactura) {
+        $this->fechaelaboracionfactura = $fechaelaboracionfactura;
+    }
+
+    function setFechapagofactura(date $fechapagofactura) {
+        $this->fechapagofactura = $fechapagofactura;
+    }
+
+    function setFacturadolar($facturadolar) {
+        $this->facturadolar = $facturadolar;
+    }
+
+    function setEmpresafactura($empresafactura) {
+        $this->empresafactura = $empresafactura;
+    }
+
+    function setIncobrablefactura($incobrablefactura) {
+        $this->incobrablefactura = $incobrablefactura;
+    }
+
+    function setNumerocontrolfactura($numerocontrolfactura) {
+        $this->numerocontrolfactura = $numerocontrolfactura;
+    }
+
+
 
 }

@@ -36,4 +36,26 @@ class Tblbancos
     private $activo;
 
 
+    function getCodbanco() {
+        return $this->codbanco;
+    }
+
+    function getNombrebanco() {
+        return $this->nombrebanco;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+    function setNombrebanco($nombrebanco) {
+        $this->nombrebanco = $nombrebanco;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+
+    
 }

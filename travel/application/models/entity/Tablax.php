@@ -49,5 +49,42 @@ class Tablax
      */
     private $agentecomision;
 
+    function getIdcomision() {
+        return $this->idcomision;
+    }
+
+    function getAgencia() {
+        return $this->agencia;
+    }
+
+    function getPlancomision() {
+        return $this->plancomision;
+    }
+
+    function getAgenciacomis() {
+        return $this->agenciacomis;
+    }
+
+    function getAgentecomision() {
+        return $this->agentecomision;
+    }
+
+    function setAgencia($agencia) {
+        $this->agencia = $agencia;
+    }
+
+    function setPlancomision($plancomision) {
+        $this->plancomision = $plancomision;
+    }
+
+    function setAgenciacomis($agenciacomis) {
+        $this->agenciacomis = $agenciacomis;
+    }
+
+    function setAgentecomision($agentecomision) {
+        $this->agentecomision = $agentecomision;
+    }
+
+
 
 }

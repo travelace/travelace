@@ -70,5 +70,66 @@ class Tbldatoscontacto
      */
     private $correotitularcontacto;
 
+    function getIdcontacto() {
+        return $this->idcontacto;
+    }
 
+    function getCodvouchercontacto() {
+        return $this->codvouchercontacto;
+    }
+
+    function getNombrecontacto() {
+        return $this->nombrecontacto;
+    }
+
+    function getTelefonocontacto() {
+        return $this->telefonocontacto;
+    }
+
+    function getCorreocontacto() {
+        return $this->correocontacto;
+    }
+
+    function getDirecciontitularcontacto() {
+        return $this->direcciontitularcontacto;
+    }
+
+    function getTelefonotitularcontacto() {
+        return $this->telefonotitularcontacto;
+    }
+
+    function getCorreotitularcontacto() {
+        return $this->correotitularcontacto;
+    }
+
+    function setCodvouchercontacto($codvouchercontacto) {
+        $this->codvouchercontacto = $codvouchercontacto;
+    }
+
+    function setNombrecontacto($nombrecontacto) {
+        $this->nombrecontacto = $nombrecontacto;
+    }
+
+    function setTelefonocontacto($telefonocontacto) {
+        $this->telefonocontacto = $telefonocontacto;
+    }
+
+    function setCorreocontacto($correocontacto) {
+        $this->correocontacto = $correocontacto;
+    }
+
+    function setDirecciontitularcontacto($direcciontitularcontacto) {
+        $this->direcciontitularcontacto = $direcciontitularcontacto;
+    }
+
+    function setTelefonotitularcontacto($telefonotitularcontacto) {
+        $this->telefonotitularcontacto = $telefonotitularcontacto;
+    }
+
+    function setCorreotitularcontacto($correotitularcontacto) {
+        $this->correotitularcontacto = $correotitularcontacto;
+    }
+
+
+    
 }

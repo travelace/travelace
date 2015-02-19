@@ -77,5 +77,74 @@ class Tblfacturacontrol
      */
     private $fecha;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getAgenciafacturacion() {
+        return $this->agenciafacturacion;
+    }
+
+    function getDire1() {
+        return $this->dire1;
+    }
+
+    function getDire2() {
+        return $this->dire2;
+    }
+
+    function getDire3() {
+        return $this->dire3;
+    }
+
+    function getNumerodesde() {
+        return $this->numerodesde;
+    }
+
+    function getNumerohasta() {
+        return $this->numerohasta;
+    }
+
+    function getCantidad() {
+        return $this->cantidad;
+    }
+
+    function getFecha() {
+        return $this->fecha;
+    }
+
+    function setAgenciafacturacion($agenciafacturacion) {
+        $this->agenciafacturacion = $agenciafacturacion;
+    }
+
+    function setDire1(text $dire1) {
+        $this->dire1 = $dire1;
+    }
+
+    function setDire2(text $dire2) {
+        $this->dire2 = $dire2;
+    }
+
+    function setDire3(text $dire3) {
+        $this->dire3 = $dire3;
+    }
+
+    function setNumerodesde($numerodesde) {
+        $this->numerodesde = $numerodesde;
+    }
+
+    function setNumerohasta($numerohasta) {
+        $this->numerohasta = $numerohasta;
+    }
+
+    function setCantidad($cantidad) {
+        $this->cantidad = $cantidad;
+    }
+
+    function setFecha(date $fecha) {
+        $this->fecha = $fecha;
+    }
+
+
 
 }

@@ -42,5 +42,34 @@ class Tblgrupoagencias
      */
     private $abrev;
 
+    function getCodgrupo() {
+        return $this->codgrupo;
+    }
+
+    function getNombregrupo() {
+        return $this->nombregrupo;
+    }
+
+    function getActivogrupo() {
+        return $this->activogrupo;
+    }
+
+    function getAbrev() {
+        return $this->abrev;
+    }
+
+    function setNombregrupo($nombregrupo) {
+        $this->nombregrupo = $nombregrupo;
+    }
+
+    function setActivogrupo($activogrupo) {
+        $this->activogrupo = $activogrupo;
+    }
+
+    function setAbrev($abrev) {
+        $this->abrev = $abrev;
+    }
+
+
 
 }

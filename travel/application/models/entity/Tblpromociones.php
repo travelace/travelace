@@ -42,5 +42,34 @@ class Tblpromociones
      */
     private $fechafinpromocion;
 
+    function getCodpromocion() {
+        return $this->codpromocion;
+    }
+
+    function getNombrepromocion() {
+        return $this->nombrepromocion;
+    }
+
+    function getFechainicionpromocion() {
+        return $this->fechainicionpromocion;
+    }
+
+    function getFechafinpromocion() {
+        return $this->fechafinpromocion;
+    }
+
+    function setNombrepromocion($nombrepromocion) {
+        $this->nombrepromocion = $nombrepromocion;
+    }
+
+    function setFechainicionpromocion(date $fechainicionpromocion) {
+        $this->fechainicionpromocion = $fechainicionpromocion;
+    }
+
+    function setFechafinpromocion(date $fechafinpromocion) {
+        $this->fechafinpromocion = $fechafinpromocion;
+    }
+
+
 
 }

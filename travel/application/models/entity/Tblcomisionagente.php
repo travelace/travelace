@@ -43,4 +43,34 @@ class Tblcomisionagente
     private $comision;
 
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getCodagente() {
+        return $this->codagente;
+    }
+
+    function getProducto() {
+        return $this->producto;
+    }
+
+    function getComision() {
+        return $this->comision;
+    }
+
+    function setCodagente($codagente) {
+        $this->codagente = $codagente;
+    }
+
+    function setProducto($producto) {
+        $this->producto = $producto;
+    }
+
+    function setComision($comision) {
+        $this->comision = $comision;
+    }
+
+
+    
 }

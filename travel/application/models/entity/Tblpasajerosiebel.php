@@ -63,5 +63,57 @@ class Tblpasajerosiebel
      */
     private $telefonoemergecia;
 
+    function getIdpasajerovouchersiebel() {
+        return $this->idpasajerovouchersiebel;
+    }
+
+    function getCodvouchersiebel() {
+        return $this->codvouchersiebel;
+    }
+
+    function getNombresibel() {
+        return $this->nombresibel;
+    }
+
+    function getNrodocumento() {
+        return $this->nrodocumento;
+    }
+
+    function getEdad() {
+        return $this->edad;
+    }
+
+    function getTelefonoparticular() {
+        return $this->telefonoparticular;
+    }
+
+    function getTelefonoemergecia() {
+        return $this->telefonoemergecia;
+    }
+
+    function setCodvouchersiebel($codvouchersiebel) {
+        $this->codvouchersiebel = $codvouchersiebel;
+    }
+
+    function setNombresibel($nombresibel) {
+        $this->nombresibel = $nombresibel;
+    }
+
+    function setNrodocumento($nrodocumento) {
+        $this->nrodocumento = $nrodocumento;
+    }
+
+    function setEdad($edad) {
+        $this->edad = $edad;
+    }
+
+    function setTelefonoparticular($telefonoparticular) {
+        $this->telefonoparticular = $telefonoparticular;
+    }
+
+    function setTelefonoemergecia($telefonoemergecia) {
+        $this->telefonoemergecia = $telefonoemergecia;
+    }
+
 
 }

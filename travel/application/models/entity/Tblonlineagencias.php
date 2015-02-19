@@ -56,5 +56,50 @@ class Tblonlineagencias
      */
     private $rif;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getLogin() {
+        return $this->login;
+    }
+
+    function getAgencia() {
+        return $this->agencia;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getRazonsocial() {
+        return $this->razonsocial;
+    }
+
+    function getRif() {
+        return $this->rif;
+    }
+
+    function setLogin($login) {
+        $this->login = $login;
+    }
+
+    function setAgencia($agencia) {
+        $this->agencia = $agencia;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setRazonsocial($razonsocial) {
+        $this->razonsocial = $razonsocial;
+    }
+
+    function setRif($rif) {
+        $this->rif = $rif;
+    }
+
+
 
 }

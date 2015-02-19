@@ -56,5 +56,50 @@ class Tblpromotoresagencia
      */
     private $principal;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getCodigousuario() {
+        return $this->codigousuario;
+    }
+
+    function getComision() {
+        return $this->comision;
+    }
+
+    function getComisiongrupo() {
+        return $this->comisiongrupo;
+    }
+
+    function getPrincipal() {
+        return $this->principal;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setCodigousuario($codigousuario) {
+        $this->codigousuario = $codigousuario;
+    }
+
+    function setComision($comision) {
+        $this->comision = $comision;
+    }
+
+    function setComisiongrupo($comisiongrupo) {
+        $this->comisiongrupo = $comisiongrupo;
+    }
+
+    function setPrincipal($principal) {
+        $this->principal = $principal;
+    }
+
+
 
 }

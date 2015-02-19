@@ -77,5 +77,74 @@ class Tbldatosfacturacion
      */
     private $telefonofacturacion;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getNrovoucherfacturacion() {
+        return $this->nrovoucherfacturacion;
+    }
+
+    function getRiffacturacion() {
+        return $this->riffacturacion;
+    }
+
+    function getRazonsocialfacturacion() {
+        return $this->razonsocialfacturacion;
+    }
+
+    function getDireccionfacturacion() {
+        return $this->direccionfacturacion;
+    }
+
+    function getEstadofacturacion() {
+        return $this->estadofacturacion;
+    }
+
+    function getCiudadfacturacion() {
+        return $this->ciudadfacturacion;
+    }
+
+    function getCorreofacturacion() {
+        return $this->correofacturacion;
+    }
+
+    function getTelefonofacturacion() {
+        return $this->telefonofacturacion;
+    }
+
+    function setNrovoucherfacturacion($nrovoucherfacturacion) {
+        $this->nrovoucherfacturacion = $nrovoucherfacturacion;
+    }
+
+    function setRiffacturacion($riffacturacion) {
+        $this->riffacturacion = $riffacturacion;
+    }
+
+    function setRazonsocialfacturacion($razonsocialfacturacion) {
+        $this->razonsocialfacturacion = $razonsocialfacturacion;
+    }
+
+    function setDireccionfacturacion($direccionfacturacion) {
+        $this->direccionfacturacion = $direccionfacturacion;
+    }
+
+    function setEstadofacturacion($estadofacturacion) {
+        $this->estadofacturacion = $estadofacturacion;
+    }
+
+    function setCiudadfacturacion($ciudadfacturacion) {
+        $this->ciudadfacturacion = $ciudadfacturacion;
+    }
+
+    function setCorreofacturacion($correofacturacion) {
+        $this->correofacturacion = $correofacturacion;
+    }
+
+    function setTelefonofacturacion($telefonofacturacion) {
+        $this->telefonofacturacion = $telefonofacturacion;
+    }
+
+
 
 }

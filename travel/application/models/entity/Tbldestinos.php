@@ -28,5 +28,18 @@ class Tbldestinos
      */
     private $nombredestino;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombredestino() {
+        return $this->nombredestino;
+    }
+
+    function setNombredestino($nombredestino) {
+        $this->nombredestino = $nombredestino;
+    }
+
+
 
 }

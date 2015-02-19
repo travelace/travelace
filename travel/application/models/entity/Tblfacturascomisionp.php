@@ -35,5 +35,26 @@ class Tblfacturascomisionp
      */
     private $idfactura;
 
+    function getIdfactcomipag() {
+        return $this->idfactcomipag;
+    }
+
+    function getIdfactcomi() {
+        return $this->idfactcomi;
+    }
+
+    function getIdfactura() {
+        return $this->idfactura;
+    }
+
+    function setIdfactcomi($idfactcomi) {
+        $this->idfactcomi = $idfactcomi;
+    }
+
+    function setIdfactura($idfactura) {
+        $this->idfactura = $idfactura;
+    }
+
+
 
 }

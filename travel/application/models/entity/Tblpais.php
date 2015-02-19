@@ -28,5 +28,18 @@ class Tblpais
      */
     private $nombrepais;
 
+    function getCodpais() {
+        return $this->codpais;
+    }
+
+    function getNombrepais() {
+        return $this->nombrepais;
+    }
+
+    function setNombrepais($nombrepais) {
+        $this->nombrepais = $nombrepais;
+    }
+
+
 
 }

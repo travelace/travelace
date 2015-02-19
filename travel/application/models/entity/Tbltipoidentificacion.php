@@ -28,5 +28,18 @@ class Tbltipoidentificacion
      */
     private $nombreidentificacion;
 
+    function getCodidentificacion() {
+        return $this->codidentificacion;
+    }
+
+    function getNombreidentificacion() {
+        return $this->nombreidentificacion;
+    }
+
+    function setNombreidentificacion($nombreidentificacion) {
+        $this->nombreidentificacion = $nombreidentificacion;
+    }
+
+
 
 }

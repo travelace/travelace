@@ -28,5 +28,18 @@ class Tbltipodescuento
      */
     private $nombredescuento;
 
+    function getCoddescuento() {
+        return $this->coddescuento;
+    }
+
+    function getNombredescuento() {
+        return $this->nombredescuento;
+    }
+
+    function setNombredescuento($nombredescuento) {
+        $this->nombredescuento = $nombredescuento;
+    }
+
+
 
 }

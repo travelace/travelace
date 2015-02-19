@@ -34,6 +34,27 @@ class Tblperfiles
      * @ORM\Column(name="descripcionPerfil", type="string", length=250, nullable=false)
      */
     private $descripcionperfil;
+    
+    function getCodperfil() {
+        return $this->codperfil;
+    }
+
+    function getNombreperfil() {
+        return $this->nombreperfil;
+    }
+
+    function getDescripcionperfil() {
+        return $this->descripcionperfil;
+    }
+
+    function setNombreperfil($nombreperfil) {
+        $this->nombreperfil = $nombreperfil;
+    }
+
+    function setDescripcionperfil($descripcionperfil) {
+        $this->descripcionperfil = $descripcionperfil;
+    }
+
 
 
 }

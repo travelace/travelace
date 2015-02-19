@@ -49,5 +49,42 @@ class Tbltarifas
      */
     private $anualtarifa;
 
+    function getCodtarifa() {
+        return $this->codtarifa;
+    }
+
+    function getCodproducto() {
+        return $this->codproducto;
+    }
+
+    function getDiastarifa() {
+        return $this->diastarifa;
+    }
+
+    function getValortarifa() {
+        return $this->valortarifa;
+    }
+
+    function getAnualtarifa() {
+        return $this->anualtarifa;
+    }
+
+    function setCodproducto($codproducto) {
+        $this->codproducto = $codproducto;
+    }
+
+    function setDiastarifa($diastarifa) {
+        $this->diastarifa = $diastarifa;
+    }
+
+    function setValortarifa(decimal $valortarifa) {
+        $this->valortarifa = $valortarifa;
+    }
+
+    function setAnualtarifa($anualtarifa) {
+        $this->anualtarifa = $anualtarifa;
+    }
+
+
 
 }

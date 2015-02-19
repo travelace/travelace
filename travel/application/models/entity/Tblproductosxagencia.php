@@ -49,5 +49,42 @@ class Tblproductosxagencia
      */
     private $comisionagente;
 
+    function getIdproductoxagencia() {
+        return $this->idproductoxagencia;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getCodproducto() {
+        return $this->codproducto;
+    }
+
+    function getComisionagencia() {
+        return $this->comisionagencia;
+    }
+
+    function getComisionagente() {
+        return $this->comisionagente;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setCodproducto($codproducto) {
+        $this->codproducto = $codproducto;
+    }
+
+    function setComisionagencia(decimal $comisionagencia) {
+        $this->comisionagencia = $comisionagencia;
+    }
+
+    function setComisionagente(decimal $comisionagente) {
+        $this->comisionagente = $comisionagente;
+    }
+
+
 
 }

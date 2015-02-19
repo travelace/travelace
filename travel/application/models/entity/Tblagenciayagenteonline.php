@@ -43,4 +43,34 @@ class Tblagenciayagenteonline
     private $tipo;
 
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getCodagenciaagente() {
+        return $this->codagenciaagente;
+    }
+
+    function getLogin() {
+        return $this->login;
+    }
+
+    function getTipo() {
+        return $this->tipo;
+    }
+
+    function setCodagenciaagente($codagenciaagente) {
+        $this->codagenciaagente = $codagenciaagente;
+    }
+
+    function setLogin($login) {
+        $this->login = $login;
+    }
+
+    function setTipo($tipo) {
+        $this->tipo = $tipo;
+    }
+
+
+    
 }

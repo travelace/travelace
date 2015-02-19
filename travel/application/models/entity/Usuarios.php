@@ -189,5 +189,202 @@ class Usuarios
      */
     private $fechadolar;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getLogin() {
+        return $this->login;
+    }
+
+    function getPassword() {
+        return $this->password;
+    }
+
+    function getFecha() {
+        return $this->fecha;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getAgencia() {
+        return $this->agencia;
+    }
+
+    function getDireccion() {
+        return $this->direccion;
+    }
+
+    function getCiudad() {
+        return $this->ciudad;
+    }
+
+    function getEstado() {
+        return $this->estado;
+    }
+
+    function getPais() {
+        return $this->pais;
+    }
+
+    function getTelefono() {
+        return $this->telefono;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getSitioweb() {
+        return $this->sitioweb;
+    }
+
+    function getEstatus() {
+        return $this->estatus;
+    }
+
+    function getComision() {
+        return $this->comision;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+    function getApv() {
+        return $this->apv;
+    }
+
+    function getRsocial() {
+        return $this->rsocial;
+    }
+
+    function getRif() {
+        return $this->rif;
+    }
+
+    function getIva() {
+        return $this->iva;
+    }
+
+    function getLimite() {
+        return $this->limite;
+    }
+
+    function getItalcambio() {
+        return $this->italcambio;
+    }
+
+    function getTfact() {
+        return $this->tfact;
+    }
+
+    function getCotizadolar() {
+        return $this->cotizadolar;
+    }
+
+    function getFechadolar() {
+        return $this->fechadolar;
+    }
+
+    function setLogin($login) {
+        $this->login = $login;
+    }
+
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function setFecha(date $fecha) {
+        $this->fecha = $fecha;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setAgencia($agencia) {
+        $this->agencia = $agencia;
+    }
+
+    function setDireccion($direccion) {
+        $this->direccion = $direccion;
+    }
+
+    function setCiudad($ciudad) {
+        $this->ciudad = $ciudad;
+    }
+
+    function setEstado($estado) {
+        $this->estado = $estado;
+    }
+
+    function setPais($pais) {
+        $this->pais = $pais;
+    }
+
+    function setTelefono($telefono) {
+        $this->telefono = $telefono;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setSitioweb($sitioweb) {
+        $this->sitioweb = $sitioweb;
+    }
+
+    function setEstatus($estatus) {
+        $this->estatus = $estatus;
+    }
+
+    function setComision($comision) {
+        $this->comision = $comision;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+    function setApv($apv) {
+        $this->apv = $apv;
+    }
+
+    function setRsocial($rsocial) {
+        $this->rsocial = $rsocial;
+    }
+
+    function setRif($rif) {
+        $this->rif = $rif;
+    }
+
+    function setIva($iva) {
+        $this->iva = $iva;
+    }
+
+    function setLimite($limite) {
+        $this->limite = $limite;
+    }
+
+    function setItalcambio($italcambio) {
+        $this->italcambio = $italcambio;
+    }
+
+    function setTfact($tfact) {
+        $this->tfact = $tfact;
+    }
+
+    function setCotizadolar($cotizadolar) {
+        $this->cotizadolar = $cotizadolar;
+    }
+
+    function setFechadolar(date $fechadolar) {
+        $this->fechadolar = $fechadolar;
+    }
+
+
 
 }

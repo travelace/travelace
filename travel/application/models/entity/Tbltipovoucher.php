@@ -28,5 +28,18 @@ class Tbltipovoucher
      */
     private $nombretipovoucher;
 
+    function getCodtipovoucher() {
+        return $this->codtipovoucher;
+    }
+
+    function getNombretipovoucher() {
+        return $this->nombretipovoucher;
+    }
+
+    function setNombretipovoucher($nombretipovoucher) {
+        $this->nombretipovoucher = $nombretipovoucher;
+    }
+
+
 
 }

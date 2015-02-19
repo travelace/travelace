@@ -42,5 +42,34 @@ class Tblservicios
      */
     private $alcance;
 
+    function getIds() {
+        return $this->ids;
+    }
+
+    function getId() {
+        return $this->id;
+    }
+
+    function getServicio() {
+        return $this->servicio;
+    }
+
+    function getAlcance() {
+        return $this->alcance;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setServicio($servicio) {
+        $this->servicio = $servicio;
+    }
+
+    function setAlcance($alcance) {
+        $this->alcance = $alcance;
+    }
+
+
 
 }

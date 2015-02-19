@@ -56,5 +56,49 @@ class Tblageciassibel
      */
     private $codigofinalsiebel;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombreagencia() {
+        return $this->nombreagencia;
+    }
+
+    function getRazonsocial() {
+        return $this->razonsocial;
+    }
+
+    function getCodigosiebel() {
+        return $this->codigosiebel;
+    }
+
+    function getCodigovigas() {
+        return $this->codigovigas;
+    }
+
+    function getCodigofinalsiebel() {
+        return $this->codigofinalsiebel;
+    }
+
+    function setNombreagencia($nombreagencia) {
+        $this->nombreagencia = $nombreagencia;
+    }
+
+    function setRazonsocial($razonsocial) {
+        $this->razonsocial = $razonsocial;
+    }
+
+    function setCodigosiebel($codigosiebel) {
+        $this->codigosiebel = $codigosiebel;
+    }
+
+    function setCodigovigas($codigovigas) {
+        $this->codigovigas = $codigovigas;
+    }
+
+    function setCodigofinalsiebel($codigofinalsiebel) {
+        $this->codigofinalsiebel = $codigofinalsiebel;
+    }
+
 
 }

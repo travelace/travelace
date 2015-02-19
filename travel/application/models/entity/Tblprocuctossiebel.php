@@ -56,5 +56,50 @@ class Tblprocuctossiebel
      */
     private $tipoventaproducto;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getNombreproducto() {
+        return $this->nombreproducto;
+    }
+
+    function getCodigoproductosiebel() {
+        return $this->codigoproductosiebel;
+    }
+
+    function getAbreviaturaproductovigas() {
+        return $this->abreviaturaproductovigas;
+    }
+
+    function getCodigoproductovigas() {
+        return $this->codigoproductovigas;
+    }
+
+    function getTipoventaproducto() {
+        return $this->tipoventaproducto;
+    }
+
+    function setNombreproducto($nombreproducto) {
+        $this->nombreproducto = $nombreproducto;
+    }
+
+    function setCodigoproductosiebel($codigoproductosiebel) {
+        $this->codigoproductosiebel = $codigoproductosiebel;
+    }
+
+    function setAbreviaturaproductovigas($abreviaturaproductovigas) {
+        $this->abreviaturaproductovigas = $abreviaturaproductovigas;
+    }
+
+    function setCodigoproductovigas($codigoproductovigas) {
+        $this->codigoproductovigas = $codigoproductovigas;
+    }
+
+    function setTipoventaproducto($tipoventaproducto) {
+        $this->tipoventaproducto = $tipoventaproducto;
+    }
+
+
 
 }

@@ -63,5 +63,58 @@ class Tblmenues
      */
     private $ordmenu;
 
+    function getIdmenu() {
+        return $this->idmenu;
+    }
+
+    function getNombremenu() {
+        return $this->nombremenu;
+    }
+
+    function getDescripcionmenu() {
+        return $this->descripcionmenu;
+    }
+
+    function getNivelmenu() {
+        return $this->nivelmenu;
+    }
+
+    function getIdpadremenu() {
+        return $this->idpadremenu;
+    }
+
+    function getUrlmenu() {
+        return $this->urlmenu;
+    }
+
+    function getOrdmenu() {
+        return $this->ordmenu;
+    }
+
+    function setNombremenu($nombremenu) {
+        $this->nombremenu = $nombremenu;
+    }
+
+    function setDescripcionmenu($descripcionmenu) {
+        $this->descripcionmenu = $descripcionmenu;
+    }
+
+    function setNivelmenu($nivelmenu) {
+        $this->nivelmenu = $nivelmenu;
+    }
+
+    function setIdpadremenu($idpadremenu) {
+        $this->idpadremenu = $idpadremenu;
+    }
+
+    function setUrlmenu($urlmenu) {
+        $this->urlmenu = $urlmenu;
+    }
+
+    function setOrdmenu($ordmenu) {
+        $this->ordmenu = $ordmenu;
+    }
+
+
 
 }

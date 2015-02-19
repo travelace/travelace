@@ -56,5 +56,50 @@ class Tblpromotoresxagencia
      */
     private $statuspromotor;
 
+    function getCodpromoxagen() {
+        return $this->codpromoxagen;
+    }
+
+    function getCodpromotor() {
+        return $this->codpromotor;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getComision() {
+        return $this->comision;
+    }
+
+    function getComisiongrupo() {
+        return $this->comisiongrupo;
+    }
+
+    function getStatuspromotor() {
+        return $this->statuspromotor;
+    }
+
+    function setCodpromotor($codpromotor) {
+        $this->codpromotor = $codpromotor;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setComision(decimal $comision) {
+        $this->comision = $comision;
+    }
+
+    function setComisiongrupo(decimal $comisiongrupo) {
+        $this->comisiongrupo = $comisiongrupo;
+    }
+
+    function setStatuspromotor($statuspromotor) {
+        $this->statuspromotor = $statuspromotor;
+    }
+
+
 
 }

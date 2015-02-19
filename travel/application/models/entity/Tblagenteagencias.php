@@ -106,4 +106,106 @@ class Tblagenteagencias
     private $fecharegistro;
 
 
+    function getIdagente() {
+        return $this->idagente;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getNombreagente() {
+        return $this->nombreagente;
+    }
+
+    function getBancoagente() {
+        return $this->bancoagente;
+    }
+
+    function getCuentaagente() {
+        return $this->cuentaagente;
+    }
+
+    function getTipocuenta() {
+        return $this->tipocuenta;
+    }
+
+    function getNumerofax() {
+        return $this->numerofax;
+    }
+
+    function getCorreoagente() {
+        return $this->correoagente;
+    }
+
+    function getNacionalidadagente() {
+        return $this->nacionalidadagente;
+    }
+
+    function getCedulaagente() {
+        return $this->cedulaagente;
+    }
+
+    function getNombrecompleto() {
+        return $this->nombrecompleto;
+    }
+
+    function getRifagente() {
+        return $this->rifagente;
+    }
+
+    function getFecharegistro() {
+        return $this->fecharegistro;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setNombreagente($nombreagente) {
+        $this->nombreagente = $nombreagente;
+    }
+
+    function setBancoagente($bancoagente) {
+        $this->bancoagente = $bancoagente;
+    }
+
+    function setCuentaagente($cuentaagente) {
+        $this->cuentaagente = $cuentaagente;
+    }
+
+    function setTipocuenta($tipocuenta) {
+        $this->tipocuenta = $tipocuenta;
+    }
+
+    function setNumerofax($numerofax) {
+        $this->numerofax = $numerofax;
+    }
+
+    function setCorreoagente($correoagente) {
+        $this->correoagente = $correoagente;
+    }
+
+    function setNacionalidadagente($nacionalidadagente) {
+        $this->nacionalidadagente = $nacionalidadagente;
+    }
+
+    function setCedulaagente($cedulaagente) {
+        $this->cedulaagente = $cedulaagente;
+    }
+
+    function setNombrecompleto($nombrecompleto) {
+        $this->nombrecompleto = $nombrecompleto;
+    }
+
+    function setRifagente($rifagente) {
+        $this->rifagente = $rifagente;
+    }
+
+    function setFecharegistro(date $fecharegistro) {
+        $this->fecharegistro = $fecharegistro;
+    }
+
+
+    
 }

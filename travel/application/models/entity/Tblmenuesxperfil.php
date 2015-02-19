@@ -35,5 +35,26 @@ class Tblmenuesxperfil
      */
     private $idmenu;
 
+    function getId() {
+        return $this->id;
+    }
+
+    function getCodperfil() {
+        return $this->codperfil;
+    }
+
+    function getIdmenu() {
+        return $this->idmenu;
+    }
+
+    function setCodperfil($codperfil) {
+        $this->codperfil = $codperfil;
+    }
+
+    function setIdmenu($idmenu) {
+        $this->idmenu = $idmenu;
+    }
+
+
 
 }

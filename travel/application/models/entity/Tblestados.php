@@ -42,5 +42,34 @@ class Tblestados
      */
     private $zonafranca;
 
+    function getCodestado() {
+        return $this->codestado;
+    }
+
+    function getNombreestado() {
+        return $this->nombreestado;
+    }
+
+    function getCodpais() {
+        return $this->codpais;
+    }
+
+    function getZonafranca() {
+        return $this->zonafranca;
+    }
+
+    function setNombreestado($nombreestado) {
+        $this->nombreestado = $nombreestado;
+    }
+
+    function setCodpais($codpais) {
+        $this->codpais = $codpais;
+    }
+
+    function setZonafranca($zonafranca) {
+        $this->zonafranca = $zonafranca;
+    }
+
+
 
 }

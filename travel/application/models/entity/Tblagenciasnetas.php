@@ -36,4 +36,26 @@ class Tblagenciasnetas
     private $activa;
 
 
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getNombreagencia() {
+        return $this->nombreagencia;
+    }
+
+    function getActiva() {
+        return $this->activa;
+    }
+
+    function setNombreagencia($nombreagencia) {
+        $this->nombreagencia = $nombreagencia;
+    }
+
+    function setActiva($activa) {
+        $this->activa = $activa;
+    }
+
+
+    
 }

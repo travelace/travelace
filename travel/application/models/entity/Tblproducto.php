@@ -168,5 +168,178 @@ class Tblproducto
      */
     private $descuento;
 
+    function getCodproducto() {
+        return $this->codproducto;
+    }
+
+    function getAbreviaturaproducto() {
+        return $this->abreviaturaproducto;
+    }
+
+    function getNombreproducto() {
+        return $this->nombreproducto;
+    }
+
+    function getServiciosadicionalesproducto() {
+        return $this->serviciosadicionalesproducto;
+    }
+
+    function getDiaadicionalproducto() {
+        return $this->diaadicionalproducto;
+    }
+
+    function getLimitediasproductos() {
+        return $this->limitediasproductos;
+    }
+
+    function getDescuentofamiliarproducto() {
+        return $this->descuentofamiliarproducto;
+    }
+
+    function getMinimaedadproducto() {
+        return $this->minimaedadproducto;
+    }
+
+    function getMaximaedadproducto() {
+        return $this->maximaedadproducto;
+    }
+
+    function getRecargoedadproducto() {
+        return $this->recargoedadproducto;
+    }
+
+    function getLimitepaxgrpfproducto() {
+        return $this->limitepaxgrpfproducto;
+    }
+
+    function getPackfamiliarproducto() {
+        return $this->packfamiliarproducto;
+    }
+
+    function getLargasestadiaslimiedad() {
+        return $this->largasestadiaslimiedad;
+    }
+
+    function getTarifaestalarga() {
+        return $this->tarifaestalarga;
+    }
+
+    function getLargaestadiaproducto() {
+        return $this->largaestadiaproducto;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+    function getModulos() {
+        return $this->modulos;
+    }
+
+    function getAnuales() {
+        return $this->anuales;
+    }
+
+    function getDosporuno() {
+        return $this->dosporuno;
+    }
+
+    function getDesdepromo() {
+        return $this->desdepromo;
+    }
+
+    function getHastapromo() {
+        return $this->hastapromo;
+    }
+
+    function getDescuento() {
+        return $this->descuento;
+    }
+
+    function setAbreviaturaproducto($abreviaturaproducto) {
+        $this->abreviaturaproducto = $abreviaturaproducto;
+    }
+
+    function setNombreproducto($nombreproducto) {
+        $this->nombreproducto = $nombreproducto;
+    }
+
+    function setServiciosadicionalesproducto($serviciosadicionalesproducto) {
+        $this->serviciosadicionalesproducto = $serviciosadicionalesproducto;
+    }
+
+    function setDiaadicionalproducto(decimal $diaadicionalproducto) {
+        $this->diaadicionalproducto = $diaadicionalproducto;
+    }
+
+    function setLimitediasproductos($limitediasproductos) {
+        $this->limitediasproductos = $limitediasproductos;
+    }
+
+    function setDescuentofamiliarproducto(decimal $descuentofamiliarproducto) {
+        $this->descuentofamiliarproducto = $descuentofamiliarproducto;
+    }
+
+    function setMinimaedadproducto($minimaedadproducto) {
+        $this->minimaedadproducto = $minimaedadproducto;
+    }
+
+    function setMaximaedadproducto($maximaedadproducto) {
+        $this->maximaedadproducto = $maximaedadproducto;
+    }
+
+    function setRecargoedadproducto(decimal $recargoedadproducto) {
+        $this->recargoedadproducto = $recargoedadproducto;
+    }
+
+    function setLimitepaxgrpfproducto($limitepaxgrpfproducto) {
+        $this->limitepaxgrpfproducto = $limitepaxgrpfproducto;
+    }
+
+    function setPackfamiliarproducto($packfamiliarproducto) {
+        $this->packfamiliarproducto = $packfamiliarproducto;
+    }
+
+    function setLargasestadiaslimiedad($largasestadiaslimiedad) {
+        $this->largasestadiaslimiedad = $largasestadiaslimiedad;
+    }
+
+    function setTarifaestalarga(decimal $tarifaestalarga) {
+        $this->tarifaestalarga = $tarifaestalarga;
+    }
+
+    function setLargaestadiaproducto($largaestadiaproducto) {
+        $this->largaestadiaproducto = $largaestadiaproducto;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+    function setModulos($modulos) {
+        $this->modulos = $modulos;
+    }
+
+    function setAnuales($anuales) {
+        $this->anuales = $anuales;
+    }
+
+    function setDosporuno($dosporuno) {
+        $this->dosporuno = $dosporuno;
+    }
+
+    function setDesdepromo(date $desdepromo) {
+        $this->desdepromo = $desdepromo;
+    }
+
+    function setHastapromo(date $hastapromo) {
+        $this->hastapromo = $hastapromo;
+    }
+
+    function setDescuento(decimal $descuento) {
+        $this->descuento = $descuento;
+    }
+
+
 
 }

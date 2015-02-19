@@ -119,5 +119,122 @@ class Tblregistro
      */
     private $fechacumple;
 
+    function getIdregistro() {
+        return $this->idregistro;
+    }
+
+    function getNombreagente() {
+        return $this->nombreagente;
+    }
+
+    function getNombreagtvigas() {
+        return $this->nombreagtvigas;
+    }
+
+    function getCodagente() {
+        return $this->codagente;
+    }
+
+    function getNombreagencia() {
+        return $this->nombreagencia;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getBanco() {
+        return $this->banco;
+    }
+
+    function getNumerocuenta() {
+        return $this->numerocuenta;
+    }
+
+    function getTipocuenta() {
+        return $this->tipocuenta;
+    }
+
+    function getCorreo() {
+        return $this->correo;
+    }
+
+    function getCedula() {
+        return $this->cedula;
+    }
+
+    function getTipodocumento() {
+        return $this->tipodocumento;
+    }
+
+    function getRif() {
+        return $this->rif;
+    }
+
+    function getFechainsc() {
+        return $this->fechainsc;
+    }
+
+    function getFechacumple() {
+        return $this->fechacumple;
+    }
+
+    function setNombreagente($nombreagente) {
+        $this->nombreagente = $nombreagente;
+    }
+
+    function setNombreagtvigas($nombreagtvigas) {
+        $this->nombreagtvigas = $nombreagtvigas;
+    }
+
+    function setCodagente($codagente) {
+        $this->codagente = $codagente;
+    }
+
+    function setNombreagencia($nombreagencia) {
+        $this->nombreagencia = $nombreagencia;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setBanco($banco) {
+        $this->banco = $banco;
+    }
+
+    function setNumerocuenta($numerocuenta) {
+        $this->numerocuenta = $numerocuenta;
+    }
+
+    function setTipocuenta($tipocuenta) {
+        $this->tipocuenta = $tipocuenta;
+    }
+
+    function setCorreo($correo) {
+        $this->correo = $correo;
+    }
+
+    function setCedula($cedula) {
+        $this->cedula = $cedula;
+    }
+
+    function setTipodocumento($tipodocumento) {
+        $this->tipodocumento = $tipodocumento;
+    }
+
+    function setRif($rif) {
+        $this->rif = $rif;
+    }
+
+    function setFechainsc(date $fechainsc) {
+        $this->fechainsc = $fechainsc;
+    }
+
+    function setFechacumple(date $fechacumple) {
+        $this->fechacumple = $fechacumple;
+    }
+
+
 
 }

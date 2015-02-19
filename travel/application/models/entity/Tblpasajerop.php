@@ -70,5 +70,66 @@ class Tblpasajerop
      */
     private $paispasajero;
 
+    function getCodusuario() {
+        return $this->codusuario;
+    }
+
+    function getCodvoucher() {
+        return $this->codvoucher;
+    }
+
+    function getNombrepasajero() {
+        return $this->nombrepasajero;
+    }
+
+    function getFechanacimiento() {
+        return $this->fechanacimiento;
+    }
+
+    function getEdad() {
+        return $this->edad;
+    }
+
+    function getTipoidentificacion() {
+        return $this->tipoidentificacion;
+    }
+
+    function getCodidentificacion() {
+        return $this->codidentificacion;
+    }
+
+    function getPaispasajero() {
+        return $this->paispasajero;
+    }
+
+    function setCodvoucher($codvoucher) {
+        $this->codvoucher = $codvoucher;
+    }
+
+    function setNombrepasajero($nombrepasajero) {
+        $this->nombrepasajero = $nombrepasajero;
+    }
+
+    function setFechanacimiento(date $fechanacimiento) {
+        $this->fechanacimiento = $fechanacimiento;
+    }
+
+    function setEdad($edad) {
+        $this->edad = $edad;
+    }
+
+    function setTipoidentificacion($tipoidentificacion) {
+        $this->tipoidentificacion = $tipoidentificacion;
+    }
+
+    function setCodidentificacion($codidentificacion) {
+        $this->codidentificacion = $codidentificacion;
+    }
+
+    function setPaispasajero($paispasajero) {
+        $this->paispasajero = $paispasajero;
+    }
+
+
 
 }

@@ -112,5 +112,114 @@ class Tblfacturacomision
      */
     private $codusuario;
 
+    function getIdfacturacomision() {
+        return $this->idfacturacomision;
+    }
+
+    function getNrofacturacomision() {
+        return $this->nrofacturacomision;
+    }
+
+    function getNrocontrol() {
+        return $this->nrocontrol;
+    }
+
+    function getTdesc() {
+        return $this->tdesc;
+    }
+
+    function getFechafacturacomision() {
+        return $this->fechafacturacomision;
+    }
+
+    function getFechaprocesofactura() {
+        return $this->fechaprocesofactura;
+    }
+
+    function getBaseimponible() {
+        return $this->baseimponible;
+    }
+
+    function getPorcentajeretencion() {
+        return $this->porcentajeretencion;
+    }
+
+    function getMontoretencion() {
+        return $this->montoretencion;
+    }
+
+    function getNrodeclaracion() {
+        return $this->nrodeclaracion;
+    }
+
+    function getTipodeclaracion() {
+        return $this->tipodeclaracion;
+    }
+
+    function getFechadeclaracion() {
+        return $this->fechadeclaracion;
+    }
+
+    function getRiffactura() {
+        return $this->riffactura;
+    }
+
+    function getCodusuario() {
+        return $this->codusuario;
+    }
+
+    function setNrofacturacomision($nrofacturacomision) {
+        $this->nrofacturacomision = $nrofacturacomision;
+    }
+
+    function setNrocontrol($nrocontrol) {
+        $this->nrocontrol = $nrocontrol;
+    }
+
+    function setTdesc($tdesc) {
+        $this->tdesc = $tdesc;
+    }
+
+    function setFechafacturacomision(date $fechafacturacomision) {
+        $this->fechafacturacomision = $fechafacturacomision;
+    }
+
+    function setFechaprocesofactura(date $fechaprocesofactura) {
+        $this->fechaprocesofactura = $fechaprocesofactura;
+    }
+
+    function setBaseimponible(decimal $baseimponible) {
+        $this->baseimponible = $baseimponible;
+    }
+
+    function setPorcentajeretencion(decimal $porcentajeretencion) {
+        $this->porcentajeretencion = $porcentajeretencion;
+    }
+
+    function setMontoretencion(decimal $montoretencion) {
+        $this->montoretencion = $montoretencion;
+    }
+
+    function setNrodeclaracion($nrodeclaracion) {
+        $this->nrodeclaracion = $nrodeclaracion;
+    }
+
+    function setTipodeclaracion($tipodeclaracion) {
+        $this->tipodeclaracion = $tipodeclaracion;
+    }
+
+    function setFechadeclaracion(date $fechadeclaracion) {
+        $this->fechadeclaracion = $fechadeclaracion;
+    }
+
+    function setRiffactura($riffactura) {
+        $this->riffactura = $riffactura;
+    }
+
+    function setCodusuario($codusuario) {
+        $this->codusuario = $codusuario;
+    }
+
+
 
 }

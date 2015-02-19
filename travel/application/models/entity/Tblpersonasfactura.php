@@ -175,5 +175,186 @@ class Tblpersonasfactura
      */
     private $esagencia;
 
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getNombreagencia() {
+        return $this->nombreagencia;
+    }
+
+    function getNombrecompleto() {
+        return $this->nombrecompleto;
+    }
+
+    function getGroupoagencia() {
+        return $this->groupoagencia;
+    }
+
+    function getUbicacionagencia() {
+        return $this->ubicacionagencia;
+    }
+
+    function getSciudadagencia() {
+        return $this->sciudadagencia;
+    }
+
+    function getCiudadagencia() {
+        return $this->ciudadagencia;
+    }
+
+    function getEstadoagencia() {
+        return $this->estadoagencia;
+    }
+
+    function getTelefonoagencia() {
+        return $this->telefonoagencia;
+    }
+
+    function getEmailagencia() {
+        return $this->emailagencia;
+    }
+
+    function getContactoagencia() {
+        return $this->contactoagencia;
+    }
+
+    function getPromotoragencia() {
+        return $this->promotoragencia;
+    }
+
+    function getFechainicioagencia() {
+        return $this->fechainicioagencia;
+    }
+
+    function getUltimamodificacion() {
+        return $this->ultimamodificacion;
+    }
+
+    function getRifagencia() {
+        return $this->rifagencia;
+    }
+
+    function getNitagencia() {
+        return $this->nitagencia;
+    }
+
+    function getIsragencia() {
+        return $this->isragencia;
+    }
+
+    function getFreeagencia() {
+        return $this->freeagencia;
+    }
+
+    function getUsuariomodificacion() {
+        return $this->usuariomodificacion;
+    }
+
+    function getAcagciaAgcia() {
+        return $this->acagciaAgcia;
+    }
+
+    function getAcagteAgcia() {
+        return $this->acagteAgcia;
+    }
+
+    function getCiafactAgcia() {
+        return $this->ciafactAgcia;
+    }
+
+    function getEsagencia() {
+        return $this->esagencia;
+    }
+
+    function setNombreagencia($nombreagencia) {
+        $this->nombreagencia = $nombreagencia;
+    }
+
+    function setNombrecompleto($nombrecompleto) {
+        $this->nombrecompleto = $nombrecompleto;
+    }
+
+    function setGroupoagencia($groupoagencia) {
+        $this->groupoagencia = $groupoagencia;
+    }
+
+    function setUbicacionagencia($ubicacionagencia) {
+        $this->ubicacionagencia = $ubicacionagencia;
+    }
+
+    function setSciudadagencia($sciudadagencia) {
+        $this->sciudadagencia = $sciudadagencia;
+    }
+
+    function setCiudadagencia($ciudadagencia) {
+        $this->ciudadagencia = $ciudadagencia;
+    }
+
+    function setEstadoagencia($estadoagencia) {
+        $this->estadoagencia = $estadoagencia;
+    }
+
+    function setTelefonoagencia($telefonoagencia) {
+        $this->telefonoagencia = $telefonoagencia;
+    }
+
+    function setEmailagencia($emailagencia) {
+        $this->emailagencia = $emailagencia;
+    }
+
+    function setContactoagencia($contactoagencia) {
+        $this->contactoagencia = $contactoagencia;
+    }
+
+    function setPromotoragencia($promotoragencia) {
+        $this->promotoragencia = $promotoragencia;
+    }
+
+    function setFechainicioagencia(date $fechainicioagencia) {
+        $this->fechainicioagencia = $fechainicioagencia;
+    }
+
+    function setUltimamodificacion(date $ultimamodificacion) {
+        $this->ultimamodificacion = $ultimamodificacion;
+    }
+
+    function setRifagencia($rifagencia) {
+        $this->rifagencia = $rifagencia;
+    }
+
+    function setNitagencia($nitagencia) {
+        $this->nitagencia = $nitagencia;
+    }
+
+    function setIsragencia($isragencia) {
+        $this->isragencia = $isragencia;
+    }
+
+    function setFreeagencia($freeagencia) {
+        $this->freeagencia = $freeagencia;
+    }
+
+    function setUsuariomodificacion($usuariomodificacion) {
+        $this->usuariomodificacion = $usuariomodificacion;
+    }
+
+    function setAcagciaAgcia($acagciaAgcia) {
+        $this->acagciaAgcia = $acagciaAgcia;
+    }
+
+    function setAcagteAgcia($acagteAgcia) {
+        $this->acagteAgcia = $acagteAgcia;
+    }
+
+    function setCiafactAgcia($ciafactAgcia) {
+        $this->ciafactAgcia = $ciafactAgcia;
+    }
+
+    function setEsagencia($esagencia) {
+        $this->esagencia = $esagencia;
+    }
+
+
 
 }

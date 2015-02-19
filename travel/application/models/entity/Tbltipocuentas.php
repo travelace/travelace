@@ -28,5 +28,18 @@ class Tbltipocuentas
      */
     private $nombretcuenta;
 
+    function getCodtipocuenta() {
+        return $this->codtipocuenta;
+    }
+
+    function getNombretcuenta() {
+        return $this->nombretcuenta;
+    }
+
+    function setNombretcuenta($nombretcuenta) {
+        $this->nombretcuenta = $nombretcuenta;
+    }
+
+
 
 }

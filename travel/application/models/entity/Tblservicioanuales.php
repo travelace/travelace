@@ -28,5 +28,18 @@ class Tblservicioanuales
      */
     private $nombreanual;
 
+    function getCodanual() {
+        return $this->codanual;
+    }
+
+    function getNombreanual() {
+        return $this->nombreanual;
+    }
+
+    function setNombreanual($nombreanual) {
+        $this->nombreanual = $nombreanual;
+    }
+
+
 
 }

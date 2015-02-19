@@ -42,5 +42,34 @@ class Tblcomisionagencia
      */
     private $comision;
 
+    function getId() {
+        return $this->id;
+    }
 
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getProducto() {
+        return $this->producto;
+    }
+
+    function getComision() {
+        return $this->comision;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setProducto($producto) {
+        $this->producto = $producto;
+    }
+
+    function setComision($comision) {
+        $this->comision = $comision;
+    }
+
+
+    
 }

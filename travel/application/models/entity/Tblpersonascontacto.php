@@ -70,5 +70,66 @@ class Tblpersonascontacto
      */
     private $codagencia;
 
+    function getCodperscontacto() {
+        return $this->codperscontacto;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
+
+    function getCargo() {
+        return $this->cargo;
+    }
+
+    function getTelefono() {
+        return $this->telefono;
+    }
+
+    function getCelular() {
+        return $this->celular;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+    function setCargo($cargo) {
+        $this->cargo = $cargo;
+    }
+
+    function setTelefono($telefono) {
+        $this->telefono = $telefono;
+    }
+
+    function setCelular($celular) {
+        $this->celular = $celular;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+
 
 }

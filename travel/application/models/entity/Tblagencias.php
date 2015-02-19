@@ -217,5 +217,233 @@ class Tblagencias
      */
     private $loginWeb;
 
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getRazonsocial() {
+        return $this->razonsocial;
+    }
+
+    function getNombreagencia() {
+        return $this->nombreagencia;
+    }
+
+    function getRifagencia() {
+        return $this->rifagencia;
+    }
+
+    function getSucursal() {
+        return $this->sucursal;
+    }
+
+    function getCodpais() {
+        return $this->codpais;
+    }
+
+    function getTelefono1() {
+        return $this->telefono1;
+    }
+
+    function getTelefono2() {
+        return $this->telefono2;
+    }
+
+    function getTelefono3() {
+        return $this->telefono3;
+    }
+
+    function getFax() {
+        return $this->fax;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getFechainicio() {
+        return $this->fechainicio;
+    }
+
+    function getAgteretespecial() {
+        return $this->agteretespecial;
+    }
+
+    function getDescespecial() {
+        return $this->descespecial;
+    }
+
+    function getTipofacturacion() {
+        return $this->tipofacturacion;
+    }
+
+    function getDireccionfiscal() {
+        return $this->direccionfiscal;
+    }
+
+    function getDireccionfisica() {
+        return $this->direccionfisica;
+    }
+
+    function getActivo() {
+        return $this->activo;
+    }
+
+    function getFechaultmov() {
+        return $this->fechaultmov;
+    }
+
+    function getCodciudad() {
+        return $this->codciudad;
+    }
+
+    function getCodestado() {
+        return $this->codestado;
+    }
+
+    function getCodgrupo() {
+        return $this->codgrupo;
+    }
+
+    function getEmpfacturacion() {
+        return $this->empfacturacion;
+    }
+
+    function getNombreultmod() {
+        return $this->nombreultmod;
+    }
+
+    function getIsr() {
+        return $this->isr;
+    }
+
+    function getFree() {
+        return $this->free;
+    }
+
+    function getPropietario() {
+        return $this->propietario;
+    }
+
+    function getAuxtelef() {
+        return $this->auxtelef;
+    }
+
+    function getLoginWeb() {
+        return $this->loginWeb;
+    }
+
+    function setRazonsocial($razonsocial) {
+        $this->razonsocial = $razonsocial;
+    }
+
+    function setNombreagencia($nombreagencia) {
+        $this->nombreagencia = $nombreagencia;
+    }
+
+    function setRifagencia($rifagencia) {
+        $this->rifagencia = $rifagencia;
+    }
+
+    function setSucursal($sucursal) {
+        $this->sucursal = $sucursal;
+    }
+
+    function setCodpais($codpais) {
+        $this->codpais = $codpais;
+    }
+
+    function setTelefono1($telefono1) {
+        $this->telefono1 = $telefono1;
+    }
+
+    function setTelefono2($telefono2) {
+        $this->telefono2 = $telefono2;
+    }
+
+    function setTelefono3($telefono3) {
+        $this->telefono3 = $telefono3;
+    }
+
+    function setFax($fax) {
+        $this->fax = $fax;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setFechainicio(date $fechainicio) {
+        $this->fechainicio = $fechainicio;
+    }
+
+    function setAgteretespecial($agteretespecial) {
+        $this->agteretespecial = $agteretespecial;
+    }
+
+    function setDescespecial($descespecial) {
+        $this->descespecial = $descespecial;
+    }
+
+    function setTipofacturacion($tipofacturacion) {
+        $this->tipofacturacion = $tipofacturacion;
+    }
+
+    function setDireccionfiscal($direccionfiscal) {
+        $this->direccionfiscal = $direccionfiscal;
+    }
+
+    function setDireccionfisica($direccionfisica) {
+        $this->direccionfisica = $direccionfisica;
+    }
+
+    function setActivo($activo) {
+        $this->activo = $activo;
+    }
+
+    function setFechaultmov(date $fechaultmov) {
+        $this->fechaultmov = $fechaultmov;
+    }
+
+    function setCodciudad($codciudad) {
+        $this->codciudad = $codciudad;
+    }
+
+    function setCodestado($codestado) {
+        $this->codestado = $codestado;
+    }
+
+    function setCodgrupo($codgrupo) {
+        $this->codgrupo = $codgrupo;
+    }
+
+    function setEmpfacturacion($empfacturacion) {
+        $this->empfacturacion = $empfacturacion;
+    }
+
+    function setNombreultmod($nombreultmod) {
+        $this->nombreultmod = $nombreultmod;
+    }
+
+    function setIsr($isr) {
+        $this->isr = $isr;
+    }
+
+    function setFree($free) {
+        $this->free = $free;
+    }
+
+    function setPropietario($propietario) {
+        $this->propietario = $propietario;
+    }
+
+    function setAuxtelef($auxtelef) {
+        $this->auxtelef = $auxtelef;
+    }
+
+    function setLoginWeb($loginWeb) {
+        $this->loginWeb = $loginWeb;
+    }
+
 
 }

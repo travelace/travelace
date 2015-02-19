@@ -106,4 +106,106 @@ class Tblagentesxbco
     private $loginsiebel;
 
 
+    function getIdagente() {
+        return $this->idagente;
+    }
+
+    function getCodagencia() {
+        return $this->codagencia;
+    }
+
+    function getNombreagente() {
+        return $this->nombreagente;
+    }
+
+    function getNombreagtvigas() {
+        return $this->nombreagtvigas;
+    }
+
+    function getBanco() {
+        return $this->banco;
+    }
+
+    function getCuenta() {
+        return $this->cuenta;
+    }
+
+    function getTipocuenta() {
+        return $this->tipocuenta;
+    }
+
+    function getFax() {
+        return $this->fax;
+    }
+
+    function getCorreo() {
+        return $this->correo;
+    }
+
+    function getNacionalidad() {
+        return $this->nacionalidad;
+    }
+
+    function getCedula() {
+        return $this->cedula;
+    }
+
+    function getLoginWebusuario() {
+        return $this->loginWebusuario;
+    }
+
+    function getLoginsiebel() {
+        return $this->loginsiebel;
+    }
+
+    function setCodagencia($codagencia) {
+        $this->codagencia = $codagencia;
+    }
+
+    function setNombreagente($nombreagente) {
+        $this->nombreagente = $nombreagente;
+    }
+
+    function setNombreagtvigas($nombreagtvigas) {
+        $this->nombreagtvigas = $nombreagtvigas;
+    }
+
+    function setBanco($banco) {
+        $this->banco = $banco;
+    }
+
+    function setCuenta($cuenta) {
+        $this->cuenta = $cuenta;
+    }
+
+    function setTipocuenta($tipocuenta) {
+        $this->tipocuenta = $tipocuenta;
+    }
+
+    function setFax($fax) {
+        $this->fax = $fax;
+    }
+
+    function setCorreo($correo) {
+        $this->correo = $correo;
+    }
+
+    function setNacionalidad($nacionalidad) {
+        $this->nacionalidad = $nacionalidad;
+    }
+
+    function setCedula($cedula) {
+        $this->cedula = $cedula;
+    }
+
+    function setLoginWebusuario($loginWebusuario) {
+        $this->loginWebusuario = $loginWebusuario;
+    }
+
+    function setLoginsiebel($loginsiebel) {
+        $this->loginsiebel = $loginsiebel;
+    }
+
+
+    
 }

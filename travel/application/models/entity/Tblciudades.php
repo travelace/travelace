@@ -35,5 +35,25 @@ class Tblciudades
      */
     private $codestado;
 
+    function getCodciudad() {
+        return $this->codciudad;
+    }
+
+    function getNombreciudad() {
+        return $this->nombreciudad;
+    }
+
+    function getCodestado() {
+        return $this->codestado;
+    }
+
+    function setNombreciudad($nombreciudad) {
+        $this->nombreciudad = $nombreciudad;
+    }
+
+    function setCodestado($codestado) {
+        $this->codestado = $codestado;
+    }
+
 
 }

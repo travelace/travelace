@@ -224,5 +224,242 @@ class Tblvoucherargentina
      */
     private $distinovouchersiebel;
 
+    function getCodvouchersiebel() {
+        return $this->codvouchersiebel;
+    }
+
+    function getNumerovouchersiebel() {
+        return $this->numerovouchersiebel;
+    }
+
+    function getCodagenciavouchersiebel() {
+        return $this->codagenciavouchersiebel;
+    }
+
+    function getLoginvouchersiebel() {
+        return $this->loginvouchersiebel;
+    }
+
+    function getNumeropasajerosvouchersiebel() {
+        return $this->numeropasajerosvouchersiebel;
+    }
+
+    function getFechaemesionvouchersiebel() {
+        return $this->fechaemesionvouchersiebel;
+    }
+
+    function getFechadesdevouchersiebel() {
+        return $this->fechadesdevouchersiebel;
+    }
+
+    function getFechahastavouchersiebel() {
+        return $this->fechahastavouchersiebel;
+    }
+
+    function getFechareportevouchersiebel() {
+        return $this->fechareportevouchersiebel;
+    }
+
+    function getFecharelacionvouchersiebel() {
+        return $this->fecharelacionvouchersiebel;
+    }
+
+    function getFechaprovouchersiebel() {
+        return $this->fechaprovouchersiebel;
+    }
+
+    function getFechafacturacionvouchersiebel() {
+        return $this->fechafacturacionvouchersiebel;
+    }
+
+    function getCodproductovouchersiebel() {
+        return $this->codproductovouchersiebel;
+    }
+
+    function getComisionagenciavouchersiebel() {
+        return $this->comisionagenciavouchersiebel;
+    }
+
+    function getComisionagentevouchersiebel() {
+        return $this->comisionagentevouchersiebel;
+    }
+
+    function getObservacionesvouchersiebel() {
+        return $this->observacionesvouchersiebel;
+    }
+
+    function getStatusvouchersiebel() {
+        return $this->statusvouchersiebel;
+    }
+
+    function getTitulogrupovouchersiebel() {
+        return $this->titulogrupovouchersiebel;
+    }
+
+    function getTarifabolivarvouchersiebel() {
+        return $this->tarifabolivarvouchersiebel;
+    }
+
+    function getTarifadolarvouchersiebel() {
+        return $this->tarifadolarvouchersiebel;
+    }
+
+    function getTarifanormalvouchersiebel() {
+        return $this->tarifanormalvouchersiebel;
+    }
+
+    function getNumerorelacionvouchersiebel() {
+        return $this->numerorelacionvouchersiebel;
+    }
+
+    function getNumerofacturavouchersiebel() {
+        return $this->numerofacturavouchersiebel;
+    }
+
+    function getNumerotcvouchersiebel() {
+        return $this->numerotcvouchersiebel;
+    }
+
+    function getDiasanualvouchersiebel() {
+        return $this->diasanualvouchersiebel;
+    }
+
+    function getMayor70vouchersiebel() {
+        return $this->mayor70vouchersiebel;
+    }
+
+    function getTipocambiovouchersiebel() {
+        return $this->tipocambiovouchersiebel;
+    }
+
+    function getTipopagovouchersiebel() {
+        return $this->tipopagovouchersiebel;
+    }
+
+    function getDescuentosiebel() {
+        return $this->descuentosiebel;
+    }
+
+    function getDistinovouchersiebel() {
+        return $this->distinovouchersiebel;
+    }
+
+    function setNumerovouchersiebel($numerovouchersiebel) {
+        $this->numerovouchersiebel = $numerovouchersiebel;
+    }
+
+    function setCodagenciavouchersiebel($codagenciavouchersiebel) {
+        $this->codagenciavouchersiebel = $codagenciavouchersiebel;
+    }
+
+    function setLoginvouchersiebel($loginvouchersiebel) {
+        $this->loginvouchersiebel = $loginvouchersiebel;
+    }
+
+    function setNumeropasajerosvouchersiebel($numeropasajerosvouchersiebel) {
+        $this->numeropasajerosvouchersiebel = $numeropasajerosvouchersiebel;
+    }
+
+    function setFechaemesionvouchersiebel(date $fechaemesionvouchersiebel) {
+        $this->fechaemesionvouchersiebel = $fechaemesionvouchersiebel;
+    }
+
+    function setFechadesdevouchersiebel(date $fechadesdevouchersiebel) {
+        $this->fechadesdevouchersiebel = $fechadesdevouchersiebel;
+    }
+
+    function setFechahastavouchersiebel(date $fechahastavouchersiebel) {
+        $this->fechahastavouchersiebel = $fechahastavouchersiebel;
+    }
+
+    function setFechareportevouchersiebel(date $fechareportevouchersiebel) {
+        $this->fechareportevouchersiebel = $fechareportevouchersiebel;
+    }
+
+    function setFecharelacionvouchersiebel(date $fecharelacionvouchersiebel) {
+        $this->fecharelacionvouchersiebel = $fecharelacionvouchersiebel;
+    }
+
+    function setFechaprovouchersiebel(date $fechaprovouchersiebel) {
+        $this->fechaprovouchersiebel = $fechaprovouchersiebel;
+    }
+
+    function setFechafacturacionvouchersiebel(date $fechafacturacionvouchersiebel) {
+        $this->fechafacturacionvouchersiebel = $fechafacturacionvouchersiebel;
+    }
+
+    function setCodproductovouchersiebel($codproductovouchersiebel) {
+        $this->codproductovouchersiebel = $codproductovouchersiebel;
+    }
+
+    function setComisionagenciavouchersiebel(decimal $comisionagenciavouchersiebel) {
+        $this->comisionagenciavouchersiebel = $comisionagenciavouchersiebel;
+    }
+
+    function setComisionagentevouchersiebel(decimal $comisionagentevouchersiebel) {
+        $this->comisionagentevouchersiebel = $comisionagentevouchersiebel;
+    }
+
+    function setObservacionesvouchersiebel(text $observacionesvouchersiebel) {
+        $this->observacionesvouchersiebel = $observacionesvouchersiebel;
+    }
+
+    function setStatusvouchersiebel($statusvouchersiebel) {
+        $this->statusvouchersiebel = $statusvouchersiebel;
+    }
+
+    function setTitulogrupovouchersiebel(text $titulogrupovouchersiebel) {
+        $this->titulogrupovouchersiebel = $titulogrupovouchersiebel;
+    }
+
+    function setTarifabolivarvouchersiebel(decimal $tarifabolivarvouchersiebel) {
+        $this->tarifabolivarvouchersiebel = $tarifabolivarvouchersiebel;
+    }
+
+    function setTarifadolarvouchersiebel(decimal $tarifadolarvouchersiebel) {
+        $this->tarifadolarvouchersiebel = $tarifadolarvouchersiebel;
+    }
+
+    function setTarifanormalvouchersiebel(decimal $tarifanormalvouchersiebel) {
+        $this->tarifanormalvouchersiebel = $tarifanormalvouchersiebel;
+    }
+
+    function setNumerorelacionvouchersiebel($numerorelacionvouchersiebel) {
+        $this->numerorelacionvouchersiebel = $numerorelacionvouchersiebel;
+    }
+
+    function setNumerofacturavouchersiebel($numerofacturavouchersiebel) {
+        $this->numerofacturavouchersiebel = $numerofacturavouchersiebel;
+    }
+
+    function setNumerotcvouchersiebel($numerotcvouchersiebel) {
+        $this->numerotcvouchersiebel = $numerotcvouchersiebel;
+    }
+
+    function setDiasanualvouchersiebel($diasanualvouchersiebel) {
+        $this->diasanualvouchersiebel = $diasanualvouchersiebel;
+    }
+
+    function setMayor70vouchersiebel($mayor70vouchersiebel) {
+        $this->mayor70vouchersiebel = $mayor70vouchersiebel;
+    }
+
+    function setTipocambiovouchersiebel($tipocambiovouchersiebel) {
+        $this->tipocambiovouchersiebel = $tipocambiovouchersiebel;
+    }
+
+    function setTipopagovouchersiebel($tipopagovouchersiebel) {
+        $this->tipopagovouchersiebel = $tipopagovouchersiebel;
+    }
+
+    function setDescuentosiebel($descuentosiebel) {
+        $this->descuentosiebel = $descuentosiebel;
+    }
+
+    function setDistinovouchersiebel($distinovouchersiebel) {
+        $this->distinovouchersiebel = $distinovouchersiebel;
+    }
+
+
 
 }
