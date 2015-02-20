@@ -13,9 +13,9 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('app.model.modelGruposGrilla', {
+Ext.define('app.model.modelPerfilesGrilla', {
     extend: 'Ext.data.Model',
-    alias: 'model.modelgruposgrilla',
+    alias: 'model.modelperfilesgrilla',
 
     requires: [
         'Ext.data.field.String',
@@ -30,11 +30,11 @@ Ext.define('app.model.modelGruposGrilla', {
         },
         {
             type: 'string',
-            name: 'nombreGrupo'
+            name: 'perfil'
         },
         {
             type: 'string',
-            name: 'abreviatura'
+            name: 'descripcion'
         },
         {
             type: 'boolean',

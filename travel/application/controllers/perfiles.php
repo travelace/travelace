@@ -13,7 +13,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class Grupos extends CI_Controller {
+class Perfiles extends CI_Controller {
 
     private $em;
 
@@ -22,71 +22,73 @@ class Grupos extends CI_Controller {
         $this->em = $this->doctrine->em;
     }
 
-    public function gruposGrilla() {
+    public function perfilesGrilla() {
 
         if ($this->input->get("tipoTransaccion") == '') {
-            $this->cargaGruposGrilla();
+            $this->cargaPerfilesGrilla();
         } else if ($this->input->get("tipoTransaccion") == 'editar') {
 
-            $grupos = $this->em->getRepository("Entity\Tblgrupoagencias")->find($this->input->get("id"));
+            $perfiles = $this->em->getRepository("Entity\Tblperfiles")->find($this->input->get("id"));
 
-            $grupos->setNombregrupo($this->input->get("nombreGrupo"));
-            $grupos->setAbrev($this->input->get("abreviatura"));
-            $grupos->setActivogrupo($this->input->get("activo"));
-            $this->em->persist($grupos);
+            $perfiles->setNombreperfil($this->input->get("perfil"));
+            $perfiles->setDescripcionperfil($this->input->get("descripcion"));
+            if($this->input->get("activo")=='true'){$activo=1;}else{$activo=0;}
+            $perfiles->setActivo($activo);
+            $this->em->persist($perfiles);
             $this->em->flush();
-            $this->cargaGruposGrilla();
+            $this->cargaPerfilesGrilla();
         } else if ($this->input->get("tipoTransaccion") == 'nuevoFalso') {
-            $grupos = $this->em->getRepository('Entity\Tblgrupoagencias')->findAll();
+            $perfiles = $this->em->getRepository('Entity\Tblperfiles')->findAll();
             $data = array();
-            foreach ($grupos as $grupo) {
+            foreach ($perfiles as $perfil) {
                 $data[] = array(
-                    "id" => $grupo->getCodgrupo(),
-                    "nombreGrupo" => utf8_encode($grupo->getNombregrupo()),
-                    "abreviatura" => $grupo->getAbrev(),
-                    "activo"=>$grupo->getActivogrupo(),
+                    "id" => $perfil->getCodperfil(),
+                    "perfil" => utf8_encode($perfil->getNombreperfil()),
+                    "descripcion" => $perfil->getDescripcionperfil(),
+                    "activo"=>$perfil->getActivo(),
                 );
             }
              $data[] = array(
                     "id"=> 0,
-                    "nombreGrupo" => '',
-                    "abreviatura" => '',
+                    "perfil" => '',
+                    "descripcion" => '',
                     "activo"=>'',
                 );
             
             $this->output
                     ->set_content_type('application/json')
-                    ->set_output(json_encode(array('totalCount' => count($data), 'grupo' => $data)));
+                    ->set_output(json_encode(array('totalCount' => count($data), 'perfil' => $data)));
         }else if ($this->input->get("tipoTransaccion") == 'nuevo') {
-            $grupos = new Entity\Tblgrupoagencias();
+            $perfiles = new Entity\Tblperfiles();
 
-            $grupos->setNombregrupo($this->input->get("nombreGrupo"));
-            $grupos->setAbrev($this->input->get("abreviatura"));
-            $this->em->persist($grupos);
+            $perfiles->setNombreperfil($this->input->get("perfil"));
+            $perfiles->setDescripcionperfil($this->input->get("descripcion"));
+            $perfiles->setActivo(1);
+            $this->em->persist($perfiles);
             $this->em->flush();
-            $this->cargaGruposGrilla();
+            $this->cargaPerfilesGrilla();
         }
         
         
         
     }
 
-    public function cargaGruposGrilla() {
-        $grupos = $this->em->getRepository('Entity\Tblgrupoagencias')->findAll();
+    public function cargaPerfilesGrilla() {
+        $perfiles = $this->em->getRepository('Entity\Tblperfiles')->findAll();
         $data = array();
-        foreach ($grupos as $grupo) {
+        foreach ($perfiles as $perfil) {
             $data[] = array(
-                "id" => $grupo->getCodgrupo(),
-                "nombreGrupo" => utf8_encode($grupo->getNombregrupo()),
-                "abreviatura" => $grupo->getAbrev(),
-                "activo"=>$grupo->getActivogrupo(),
+                "id" => $perfil->getCodperfil(),
+                "perfil" => utf8_encode($perfil->getNombreperfil()),
+                "descripcion" => $perfil->getDescripcionperfil(),
+                "activo"=>$perfil->getActivo(),
                     
             );
         }
 
         $this->output
                 ->set_content_type('application/json')
-                ->set_output(json_encode(array('totalCount' => count($data), 'grupo' => $data)));
+                ->set_output(json_encode(array('totalCount' => count($data), 'perfil' => $data)));
     }
 
     public function buscarPaises() {

@@ -32,7 +32,8 @@ class Grupos extends CI_Controller {
 
             $grupos->setNombregrupo($this->input->get("nombreGrupo"));
             $grupos->setAbrev($this->input->get("abreviatura"));
-            $grupos->setActivogrupo($this->input->get("activo"));
+            if($this->input->get("activo")=='true'){$activo=1;}else{$activo=0;}
+            $grupos->setActivogrupo($activo);
             $this->em->persist($grupos);
             $this->em->flush();
             $this->cargaGruposGrilla();

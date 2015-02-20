@@ -22,12 +22,14 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'modelPrueba',
-        'modelGruposGrilla'
+        'modelGruposGrilla',
+        'modelPerfilesGrilla'
     ],
     stores: [
         'menuStore',
         'storePrueba',
-        'storeGruposGrilla'
+        'storeGruposGrilla',
+        'storePerfilesGrilla'
     ],
     views: [
         'myViewport',

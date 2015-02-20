@@ -40,18 +40,43 @@ Ext.define('app.view.tab.perfiles', {
         {
             xtype: 'gridpanel',
             title: '',
+            store:'storePerfilesGrilla',
+            itemId:'perfilesGrilla',
             columns: [
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'string',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
                     text: 'Id',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'perfil',
                     text: 'Perfil',
-                    flex: 8
+                    flex: 8,
+                    editor: {
+                        xtype:'textfield'
+                    }
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'descripcion',
+                    text: 'Descripci&oacute;n',
+                    flex: 8,
+                    editor: {
+                        xtype:'textfield'
+                    }
+                    
+                },
+                {
+                    xtype: 'checkcolumn',
+                    dataIndex: 'activo',
+                    text: 'Activo',
+                    flex: 8,
+                    editor: {
+                        xtype:'checkbox'
+                    }
+                    
                 }
             ],
             dockedItems: [
@@ -63,7 +88,20 @@ Ext.define('app.view.tab.perfiles', {
                             xtype: 'button',
                             width: '',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            text: 'Nuevo',
+                            handler: function () {
+                                    me=this;
+                                    console.log(me.up("#perfilesGrilla"))
+                                    perfil = me.up("#perfilesGrilla");
+                                    store_perfil = perfil.getStore();
+                                    store_perfil.load({
+                                        params: {
+                                            tipoTransaccion: 'nuevoFalso'
+                                        }
+                                    });
+
+                               
+                            }
                         },
                         {
                             xtype: 'button',
@@ -75,7 +113,27 @@ Ext.define('app.view.tab.perfiles', {
             ],
             selModel: {
                 selType: 'checkboxmodel'
-            }
+            },
+            plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+                            console.log(event)
+                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    id: event.record.data.id,
+                                    perfil: event.record.data.perfil,
+                                    descripcion: event.record.data.descripcion,
+                                    activo: event.record.data.activo,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
         }
     ]
 

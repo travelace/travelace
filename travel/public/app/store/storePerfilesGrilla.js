@@ -13,11 +13,11 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('app.store.storeGruposGrilla', {
+Ext.define('app.store.storePerfilesGrilla', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'app.model.modelGruposGrilla',
+        'app.model.modelPerfilesGrilla',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json'
     ],
@@ -26,14 +26,14 @@ Ext.define('app.store.storeGruposGrilla', {
         var me = this;
         cfg = cfg || {};
         me.callParent([Ext.apply({
-            storeId: 'storeGruposGrilla',
-            model: 'app.model.modelGruposGrilla',
+            storeId: 'storePerfilesGrilla',
+            model: 'app.model.modelPerfilesGrilla',
             proxy: {
                 type: 'ajax',
-                url: './grupos/gruposGrilla/',
+                url: './perfiles/perfilesGrilla/',
                 reader: {
                     type: 'json',
-                    rootProperty: 'grupo',
+                    rootProperty: 'perfil',
                     totalProperty: 'totalCount'
                 }
             }
