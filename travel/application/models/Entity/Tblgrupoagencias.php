@@ -1,44 +1,44 @@
 <?php
 
 
-
-use Doctrine\ORM\Mapping as ORM;
+namespace Entity;
+//use Doctrine\0RM\Mapping as ORM;
 
 /**
- * Tblgrupoagencias
+ * Entity\Tblgrupoagencias
  *
- * @ORM\Table(name="tblgrupoagencias")
- * @ORM\Entity
+ * @Table(name="tblgrupoagencias")
+ * @Entity
  */
 class Tblgrupoagencias
 {
     /**
      * @var integer $codgrupo
      *
-     * @ORM\Column(name="codGrupo", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="codGrupo", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $codgrupo;
 
     /**
      * @var string $nombregrupo
      *
-     * @ORM\Column(name="nombreGrupo", type="string", length=45, nullable=true)
+     * @Column(name="nombreGrupo", type="string", length=45, nullable=true)
      */
     private $nombregrupo;
 
     /**
      * @var boolean $activogrupo
      *
-     * @ORM\Column(name="activoGrupo", type="boolean", nullable=true)
+     * @Column(name="activoGrupo", type="boolean", nullable=true)
      */
     private $activogrupo;
 
     /**
      * @var string $abrev
      *
-     * @ORM\Column(name="abrev", type="string", length=10, nullable=true)
+     * @Column(name="abrev", type="string", length=10, nullable=true)
      */
     private $abrev;
 
@@ -70,6 +70,8 @@ class Tblgrupoagencias
         $this->abrev = $abrev;
     }
 
-
+    public function __toString() {
+        return $this->getNombregrupo();
+    }
 
 }

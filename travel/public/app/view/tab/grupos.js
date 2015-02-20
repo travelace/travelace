@@ -16,7 +16,6 @@
 Ext.define('app.view.tab.grupos', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.grupos',
-
     requires: [
         'app.view.tab.bancosViewModel1',
         'Ext.grid.Panel',
@@ -26,7 +25,6 @@ Ext.define('app.view.tab.grupos', {
         'Ext.button.Button',
         'Ext.selection.CheckboxModel'
     ],
-
     viewModel: {
         type: 'tabgrupos'
     },
@@ -35,29 +33,35 @@ Ext.define('app.view.tab.grupos', {
     closable: true,
     icon: 'iconos/16x16/group.png',
     title: 'Grupos',
-
     items: [
         {
             xtype: 'gridpanel',
+            store: 'storeGruposGrilla',
             title: '',
             columns: [
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'string',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
                     text: 'Id',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'nombreGrupo',
                     text: 'Grupo',
-                    flex: 10
+                    flex: 10,
+                    editor: {
+                        xtype: 'textfield',
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'abreviatura',
                     text: 'Abreviatura',
-                    flex: 2
+                    flex: 2,
+                    editor: {
+                        xtype: 'textfield',
+                    }
                 }
             ],
             dockedItems: [
@@ -81,7 +85,26 @@ Ext.define('app.view.tab.grupos', {
             ],
             selModel: {
                 selType: 'checkboxmodel'
-            }
+            },
+            plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+                            console.log(event)
+                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    id: event.record.data.id,
+                                    nombreGrupo: event.record.data.nombreGrupo,
+                                    abreviatura: event.record.data.abreviatura,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
         }
     ]
 

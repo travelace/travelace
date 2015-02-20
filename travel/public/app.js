@@ -21,11 +21,13 @@ Ext.Loader.setConfig({
 
 Ext.application({
     models: [
-        'modelPrueba'
+        'modelPrueba',
+        'modelGruposGrilla'
     ],
     stores: [
         'menuStore',
-        'storePrueba'
+        'storePrueba',
+        'storeGruposGrilla'
     ],
     views: [
         'myViewport',
