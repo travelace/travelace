@@ -21,9 +21,9 @@ class Grupos extends CI_Controller {
         parent::__construct();
         $this->em = $this->doctrine->em;
     }
-    
+
     public function gruposGrilla() {
-        
+
         if ($this->input->get("tipoTransaccion") == '') {
             $this->cargaGruposGrilla();
         } else if ($this->input->get("tipoTransaccion") == 'editar') {
@@ -32,24 +32,55 @@ class Grupos extends CI_Controller {
 
             $grupos->setNombregrupo($this->input->get("nombreGrupo"));
             $grupos->setAbrev($this->input->get("abreviatura"));
+            $grupos->setActivogrupo($this->input->get("activo"));
+            $this->em->persist($grupos);
+            $this->em->flush();
+            $this->cargaGruposGrilla();
+        } else if ($this->input->get("tipoTransaccion") == 'nuevoFalso') {
+            $grupos = $this->em->getRepository('Entity\Tblgrupoagencias')->findAll();
+            $data = array();
+            foreach ($grupos as $grupo) {
+                $data[] = array(
+                    "id" => $grupo->getCodgrupo(),
+                    "nombreGrupo" => utf8_encode($grupo->getNombregrupo()),
+                    "abreviatura" => $grupo->getAbrev(),
+                    "activo"=>$grupo->getActivogrupo(),
+                );
+            }
+             $data[] = array(
+                    "id"=> 0,
+                    "nombreGrupo" => '',
+                    "abreviatura" => '',
+                    "activo"=>'',
+                );
+            
+            $this->output
+                    ->set_content_type('application/json')
+                    ->set_output(json_encode(array('totalCount' => count($data), 'grupo' => $data)));
+        }else if ($this->input->get("tipoTransaccion") == 'nuevo') {
+            $grupos = new Entity\Tblgrupoagencias();
+
+            $grupos->setNombregrupo($this->input->get("nombreGrupo"));
+            $grupos->setAbrev($this->input->get("abreviatura"));
             $this->em->persist($grupos);
             $this->em->flush();
             $this->cargaGruposGrilla();
         }
         
-    }  
         
         
-        
-        
-      public function cargaGruposGrilla() {  
+    }
+
+    public function cargaGruposGrilla() {
         $grupos = $this->em->getRepository('Entity\Tblgrupoagencias')->findAll();
         $data = array();
         foreach ($grupos as $grupo) {
             $data[] = array(
                 "id" => $grupo->getCodgrupo(),
                 "nombreGrupo" => utf8_encode($grupo->getNombregrupo()),
-                "abreviatura" => $grupo->getAbrev()
+                "abreviatura" => $grupo->getAbrev(),
+                "activo"=>$grupo->getActivogrupo(),
+                    
             );
         }
 
@@ -57,8 +88,6 @@ class Grupos extends CI_Controller {
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('totalCount' => count($data), 'grupo' => $data)));
     }
-
-  
 
     public function buscarPaises() {
 
@@ -148,7 +177,7 @@ class Grupos extends CI_Controller {
     }
 
     public function buscarPuertoOrigen() {
-        /* 
+        /*
          * Este valor viene de la funcion load. utilizada en FclienteProveedores
          * para obtener el pais actual y realizar la busqueda de puerto segun el pais 
          */

@@ -19,7 +19,8 @@ Ext.define('app.model.modelGruposGrilla', {
 
     requires: [
         'Ext.data.field.String',
-        'Ext.data.field.Integer'
+        'Ext.data.field.Integer',
+        'Ext.data.field.Boolean'
     ],
 
     fields: [
@@ -34,6 +35,10 @@ Ext.define('app.model.modelGruposGrilla', {
         {
             type: 'string',
             name: 'abreviatura'
+        },
+        {
+            type: 'boolean',
+            name: 'activo'
         }
     ]
 });

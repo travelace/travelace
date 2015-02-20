@@ -37,6 +37,7 @@ Ext.define('app.view.tab.grupos', {
         {
             xtype: 'gridpanel',
             store: 'storeGruposGrilla',
+            itemId: 'gruposGrilla',
             title: '',
             columns: [
                 {
@@ -62,6 +63,15 @@ Ext.define('app.view.tab.grupos', {
                     editor: {
                         xtype: 'textfield',
                     }
+                },
+                {
+                    xtype: 'checkcolumn',
+                    dataIndex: 'activo',
+                    text: 'Activo',
+                    flex: 2,
+                    editor: {
+                        xtype: 'checkbox',
+                    }
                 }
             ],
             dockedItems: [
@@ -73,12 +83,19 @@ Ext.define('app.view.tab.grupos', {
                             xtype: 'button',
                             width: '',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
-                        },
-                        {
-                            xtype: 'button',
-                            icon: 'iconos/16x16/delete.png',
-                            text: 'Eliminar'
+                            text: 'Nuevo',
+                            handler: function () {
+                                    me=this;
+                                    grupo = me.up("#gruposGrilla");
+                                    store_grupo = grupo.getStore();
+                                    store_grupo.load({
+                                        params: {
+                                            tipoTransaccion: 'nuevoFalso'
+                                        }
+                                    });
+
+                               
+                            }
                         }
                     ]
                 }
@@ -98,6 +115,7 @@ Ext.define('app.view.tab.grupos', {
                                     id: event.record.data.id,
                                     nombreGrupo: event.record.data.nombreGrupo,
                                     abreviatura: event.record.data.abreviatura,
+                                    activo: event.record.data.activo,
                                     tipoTransaccion: tipoTransaccion
                                 }
                             });

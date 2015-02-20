@@ -30,7 +30,7 @@ Ext.define('app.store.storeGruposGrilla', {
             model: 'app.model.modelGruposGrilla',
             proxy: {
                 type: 'ajax',
-                url: './grupos/gruposGrilla',
+                url: './grupos/gruposGrilla/',
                 reader: {
                     type: 'json',
                     rootProperty: 'grupo',
