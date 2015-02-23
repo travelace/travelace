@@ -16,7 +16,6 @@
 Ext.define('app.view.tab.agencias', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.agencias',
-
     requires: [
         'app.view.tab.agenciasViewModel',
         'Ext.grid.Panel',
@@ -31,7 +30,6 @@ Ext.define('app.view.tab.agencias', {
         'Ext.tab.Tab',
         'Ext.grid.column.Date'
     ],
-
     viewModel: {
         type: 'tabagencias'
     },
@@ -43,40 +41,46 @@ Ext.define('app.view.tab.agencias', {
     icon: 'iconos/16x16/building.png',
     title: 'Agencias',
     defaultListenerScope: true,
-
     items: [
         {
             xtype: 'gridpanel',
+            itemId: 'agenciasGrilla',
+            store: 'storeAgenciasGrilla',
             flex: 2,
             region: 'north',
             height: 150,
             collapsed: false,
             collapsible: true,
             title: 'Mis Agencias',
+         
             columns: [
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
                     text: 'id',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
+                    dataIndex: 'nombreAgencia',
                     text: 'Nombre Agencia',
                     flex: 2
                 },
                 {
                     xtype: 'gridcolumn',
+                    dataIndex: 'grupoAgencia',
                     text: 'Grupo',
                     flex: 1
                 },
                 {
-                    xtype: 'numbercolumn',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'telefono',
                     text: 'Tel&eacute;fono Principal',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
+                    dataIndex: 'rif',
                     text: 'RIF'
                 }
             ],
@@ -126,14 +130,14 @@ Ext.define('app.view.tab.agencias', {
                     displayInfo: true
                 }
             ],
-            plugins: [
-                {
-                    ptype: 'rowediting',
-                    listeners: {
-                        edit: 'onRowEditingEdit'
-                    }
-                }
-            ],
+            /*plugins: [
+             {
+             ptype: 'rowediting',
+             listeners: {
+             edit: 'onRowEditingEdit'
+             }
+             }
+             ],*/
             selModel: {
                 selType: 'checkboxmodel'
             }
@@ -152,62 +156,72 @@ Ext.define('app.view.tab.agencias', {
                     items: [
                         {
                             xtype: 'panel',
+                            autoScroll: true,
                             title: 'Sucursales',
                             items: [
                                 {
                                     xtype: 'gridpanel',
+                                    height: 250,
+                                    itemId: 'sucursalGrilla',
+                                    store: 'storeSucursalGrilla',
                                     columns: [
                                         {
-                                            xtype: 'numbercolumn',
-                                            dataIndex: 'string',
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'id',
                                             text: 'C&oacute;digo',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
-                                            dataIndex: 'number',
+                                            dataIndex: 'direccion',
                                             text: 'Direcci&oacute;n Fisica',
                                             flex: 2
                                         },
                                         {
-                                            xtype: 'datecolumn',
-                                            dataIndex: 'date',
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'nombre',
                                             text: 'Nombre',
                                             flex: 1
                                         },
                                         {
-                                            xtype: 'numbercolumn',
-                                            dataIndex: 'bool',
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'telefono',
                                             text: 'T&eacute;lefono',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            dataIndex: 'correo',
                                             text: 'Correo',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            dataIndex: 'pais',
                                             text: 'Pais',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            dataIndex: 'estado',
                                             text: 'Estado',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            dataIndex: 'ciudad',
                                             text: 'Ciudad',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            dataIndex: 'login',
                                             text: 'login',
                                             flex: 1
                                         },
                                         {
                                             xtype: 'gridcolumn',
+                                            dataIndex: 'password',
                                             text: 'Password',
                                             flex: 1
                                         }
@@ -343,10 +357,6 @@ Ext.define('app.view.tab.agencias', {
                 }
             ]
         }
-    ],
-
-    onRowEditingEdit: function(editor, context, eOpts) {
-
-    }
-
+    ]
+   
 });

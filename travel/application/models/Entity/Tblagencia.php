@@ -1,180 +1,214 @@
 <?php
 
 
-
-use Doctrine\ORM\Mapping as ORM;
+namespace Entity;
+//use Doctrine\Mapping as ORM;
 
 /**
  * Tblagencia
  *
- * @ORM\Table(name="tblagencia")
- * @ORM\Entity
+ * @Table(name="tblagencia")
+ * @Entity
  */
 class Tblagencia
 {
     /**
      * @var integer $codagencia
      *
-     * @ORM\Column(name="codAgencia", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="codAgencia", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $codagencia;
 
     /**
      * @var string $nombreagencia
      *
-     * @ORM\Column(name="nombreAgencia", type="string", length=60, nullable=false)
+     * @Column(name="nombreAgencia", type="string", length=60, nullable=false)
      */
     private $nombreagencia;
 
     /**
      * @var string $nombrecompleto
      *
-     * @ORM\Column(name="nombreCompleto", type="string", length=60, nullable=false)
+     * @Column(name="nombreCompleto", type="string", length=60, nullable=false)
      */
     private $nombrecompleto;
 
     /**
      * @var integer $groupoagencia
      *
-     * @ORM\Column(name="groupoAgencia", type="integer", nullable=false)
+     * @Column(name="groupoAgencia", type="integer", nullable=false)
      */
     private $groupoagencia;
 
     /**
      * @var string $ubicacionagencia
      *
-     * @ORM\Column(name="ubicacionAgencia", type="string", length=130, nullable=false)
+     * @Column(name="ubicacionAgencia", type="string", length=130, nullable=false)
      */
     private $ubicacionagencia;
 
     /**
      * @var string $sciudadagencia
      *
-     * @ORM\Column(name="sciudadAgencia", type="string", length=60, nullable=false)
+     * @Column(name="sciudadAgencia", type="string", length=60, nullable=false)
      */
     private $sciudadagencia;
 
     /**
      * @var integer $ciudadagencia
      *
-     * @ORM\Column(name="ciudadAgencia", type="integer", nullable=false)
+     * @Column(name="ciudadAgencia", type="integer", nullable=false)
      */
     private $ciudadagencia;
 
     /**
      * @var integer $estadoagencia
      *
-     * @ORM\Column(name="estadoAgencia", type="integer", nullable=false)
+     * @Column(name="estadoAgencia", type="integer", nullable=false)
      */
     private $estadoagencia;
 
     /**
      * @var string $telefonoagencia
      *
-     * @ORM\Column(name="telefonoAgencia", type="string", length=60, nullable=false)
+     * @Column(name="telefonoAgencia", type="string", length=60, nullable=false)
      */
     private $telefonoagencia;
 
     /**
      * @var string $emailagencia
      *
-     * @ORM\Column(name="emailAgencia", type="string", length=60, nullable=false)
+     * @Column(name="emailAgencia", type="string", length=60, nullable=false)
      */
     private $emailagencia;
 
     /**
      * @var string $contactoagencia
      *
-     * @ORM\Column(name="contactoAgencia", type="string", length=60, nullable=false)
+     * @Column(name="contactoAgencia", type="string", length=60, nullable=false)
      */
     private $contactoagencia;
 
     /**
      * @var string $promotoragencia
      *
-     * @ORM\Column(name="promotorAgencia", type="string", length=60, nullable=false)
+     * @Column(name="promotorAgencia", type="string", length=60, nullable=false)
      */
     private $promotoragencia;
 
     /**
      * @var date $fechainicioagencia
      *
-     * @ORM\Column(name="fechaInicioAgencia", type="date", nullable=false)
+     * @Column(name="fechaInicioAgencia", type="date", nullable=false)
      */
     private $fechainicioagencia;
 
     /**
      * @var date $ultimamodificacion
      *
-     * @ORM\Column(name="ultimaModificacion", type="date", nullable=false)
+     * @Column(name="ultimaModificacion", type="date", nullable=false)
      */
     private $ultimamodificacion;
 
     /**
      * @var string $rifagencia
      *
-     * @ORM\Column(name="rifAgencia", type="string", length=60, nullable=false)
+     * @Column(name="rifAgencia", type="string", length=60, nullable=false)
      */
     private $rifagencia;
 
     /**
      * @var string $nitagencia
      *
-     * @ORM\Column(name="nitAgencia", type="string", length=60, nullable=false)
+     * @Column(name="nitAgencia", type="string", length=60, nullable=false)
      */
     private $nitagencia;
 
     /**
      * @var boolean $isragencia
      *
-     * @ORM\Column(name="isrAgencia", type="boolean", nullable=false)
+     * @Column(name="isrAgencia", type="boolean", nullable=false)
      */
     private $isragencia;
 
     /**
      * @var boolean $freeagencia
      *
-     * @ORM\Column(name="freeAgencia", type="boolean", nullable=false)
+     * @Column(name="freeAgencia", type="boolean", nullable=false)
      */
     private $freeagencia;
 
     /**
      * @var string $usuariomodificacion
      *
-     * @ORM\Column(name="usuarioModificacion", type="string", length=60, nullable=false)
+     * @Column(name="usuarioModificacion", type="string", length=60, nullable=false)
      */
     private $usuariomodificacion;
 
     /**
      * @var boolean $acagciaAgcia
      *
-     * @ORM\Column(name="acagcia_agcia", type="boolean", nullable=false)
+     * @Column(name="acagcia_agcia", type="boolean", nullable=false)
      */
     private $acagciaAgcia;
 
     /**
      * @var boolean $acagteAgcia
      *
-     * @ORM\Column(name="acagte_agcia", type="boolean", nullable=false)
+     * @Column(name="acagte_agcia", type="boolean", nullable=false)
      */
     private $acagteAgcia;
 
     /**
      * @var string $ciafactAgcia
      *
-     * @ORM\Column(name="ciafact_agcia", type="string", length=60, nullable=false)
+     * @Column(name="ciafact_agcia", type="string", length=60, nullable=false)
      */
     private $ciafactAgcia;
 
     /**
      * @var boolean $esagencia
      *
-     * @ORM\Column(name="esAgencia", type="boolean", nullable=false)
+     * @Column(name="esAgencia", type="boolean", nullable=false)
      */
     private $esagencia;
 
+     /**
+     * @var integer $sucursal
+     *
+     * @Column(name="sucursal", type="integer", nullable=false)
+     */
+    private $sucursal;
+    
+     /**
+     * @var integer $sucursalagencia
+     *
+     * @Column(name="sucursalagencia", type="integer", nullable=false)
+     */
+    private $sucursalagencia;
+    
+      /**
+     * @var string $login
+     *
+     * @Column(name="login", type="string", length=60, nullable=false)
+     */
+    private $login;
+    
+     /**
+     * @var string $password
+     *
+     * @Column(name="password", type="string", length=60, nullable=false)
+     */
+    private $password;
+    
+     /**
+     * @var string $codigosiebel
+     *
+     * @Column(name="codigosiebel", type="string", length=60, nullable=false)
+     */
+    private $codigosiebel;
 
     function getCodagencia() {
         return $this->codagencia;
@@ -268,6 +302,26 @@ class Tblagencia
         return $this->esagencia;
     }
 
+    function getSucursal() {
+        return $this->sucursal;
+    }
+
+    function getSucursalagencia() {
+        return $this->sucursalagencia;
+    }
+
+    function getLogin() {
+        return $this->login;
+    }
+
+    function getPassword() {
+        return $this->password;
+    }
+
+    function getCodigosiebel() {
+        return $this->codigosiebel;
+    }
+
     function setNombreagencia($nombreagencia) {
         $this->nombreagencia = $nombreagencia;
     }
@@ -356,7 +410,24 @@ class Tblagencia
         $this->esagencia = $esagencia;
     }
 
-
+    function setSucursal($sucursal) {
+        $this->sucursal = $sucursal;
+    }
     
+    function setSucursalagencia($sucursalagencia) {
+        $this->sucursalagencia = $sucursalagencia;
+    }
+
+    function setLogin($login) {
+        $this->login = $login;
+    }
+
+    function setPassword($password) {
+        $this->password = $password;
+    }
+
+    function setCodigosiebel($codigosiebel) {
+        $this->codigosiebel = $codigosiebel;
+    }
     
 }

@@ -23,13 +23,19 @@ Ext.application({
     models: [
         'modelPrueba',
         'modelGruposGrilla',
-        'modelPerfilesGrilla'
+        'modelPerfilesGrilla',
+        
+        'modelAgenciasGrilla',
+        'modelSucursalGrilla'
     ],
     stores: [
         'menuStore',
         'storePrueba',
         'storeGruposGrilla',
-        'storePerfilesGrilla'
+        'storePerfilesGrilla',
+        
+        'storeAgenciasGrilla',
+        'storeSucursalGrilla'
     ],
     views: [
         'myViewport',

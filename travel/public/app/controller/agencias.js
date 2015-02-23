@@ -16,7 +16,6 @@
 Ext.define('app.controller.agencias', {
     extend: 'Ext.app.Controller',
     alias: 'controller.agencias',
-
     refs: {
         agencias: {
             autoCreate: true,
@@ -34,7 +33,6 @@ Ext.define('app.controller.agencias', {
             xtype: 'productosventana'
         }
     },
-
     control: {
         "#editarAgencia": {
             click: 'editarAgencia'
@@ -47,40 +45,68 @@ Ext.define('app.controller.agencias', {
         },
         "#checkcorporativo": {
             change: 'clickcorporativo'
-        }
+        },
+         "#agenciasGrilla": {
+            select: 'cargarSucursales'
+        },
     },
-
-    editarAgencia: function(button, e, eOpts) {
+    editarAgencia: function (button, e, eOpts) {
         this.getEdicionagencias().show();
     },
-
-    buscarAgencias: function(button, e, eOpts) {
-         var me=this;
-                busqueda=this.getAgencias().down("#textoBusqueda").value;
-                if(busqueda==''){
-                     Ext.Msg.alert('Error', 'Debe buscar al menos por un caracter.');
+    buscarAgencias: function (button, e, eOpts) {
+        var me = this;
+        busqueda = this.getAgencias().down("#textoBusqueda").value;
+        if (busqueda == '') {
+            Ext.Msg.alert('Error', 'Debe buscar al menos por un caracter.');
+        }
+        else {
+            storeAgenciasGrilla = this.getAgencias().down("#agenciasGrilla").getStore();
+            storeAgenciasGrilla.load({
+                params: {
+                    tipoTransaccion: 'busqueda',
+                    busqueda: busqueda
                 }
-                else{
-                    //////////////////////////////codigo para busqueda de agencias
-
-
-                    //////////////////////////////////////////////////
-                }
+            });
+        }
 
     },
-
-    productoSucursal: function(button, e, eOpts) {
+    productoSucursal: function (button, e, eOpts) {
         this.getProductosventana().show();
     },
-
-    clickcorporativo: function(field, newValue, oldValue, eOpts) {
-        if(newValue==true){
-            this.getEdicionagencias().down("#agenciacorporativo").show();}
-            else{
+    clickcorporativo: function (field, newValue, oldValue, eOpts) {
+        if (newValue == true) {
+            this.getEdicionagencias().down("#agenciacorporativo").show();
+        }
+        else {
             this.getEdicionagencias().down("#agenciacorporativo").hide();
-            }
+        }
         console.log(newValue);
 
-    }
+    },
+     cargarSucursales: function (dv, record, item, index, e) {
+        
+        var id = record.data.id;
+        console.log(this.getAgencias().down("#sucursalGrilla"));
+        store_sucursal =  this.getAgencias().down("#sucursalGrilla").getStore();
+        
+        store_sucursal.load({
+            params: {
+                agencia: id,
+                tipoTransaccion: 'cargar'
+            }
+        });
+        
+        /*paisId = me.down("#paisSeleccionado");
+        paisId.setValue(id);
+
+        estado = me.down("#estado");
+        store_estado = estado.getStore();
+        store_estado.load({
+            params: {
+                pais_id: id,
+                tipoTransaccion: 'cargar'
+            }
+        });*/
+      }
 
 });
