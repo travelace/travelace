@@ -1,37 +1,37 @@
 <?php
 
+namespace Entity;
 
-
-use Doctrine\ORM\Mapping as ORM;
+//use Doctrine\Mapping as ORM;
 
 /**
  * Tblbancos
  *
- * @ORM\Table(name="tblbancos")
- * @ORM\Entity
+ * @Table(name="tblbancos")
+ * @Entity
  */
 class Tblbancos
 {
     /**
      * @var integer $codbanco
      *
-     * @ORM\Column(name="codBanco", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="codBanco", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $codbanco;
 
     /**
      * @var string $nombrebanco
      *
-     * @ORM\Column(name="nombreBanco", type="string", length=45, nullable=true)
+     * @Column(name="nombreBanco", type="string", length=45, nullable=true)
      */
     private $nombrebanco;
 
     /**
      * @var boolean $activo
      *
-     * @ORM\Column(name="activo", type="boolean", nullable=false)
+     * @Column(name="activo", type="boolean")
      */
     private $activo;
 

@@ -24,18 +24,20 @@ Ext.application({
         'modelPrueba',
         'modelGruposGrilla',
         'modelPerfilesGrilla',
-        
+        'modelBancosGrilla',
         'modelAgenciasGrilla',
         'modelSucursalGrilla'
+        
     ],
     stores: [
         'menuStore',
         'storePrueba',
         'storeGruposGrilla',
         'storePerfilesGrilla',
-        
+        'storeBancosGrilla',
         'storeAgenciasGrilla',
         'storeSucursalGrilla'
+        
     ],
     views: [
         'myViewport',

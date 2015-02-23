@@ -113,8 +113,7 @@ Ext.define('app.view.tab.grupos', {
                             event.store.load({
                                 params: {
                                     id: event.record.data.id,
-                                    nombreGrupo: event.record.data.nombreGrupo,
-                                    abreviatura: event.record.data.abreviatura,
+                                    banco: event.record.data.banco,
                                     activo: event.record.data.activo,
                                     tipoTransaccion: tipoTransaccion
                                 }

@@ -16,7 +16,6 @@
 Ext.define('app.view.tab.bancos', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.bancos',
-
     requires: [
         'app.view.tab.bancosViewModel',
         'Ext.grid.Panel',
@@ -25,30 +24,45 @@ Ext.define('app.view.tab.bancos', {
         'Ext.toolbar.Toolbar',
         'Ext.button.Button'
     ],
-
     viewModel: {
         type: 'tabbancos'
     },
+    autoScroll:true,
     height: 250,
     width: 745,
     closable: true,
     icon: 'iconos/16x16/money_bag.png',
     title: 'Bancos',
-
     items: [
         {
             xtype: 'gridpanel',
+            store: 'storeBancosGrilla',
+            itemId: 'BancosGrilla',
             title: '',
             columns: [
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'string',
-                    text: 'id'
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
+                    text: 'Id',
+                    flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
-                    text: 'banco'
+                    dataIndex: 'banco',
+                    text: 'banco',
+                    flex: 2,
+                    editor: {
+                        xtype: 'textfield'
+                    }
+                },
+                {
+                    xtype: 'checkcolumn',
+                    dataIndex: 'activo',
+                    text: 'Activo',
+                    flex: 2,
+                    editor: {
+                        xtype: 'checkbox'
+                    }
                 }
             ],
             dockedItems: [
@@ -60,7 +74,19 @@ Ext.define('app.view.tab.bancos', {
                             xtype: 'button',
                             width: '',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            text: 'Nuevo',
+                            handler: function () {
+                                me = this;
+                                banco = me.up("#BancosGrilla");
+                                store_banco = banco.getStore();
+                                store_banco.load({
+                                    params: {
+                                        tipoTransaccion: 'nuevoFalso'
+                                    }
+                                });
+
+
+                            }
                         },
                         {
                             xtype: 'button',
@@ -68,8 +94,32 @@ Ext.define('app.view.tab.bancos', {
                             text: 'Eliminar'
                         }
                     ]
+                   
+                    
                 }
-            ]
+            ], selModel: {
+                        selType: 'checkboxmodel'
+                    },
+                    
+            plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+                            console.log(event)
+                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    id: event.record.data.id,
+                                    banco: event.record.data.banco,
+                                    activo: event.record.data.activo,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
         }
     ]
 
