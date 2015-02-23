@@ -23,13 +23,15 @@ Ext.application({
     models: [
         'modelPrueba',
         'modelGruposGrilla',
-        'modelPerfilesGrilla'
+        'modelPerfilesGrilla',
+        'modelBancosGrilla'
     ],
     stores: [
         'menuStore',
         'storePrueba',
         'storeGruposGrilla',
-        'storePerfilesGrilla'
+        'storePerfilesGrilla',
+        'storeBancosGrilla'
     ],
     views: [
         'myViewport',
