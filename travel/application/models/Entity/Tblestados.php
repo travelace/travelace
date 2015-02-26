@@ -38,7 +38,7 @@ class Tblestados
     /**
      * @var boolean $zonafranca
      *
-     * @Column(name="zonaFranca", type="boolean", nullable=false)
+     * @Column(name="zonaFranca", type="boolean" )
      */
     private $zonafranca;
 

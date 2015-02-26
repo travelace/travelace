@@ -40,36 +40,58 @@ Ext.define('app.view.tab.usuarios', {
         {
             xtype: 'gridpanel',
             title: '',
+            store: 'storeUsuariosGrilla',
+            itemId: 'usuariosGrilla',
+            autoScroll: true,
+            height: 500,
             columns: [
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'string',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
                     text: 'Id',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'nombre',
                     text: 'Nombre',
-                    flex: 4
+                    flex: 4,
+                     editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'usuario',
                     text: 'Usuario',
-                    flex: 4
+                    flex: 4,
+                     editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'contrasena',
                     text: 'Contraseña',
-                    flex: 4
+                    flex: 4,
+                     editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'perfil',
                     text: 'Perfil',
-                    flex: 4
+                    flex: 4,
+                     editor: {
+                        xtype: 'combobox',
+                        fieldStyle:'border: 0;-webkit-appearance: none; -moz-appearance: none; background: #0088cc no-repeat 90% center ;width: 100px;text-indent: 0.01px;text-overflow: ""; color: #FFF;border-radius: 15px;padding: 5px;box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);',
+                         
+                        setStyle:'border: 0;-webkit-appearance: none; -moz-appearance: none; background: #0088cc no-repeat 90% center ;width: 100px;text-indent: 0.01px;text-overflow: ""; color: #FFF;border-radius: 15px;padding: 5px;box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);',
+                        store:'storePerfilCombo',
+                        displayField:'perfil',
+                        valueField:'id'
+                    }
                 }
             ],
             dockedItems: [
@@ -81,7 +103,19 @@ Ext.define('app.view.tab.usuarios', {
                             xtype: 'button',
                             width: '',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            text: 'Nuevo',
+                             handler: function () {
+                                me = this;
+                                usuarios = me.up("#usuariosGrilla");
+                                store_usuarios = usuarios.getStore();
+                                store_usuarios.load({
+                                    params: {
+                                        tipoTransaccion: 'nuevoFalso'
+                                    }
+                                });
+
+
+                            }
                         },
                         {
                             xtype: 'button',
@@ -93,7 +127,28 @@ Ext.define('app.view.tab.usuarios', {
             ],
             selModel: {
                 selType: 'checkboxmodel'
-            }
+            },
+             plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+                            
+                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    id: event.record.data.id,
+                                    nombre: event.record.data.nombre,
+                                    usuario: event.record.data.usuario,
+                                    contrasena: event.record.data.contrasena,
+                                    perfil: event.record.data.perfil,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
         }
     ]
 

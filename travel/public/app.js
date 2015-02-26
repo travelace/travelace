@@ -29,7 +29,13 @@ Ext.application({
         'modelSucursalGrilla',
         'modelPaisCombo',
         'modelEstadoCombo',
-        'modelCiudadCombo'
+        'modelCiudadCombo',
+        'modelEmpresasGrilla',
+        'modelUsuariosGrilla',
+        'modelPerfilCombo',
+        'modelPaisesGrilla',
+        'modelCiudadesGrilla'
+        
         
     ],
     stores: [
@@ -42,7 +48,13 @@ Ext.application({
         'storeSucursalGrilla',
         'storePaisCombo',
         'storeEstadoCombo',
-        'storeCiudadCombo'
+        'storeCiudadCombo',
+        'storeEmpresasGrilla',
+        'storeUsuariosGrilla',
+        'storePerfilCombo',
+        'storePaisesGrilla',
+        'storeEstadosGrilla',
+        'storeCiudadesGrilla'
         
     ],
     views: [
@@ -62,7 +74,8 @@ Ext.application({
         'tab.productos'
     ],
     controllers: [
-        'agencias'
+        'agencias',
+        'paises'
     ],
     name: 'app',
     appFolder: 'public/app',
