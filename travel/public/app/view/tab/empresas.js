@@ -40,51 +40,87 @@ Ext.define('app.view.tab.empresas', {
     items: [
         {
             xtype: 'gridpanel',
+            store: 'storeEmpresasGrilla',
+            itemId: 'EmpresasGrilla',
+            title: '',
             columns: [
                 {
-                    xtype: 'numbercolumn',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
                     text: 'id',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
+                    dataIndex: 'nombreEmpresa',
                     text: 'Nombre Empresa',
-                    flex: 5
+                    flex: 5,
+                     editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
+                    dataIndex: 'abreviatura',
                     text: 'Abreviatura',
-                    flex: 2
+                    flex: 2,
+                     editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
                     xtype: 'numbercolumn',
+                    dataIndex: 'iva',
                     text: 'IVA',
-                    flex: 2
+                    flex: 2,
+                     editor: {
+                        xtype: 'numberfield'
+                    }
                 },
                 {
                     xtype: 'numbercolumn',
+                    dataIndex: 'limiteRetencion',
                     text: 'Limite Retenci&oacute;n',
-                    flex: 3
+                    flex: 3,
+                     editor: {
+                        xtype: 'numberfield'
+                    }
                 },
                 {
                     xtype: 'numbercolumn',
+                    dataIndex: 'retencion',
                     text: '% Retenci&oacute;n',
-                    flex: 3
+                    flex: 3,
+                     editor: {
+                        xtype: 'numberfield'
+                    }
                 },
                 {
                     xtype: 'numbercolumn',
                     text: '$ Oficial',
-                    flex: 3
+                    dataIndex: 'oficial',
+                    flex: 3,
+                     editor: {
+                        xtype: 'numberfield'
+                    }
                 },
                 {
                     xtype: 'numbercolumn',
                     text: '$ Mercado',
-                    flex: 3
+                    dataIndex: 'mercado',
+                    flex: 3,
+                     editor: {
+                        xtype: 'numberfield'
+                    }
                 },
                 {
                     xtype: 'numbercolumn',
                     text: '$ Especial',
-                    flex: 3
+                    dataIndex: 'especial',
+                    flex: 3,
+                     editor: {
+                        xtype: 'numberfield'
+                    }
                 }
             ],
             dockedItems: [
@@ -96,7 +132,19 @@ Ext.define('app.view.tab.empresas', {
                             xtype: 'button',
                             width: '',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            text: 'Nuevo',
+                             handler: function () {
+                                me = this;
+                                empresa = me.up("#EmpresasGrilla");
+                                store_empresa = empresa.getStore();
+                                store_empresa.load({
+                                    params: {
+                                        tipoTransaccion: 'nuevoFalso'
+                                    }
+                                });
+
+
+                            }
                         },
                         {
                             xtype: 'button',
@@ -106,14 +154,36 @@ Ext.define('app.view.tab.empresas', {
                     ]
                 }
             ],
-            plugins: [
-                {
-                    ptype: 'rowediting'
-                }
-            ],
+          
             selModel: {
                 selType: 'checkboxmodel'
-            }
+            },
+             plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+                            console.log(event)
+                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    id: event.record.data.id,
+                                    nombreEmpresa: event.record.data.nombreEmpresa,
+                                    abreviatura: event.record.data.abreviatura,
+                                    iva: event.record.data.iva,
+                                    limiteRetencion: event.record.data.limiteRetencion,
+                                    retencion: event.record.data.retencion,
+                                    oficial: event.record.data.oficial,
+                                    mercado: event.record.data.mercado,
+                                    especial: event.record.data.especial,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
+            
         }
     ]
 

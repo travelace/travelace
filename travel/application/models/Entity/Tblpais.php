@@ -1,30 +1,30 @@
 <?php
 
 
-
-use Doctrine\ORM\Mapping as ORM;
+namespace Entity;
+//use Doctrine\Mapping as ORM;
 
 /**
  * Tblpais
  *
- * @ORM\Table(name="tblpais")
- * @ORM\Entity
+ * @Table(name="tblpais")
+ * @Entity
  */
 class Tblpais
 {
     /**
      * @var integer $codpais
      *
-     * @ORM\Column(name="codPais", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="codPais", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $codpais;
 
     /**
      * @var string $nombrepais
      *
-     * @ORM\Column(name="nombrePais", type="string", length=60, nullable=true)
+     * @Column(name="nombrePais", type="string", length=60, nullable=true)
      */
     private $nombrepais;
 

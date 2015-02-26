@@ -16,7 +16,6 @@
 Ext.define('app.view.tab.paises', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.paises',
-
     requires: [
         'app.view.tab.paisesViewModel',
         'Ext.grid.Panel',
@@ -27,7 +26,6 @@ Ext.define('app.view.tab.paises', {
         'Ext.tab.Panel',
         'Ext.tab.Tab'
     ],
-
     viewModel: {
         type: 'tabpaises'
     },
@@ -37,8 +35,13 @@ Ext.define('app.view.tab.paises', {
     closable: true,
     icon: 'iconos/16x16/world.png',
     title: 'Paises',
-
+    itemId: 'paisesPrincipal',
     items: [
+        {xtype: 'textfield',
+            itemId: 'paisSeleccionado',
+            value: 'nada',
+            hidden: true
+        },
         {
             xtype: 'gridpanel',
             region: 'north',
@@ -46,18 +49,23 @@ Ext.define('app.view.tab.paises', {
             collapsed: false,
             collapsible: true,
             title: 'Mis Paises',
+            store: 'storePaisesGrilla',
+            itemId: 'paisesGrilla',
             columns: [
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'string',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'id',
                     text: 'Id',
                     flex: 1
                 },
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
+                    xtype: 'gridcolumn',
+                    dataIndex: 'nombre',
                     text: 'Nombre',
-                    flex: 10
+                    flex: 10,
+                    editor: {
+                        xtype: 'textfield'
+                    }
                 }
             ],
             dockedItems: [
@@ -68,7 +76,20 @@ Ext.define('app.view.tab.paises', {
                         {
                             xtype: 'button',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            text: 'Nuevo',
+                            handler: function () {
+                                me = this;
+                                console.log(me.up("#paisesGrilla"))
+                                pais = me.up("#paisesGrilla");
+                                store_pais = pais.getStore();
+                                store_pais.load({
+                                    params: {
+                                        tipoTransaccion: 'nuevoFalso'
+                                    }
+                                });
+
+
+                            }
                         },
                         {
                             xtype: 'button',
@@ -80,7 +101,25 @@ Ext.define('app.view.tab.paises', {
             ],
             selModel: {
                 selType: 'checkboxmodel'
-            }
+            },
+            plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+                            console.log(event)
+                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    id: event.record.data.id,
+                                    nombre: event.record.data.nombre,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
         },
         {
             xtype: 'tabpanel',
@@ -92,27 +131,58 @@ Ext.define('app.view.tab.paises', {
                 {
                     xtype: 'panel',
                     title: 'Estados',
+                    height: 500,
+                    autoScroll: true,
                     items: [
+                        {xtype: 'textfield',
+                            itemId: 'estadoSeleccionado',
+                            value: 'nada',
+                            hidden: true
+                        },
                         {
                             xtype: 'gridpanel',
                             title: '',
+                            store: 'storeEstadosGrilla',
+                            itemId: 'estadosGrilla',
                             columns: [
                                 {
-                                    xtype: 'numbercolumn',
-                                    dataIndex: 'string',
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'id',
                                     text: 'Id',
                                     flex: 1
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    dataIndex: 'number',
+                                    dataIndex: 'nombre',
                                     text: 'Nombre',
-                                    flex: 10
+                                    flex: 10,
+                                    editor: {
+                                        xtype: 'textfield'
+                                    }
                                 }
                             ],
                             selModel: {
                                 selType: 'checkboxmodel'
                             },
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.RowEditing', {
+                                    clicksToEdit: 2,
+                                    listeners: {
+                                        edit: function (editor, event, eOpts) {
+                                            console.log(event)
+                                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                                            event.store.load({
+                                                params: {
+                                                    id: event.record.data.id,
+                                                    nombre: event.record.data.nombre,
+                                                    pais: event.record.data.paisId,
+                                                    tipoTransaccion: tipoTransaccion
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                })],
                             dockedItems: [
                                 {
                                     xtype: 'toolbar',
@@ -121,7 +191,22 @@ Ext.define('app.view.tab.paises', {
                                         {
                                             xtype: 'button',
                                             icon: 'iconos/16x16/add.png',
-                                            text: 'Nuevo'
+                                            text: 'Nuevo',
+                                            handler: function () {
+                                                me = this;
+                                                console.log(me.up("#estadosGrilla"))
+                                                estado = me.up("#estadosGrilla");
+                                                paisId = me.up("#paisesPrincipal").down("#paisSeleccionado").getValue();
+                                                store_estado = estado.getStore();
+                                                store_estado.load({
+                                                    params: {
+                                                        pais: paisId,
+                                                        tipoTransaccion: 'nuevoFalso'
+                                                    }
+                                                });
+
+
+                                            }
                                         },
                                         {
                                             xtype: 'button',
@@ -141,18 +226,23 @@ Ext.define('app.view.tab.paises', {
                         {
                             xtype: 'gridpanel',
                             title: '',
+                            store: 'storeCiudadesGrilla',
+                            itemId: 'ciudadesGrilla',
                             columns: [
                                 {
                                     xtype: 'numbercolumn',
-                                    dataIndex: 'string',
+                                    dataIndex: 'id',
                                     text: 'Id',
                                     flex: 1
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    dataIndex: 'number',
+                                    dataIndex: 'nombre',
                                     text: 'Nombre',
-                                    flex: 10
+                                    flex: 10,
+                                    editor: {
+                                        xtype: 'textfield'
+                                    }
                                 }
                             ],
                             dockedItems: [
@@ -163,7 +253,22 @@ Ext.define('app.view.tab.paises', {
                                         {
                                             xtype: 'button',
                                             icon: 'iconos/16x16/add.png',
-                                            text: 'Nuevo'
+                                            text: 'Nuevo',
+                                            handler: function () {
+                                                me = this;
+                                                console.log(me.up("#ciudadesGrilla"))
+                                                ciudad = me.up("#ciudadesGrilla");
+                                                store_ciudad = ciudad.getStore();
+                                                estadoId = me.up("#paisesPrincipal").down("#estadoSeleccionado").getValue();
+                                                store_ciudad.load({
+                                                    params: {
+                                                        tipoTransaccion: 'nuevoFalso',
+                                                        estado: estadoId
+                                                    }
+                                                });
+
+
+                                            }
                                         },
                                         {
                                             xtype: 'button',
@@ -175,7 +280,26 @@ Ext.define('app.view.tab.paises', {
                             ],
                             selModel: {
                                 selType: 'checkboxmodel'
-                            }
+                            },
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.RowEditing', {
+                                    clicksToEdit: 2,
+                                    listeners: {
+                                        edit: function (editor, event, eOpts) {
+                                            console.log(event)
+                                            var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                                            event.store.load({
+                                                params: {
+                                                    id: event.record.data.id,
+                                                    nombre: event.record.data.nombre,
+                                                    estado: event.record.data.estadoId,
+                                                    tipoTransaccion: tipoTransaccion
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                })]
                         }
                     ]
                 }
