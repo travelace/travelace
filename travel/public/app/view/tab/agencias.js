@@ -52,7 +52,6 @@ Ext.define('app.view.tab.agencias', {
             collapsed: false,
             collapsible: true,
             title: 'Mis Agencias',
-         
             columns: [
                 {
                     xtype: 'gridcolumn',
@@ -170,48 +169,106 @@ Ext.define('app.view.tab.agencias', {
                                             dataIndex: 'id',
                                             text: 'C&oacute;digo',
                                             flex: 1
-                                        },
-                                        {
-                                            xtype: 'gridcolumn',
-                                            dataIndex: 'direccion',
-                                            text: 'Direcci&oacute;n Fisica',
-                                            flex: 2
+
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'nombre',
                                             text: 'Nombre',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'textfield'
+                                            }
+                                        },
+                                        {
+                                            xtype: 'gridcolumn',
+                                            dataIndex: 'direccion',
+                                            text: 'Direcci&oacute;n Fisica',
+                                            flex: 2,
+                                            editor: {
+                                                xtype: 'textfield'
+                                            }
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'telefono',
                                             text: 'T&eacute;lefono',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'textfield'
+                                            }
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'correo',
                                             text: 'Correo',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'textfield'
+                                            }
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'pais',
                                             text: 'Pais',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'combobox',
+                                                displayField: 'pais',
+                                                valueField: 'id',
+                                                store: 'storePaisCombo',
+                                                //queryMode: 'local',
+                                                listeners: {
+                                                    select: 'cargarEstado',
+                                                }
+                                            }
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'estado',
                                             text: 'Estado',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'combobox',
+                                                store: 'storeEstadoCombo',
+                                                displayField: 'estado',
+                                                valueField: 'id',
+                                                queryMode: 'local',
+                                                listeners: {
+                                                    beforeQuery: function (query) {
+                                                        var pais = this.up("#sucursalGrilla").getSelectionModel().getSelection()[0].get('paisId');
+                                                        this.store.load({
+                                                            params: {paisId: pais}
+                                                        });
+                                                        this.store.proxy.extraParams = {paisId: pais};
+                                                    },
+                                                    select: 'cargarCiudad'
+
+                                                }
+                                            }
                                         },
                                         {
                                             xtype: 'gridcolumn',
                                             dataIndex: 'ciudad',
                                             text: 'Ciudad',
-                                            flex: 1
+                                            flex: 1,
+                                            editor: {
+                                                xtype: 'combobox',
+                                                store: 'storeCiudadCombo',
+                                                displayField: 'ciudad',
+                                                valueField: 'id',
+                                                queryMode: 'local',
+                                                listeners: {
+                                                    beforeQuery: function (query) {
+                                                        var estado = this.up("#sucursalGrilla").getSelectionModel().getSelection()[0].get('estadoId');
+                                                        this.store.load({
+                                                            params: {estadoId: estado}
+                                                        });
+                                                        this.store.proxy.extraParams = {estadoId: estado};
+                                                    }
+                                                }
+                                            }
+
                                         },
                                         {
                                             xtype: 'gridcolumn',
@@ -262,7 +319,15 @@ Ext.define('app.view.tab.agencias', {
                                     ],
                                     selModel: {
                                         selType: 'checkboxmodel'
-                                    }
+                                    },
+                                    plugins: [
+                                        {
+                                            ptype: 'rowediting',
+                                            listeners: {
+                                                edit: 'editarSucursal'
+                                            }
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -357,6 +422,22 @@ Ext.define('app.view.tab.agencias', {
                 }
             ]
         }
-    ]
-   
+    ],
+    editarSucursal: function (editor, context, eOpts) {
+
+
+
+    },
+    cargarEstado: function (combo, records) {
+        var me = this;
+        pais_origen = records[0].get('id');
+        console.log(pais_origen);
+        me.down("#sucursalGrilla").getSelectionModel().getSelection()[0].set("paisId", pais_origen);
+    },
+    cargarCiudad: function (combo, records) {
+        var me = this;
+        estado_origen = records[0].get('id');
+        console.log(estado_origen);
+        me.down("#sucursalGrilla").getSelectionModel().getSelection()[0].set("estadoId", estado_origen);
+    }
 });

@@ -48,7 +48,8 @@ Ext.define('app.controller.agencias', {
         },
          "#agenciasGrilla": {
             select: 'cargarSucursales'
-        },
+        }
+        
     },
     editarAgencia: function (button, e, eOpts) {
         this.getEdicionagencias().show();

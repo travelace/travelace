@@ -22684,7 +22684,8 @@ div.x-border-layout-ct {
 .x-boundlist {
   border-width: 1px;
   border-style: solid;
-  border-color: #e1e1e1;
+  /*border-color: #e1e1e1;*/
+  border-color: #157fcc;
   background: white;
 }
 

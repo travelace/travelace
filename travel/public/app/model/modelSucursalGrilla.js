@@ -65,6 +65,18 @@ Ext.define('app.model.modelSucursalGrilla', {
         {
             type: 'string',
             name: 'password'
-        }
+        },
+        {
+            type: 'string',
+            name: 'paisId'
+        },
+        {
+            type: 'string',
+            name: 'estadoId'
+        },
+        {
+            type: 'string',
+            name: 'ciudadId'
+        },
     ]
 });

@@ -25,30 +25,27 @@ class Agencias extends CI_Controller {
     public function agenciasGrilla() {
 
         if ($this->input->get("tipoTransaccion") == 'busqueda') {
-            $busqueda=$this->input->get("busqueda"); 
+            $busqueda = $this->input->get("busqueda");
             $this->cargaAgenciasGrilla($busqueda);
-        } 
-        
-        
+        }
     }
 
     public function cargaAgenciasGrilla($busqueda) {
         $agencias = $this->em->getRepository('Entity\Tblagencia')->createQueryBuilder('agencia')
-        ->where('agencia.nombrecompleto like :nombreAgencia')
-        ->andWhere('agencia.sucursal = 0')
-        ->setParameter('nombreAgencia', "%".$busqueda."%")
-        ->getQuery()
-        ->getResult();
-        
+                ->where('agencia.nombrecompleto like :nombreAgencia')
+                ->andWhere('agencia.sucursal = 0')
+                ->setParameter('nombreAgencia', "%" . $busqueda . "%")
+                ->getQuery()
+                ->getResult();
+
         $data = array();
         foreach ($agencias as $agencia) {
             $data[] = array(
                 "id" => $agencia->getCodagencia(),
                 "nombreAgencia" => utf8_encode($agencia->getNombrecompleto()),
                 "grupoAgencia" => $agencia->getGroupoagencia(),
-                "telefono"=>$agencia->getTelefonoagencia(),
-                "rif"=>$agencia->getRifagencia(),
-                    
+                "telefono" => $agencia->getTelefonoagencia(),
+                "rif" => $agencia->getRifagencia(),
             );
         }
 
@@ -57,41 +54,43 @@ class Agencias extends CI_Controller {
                 ->set_output(json_encode(array('totalCount' => count($data), 'agencia' => $data)));
     }
 
-     public function sucursalGrilla() {
+    public function sucursalGrilla() {
 
         if ($this->input->get("tipoTransaccion") == 'cargar') {
-            $agencia=$this->input->get("agencia"); 
+            $agencia = $this->input->get("agencia");
             $this->cargaSucursalGrilla($agencia);
-        } 
-        
-        
+        }
     }
-    
-     public function cargaSucursalGrilla($agencia) {
+
+    public function cargaSucursalGrilla($agencia) {
         $agencias = $this->em->getRepository('Entity\Tblagencia')->createQueryBuilder('agencia')
-        ->where('agencia.sucursalagencia like :codAgencia')
-        ->andWhere('agencia.sucursal = 1')
-        ->setParameter('codAgencia', $agencia)
-        ->getQuery()
-        ->getResult();
-        
+                ->where('agencia.sucursalagencia like :codAgencia')
+                ->andWhere('agencia.sucursal = 1')
+                ->setParameter('codAgencia', $agencia)
+                ->getQuery()
+                ->getResult();
+
         $data = array();
         foreach ($agencias as $agencia) {
+            
+            $estados = $this->em->getRepository('Entity\Tblestados')->find($agencia->getEstadoagencia());
+            $pais = $this->em->getRepository('Entity\Tblpais')->find($estados->getCodpais());
+            $ciudad = $this->em->getRepository('Entity\Tblciudades')->find($agencia->getCiudadagencia());
+
             $data[] = array(
-                
-                
-                
                 "id" => $agencia->getCodagencia(),
                 "direccion" => utf8_encode($agencia->getUbicacionagencia()),
                 "nombre" => $agencia->getNombreagencia(),
-                "telefono"=>$agencia->getTelefonoagencia(),
-                "correo"=>$agencia->getEmailagencia(),
-                "pais"=>$agencia->getTelefonoagencia(),
-                "estado"=>$agencia->getEstadoagencia(),
-                "ciudad"=>$agencia->getCiudadagencia(),
-                "login"=>$agencia->getLogin(),
-                "Password"=>$agencia->getPassword(),
-                    
+                "telefono" => $agencia->getTelefonoagencia(),
+                "correo" => $agencia->getEmailagencia(),
+                "paisId" => $estados->getCodpais(),
+                "pais" =>  $pais->getNombrepais(),
+                "estado" => $estados->getNombreestado(),
+                "estadoId" => $agencia->getEstadoagencia(),
+                "ciudadId" => $agencia->getCiudadagencia(),
+                "ciudad" => $ciudad->getNombreciudad(),
+                "login" => $agencia->getLogin(),
+                "Password" => $agencia->getPassword(),
             );
         }
 

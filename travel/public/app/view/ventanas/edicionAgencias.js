@@ -38,15 +38,25 @@ Ext.define('app.view.ventanas.edicionAgencias', {
     width: 1060,
     layout: 'absolute',
     icon: 'iconos/16x16/script_edit.png',
-    title: 'Edici&oacute;n Agencias',
+    title: 'Creaci&oacute;n y Edici&oacute;n Agencias',
 
     items: [
         {
-            xtype: 'numberfield',
+            xtype: 'textfield',
             x: 10,
             y: 10,
             fieldLabel: 'C&oacute;digo',
-            labelWidth: 120
+            labelWidth: 50,
+            width:110,
+            readOnly: true
+        },
+        {
+            xtype: 'textfield',
+            x: 130,
+            y: 10,
+            fieldLabel: 'C&oacute;digo Siebel',
+            labelWidth: 85,
+            width:175,
         },
         {
             xtype: 'textfield',
@@ -81,7 +91,12 @@ Ext.define('app.view.ventanas.edicionAgencias', {
             x: 10,
             y: 70,
             fieldLabel: 'Pais',
-            labelWidth: 120
+            labelWidth: 120,
+            displayField: 'pais',
+            valueField: 'id',
+            store: 'storePaisCombo',
+            name: 'pais',
+            itemId: 'paisCombo',
         },
         {
             xtype: 'combobox',

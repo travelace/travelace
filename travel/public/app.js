@@ -26,7 +26,10 @@ Ext.application({
         'modelPerfilesGrilla',
         'modelBancosGrilla',
         'modelAgenciasGrilla',
-        'modelSucursalGrilla'
+        'modelSucursalGrilla',
+        'modelPaisCombo',
+        'modelEstadoCombo',
+        'modelCiudadCombo'
         
     ],
     stores: [
@@ -36,7 +39,10 @@ Ext.application({
         'storePerfilesGrilla',
         'storeBancosGrilla',
         'storeAgenciasGrilla',
-        'storeSucursalGrilla'
+        'storeSucursalGrilla',
+        'storePaisCombo',
+        'storeEstadoCombo',
+        'storeCiudadCombo'
         
     ],
     views: [
