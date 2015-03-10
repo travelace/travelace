@@ -35,14 +35,17 @@ Ext.application({
         'modelPerfilCombo',
         'modelPaisesGrilla',
         'modelCiudadesGrilla',
+<<<<<<< HEAD
         'modelGruposCombo',
         'modelEmpresasCombo',
         'modelFacturacionCombo',
         'modelAgenciasCombo',
         'modelPromotorCombo',
-        'modelPromotoresAgenciasGrilla',
+        'modelPromotoresAgenciasGrilla'
+=======
         'modelProductosGrilla',
         'modelTarifasGrilla'
+>>>>>>> ae0e67982977b5338ed96d0f4c3795a967d906ab
         
         
     ],
@@ -63,14 +66,17 @@ Ext.application({
         'storePaisesGrilla',
         'storeEstadosGrilla',
         'storeCiudadesGrilla',
+<<<<<<< HEAD
         'storeGruposCombo',
         'storeEmpresasCombo',
         'storeFacturacionCombo',
         'storeAgenciasCombo',
         'storePromotorCombo',
-        'storePromotoresAgenciasGrilla',
+        'storePromotoresAgenciasGrilla'
+=======
         'storeProductosGrilla',
         'storeTarifasGrilla'
+>>>>>>> ae0e67982977b5338ed96d0f4c3795a967d906ab
         
     ],
     views: [
@@ -92,8 +98,11 @@ Ext.application({
     controllers: [
         'agencias',
         'paises',
-        'edicionAgencias',
+<<<<<<< HEAD
+        'edicionAgencias'
+=======
         'productos'
+>>>>>>> ae0e67982977b5338ed96d0f4c3795a967d906ab
     ],
     name: 'app',
     appFolder: 'public/app',

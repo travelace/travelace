@@ -85,9 +85,6 @@ Ext.define('app.view.tab.usuarios', {
                     flex: 4,
                      editor: {
                         xtype: 'combobox',
-                        fieldStyle:'border: 0;-webkit-appearance: none; -moz-appearance: none; background: #0088cc no-repeat 90% center ;width: 100px;text-indent: 0.01px;text-overflow: ""; color: #FFF;border-radius: 15px;padding: 5px;box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);',
-                         
-                        setStyle:'border: 0;-webkit-appearance: none; -moz-appearance: none; background: #0088cc no-repeat 90% center ;width: 100px;text-indent: 0.01px;text-overflow: ""; color: #FFF;border-radius: 15px;padding: 5px;box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);',
                         store:'storePerfilCombo',
                         displayField:'perfil',
                         valueField:'id'
