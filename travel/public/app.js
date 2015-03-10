@@ -34,7 +34,9 @@ Ext.application({
         'modelUsuariosGrilla',
         'modelPerfilCombo',
         'modelPaisesGrilla',
-        'modelCiudadesGrilla'
+        'modelCiudadesGrilla',
+        'modelProductosGrilla',
+        'modelTarifasGrilla'
         
         
     ],
@@ -54,7 +56,9 @@ Ext.application({
         'storePerfilCombo',
         'storePaisesGrilla',
         'storeEstadosGrilla',
-        'storeCiudadesGrilla'
+        'storeCiudadesGrilla',
+        'storeProductosGrilla',
+        'storeTarifasGrilla'
         
     ],
     views: [
@@ -75,7 +79,8 @@ Ext.application({
     ],
     controllers: [
         'agencias',
-        'paises'
+        'paises',
+        'productos'
     ],
     name: 'app',
     appFolder: 'public/app',

@@ -16,7 +16,6 @@
 Ext.define('app.view.tab.productos', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.productos',
-
     requires: [
         'app.view.tab.productosViewModel',
         'Ext.grid.Panel',
@@ -32,7 +31,6 @@ Ext.define('app.view.tab.productos', {
         'Ext.form.field.Date',
         'Ext.form.CheckboxGroup'
     ],
-
     viewModel: {
         type: 'tabproductos'
     },
@@ -42,38 +40,48 @@ Ext.define('app.view.tab.productos', {
     closable: true,
     icon: 'iconos/16x16/box.png',
     title: 'Productos',
-
     items: [
         {
             xtype: 'gridpanel',
             region: 'north',
             height: 150,
             title: '',
+            store: 'storeProductosGrilla',
+            itemId: 'productosGrilla',
             columns: [
                 {
                     xtype: 'numbercolumn',
                     width: 52,
-                    dataIndex: 'string',
+                    dataIndex: 'codigo',
                     text: 'Codigo',
                     flex: 1
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'number',
+                    dataIndex: 'abreviatura',
                     text: 'Abreviatura',
-                    flex: 2
+                    flex: 2,
+                    editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
                     xtype: 'gridcolumn',
-                    dataIndex: 'date',
+                    dataIndex: 'nombre',
                     text: 'Nombre',
-                    flex: 4
+                    flex: 4,
+                    editor: {
+                        xtype: 'textfield'
+                    }
                 },
                 {
-                    xtype: 'booleancolumn',
-                    dataIndex: 'bool',
+                    xtype: 'checkcolumn',
+                    dataIndex: 'activo',
                     text: 'Activo',
-                    flex: 4
+                    flex: 4,
+                    editor: {
+                        xtype: 'checkbox'
+                    }
                 }
             ],
             dockedItems: [
@@ -84,7 +92,19 @@ Ext.define('app.view.tab.productos', {
                         {
                             xtype: 'button',
                             icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            text: 'Nuevo',
+                            handler: function () {
+                                me = this;
+                                productos = me.up("#productosGrilla");
+                                store_productos = productos.getStore();
+                                store_productos.load({
+                                    params: {
+                                        tipoTransaccion: 'nuevoFalso'
+                                    }
+                                });
+
+
+                            }
                         },
                         {
                             xtype: 'button',
@@ -96,7 +116,27 @@ Ext.define('app.view.tab.productos', {
             ],
             selModel: {
                 selType: 'checkboxmodel'
-            }
+            },
+            plugins: [
+                Ext.create('Ext.grid.plugin.RowEditing', {
+                    clicksToEdit: 2,
+                    listeners: {
+                        edit: function (editor, event, eOpts) {
+
+                            var tipoTransaccion = event.record.data.codigo == 0 ? 'nuevo' : 'editar';
+                            event.store.load({
+                                params: {
+                                    codigo: event.record.data.codigo,
+                                    abreviatura: event.record.data.abreviatura,
+                                    nombre: event.record.data.nombre,
+                                    activo: event.record.data.activo,
+                                    tipoTransaccion: tipoTransaccion
+                                }
+                            });
+                        }
+                    }
+
+                })]
         },
         {
             xtype: 'tabpanel',
@@ -109,16 +149,46 @@ Ext.define('app.view.tab.productos', {
                     title: 'Configraci&oacute;n Basica',
                     items: [
                         {
+                            xtype: 'radiogroup',
+                            itemId: 'modulos',
+                            x: 10,
+                            y: 10,
+                            width: 250,
+                            fieldLabel: 'Modulos',
+                            labelWidth: 60,
+                            items: [
+                                {
+                                    xtype: 'radiofield',
+                                    boxLabel: 'Dias',
+                                    name: 'modulo',
+                                    inputValue: '0'
+
+                                },
+                                {
+                                    xtype: 'radiofield',
+                                    boxLabel: 'Semanas',
+                                    name: 'modulo',
+                                    inputValue: '1'
+
+                                }
+                            ]
+                        },
+                        {
                             xtype: 'numberfield',
+                            itemId: 'diasA',
+                            name: 'diasA',
                             x: 10,
                             y: 70,
                             fieldLabel: 'Dias Adicionales',
                             labelWidth: 120
+
                         },
                         {
                             xtype: 'numberfield',
                             x: 10,
                             y: 100,
+                            itemId: 'maxP',
+                            name: 'maxP',
                             fieldLabel: 'Max. persona',
                             labelWidth: 120
                         },
@@ -127,6 +197,8 @@ Ext.define('app.view.tab.productos', {
                             x: 10,
                             y: 130,
                             fieldLabel: 'Edad Maxima',
+                            itemId: 'edadM',
+                            name: 'edadM',
                             labelWidth: 120
                         },
                         {
@@ -134,45 +206,73 @@ Ext.define('app.view.tab.productos', {
                             x: 10,
                             y: 160,
                             fieldLabel: 'Edad Minima',
-                            labelWidth: 120
+                            labelWidth: 120,
+                            itemId: 'edadMin',
+                            name: 'edadMin'
                         },
                         {
                             xtype: 'numberfield',
                             x: 10,
                             y: 250,
                             fieldLabel: 'Mayores a',
-                            labelWidth: 120
+                            labelWidth: 120,
+                            itemId: 'mayoresA',
+                            name: 'mayoresA'
                         },
                         {
                             xtype: 'numberfield',
                             x: 10,
                             y: 280,
                             fieldLabel: 'Porcentaje de recargo',
+                            labelWidth: 120,
+                            itemId: 'porcentajeR',
+                            name: 'porcentajeR'
+                        },
+                        {
+                            xtype: 'textfield',
+                            x: 330,
+                            y: 280,
+                            itemId: 'agenciaSeleccionada',
+                            readOnly: true,
+                            fieldLabel: 'Agencia Seleccionada',
                             labelWidth: 120
                         },
                         {
-                            xtype: 'checkboxfield',
+                            xtype: 'textfield',
+                            x: 330,
+                            y: 280,
+                            hidden: true,
+                            itemId: 'agenciaSeleccionadaCodigo',
+                            readOnly: true
+                        },
+                        {
+                            xtype: 'numberfield',
                             x: 10,
                             y: 190,
                             fieldLabel: 'Descuento Familiar ',
                             labelWidth: 120,
-                            boxLabel: ''
+                            itemId: 'descuentoF',
+                            name: 'descuentoF'
+
                         },
                         {
                             xtype: 'checkboxfield',
                             x: 10,
                             y: 320,
                             fieldLabel: 'Corporativo',
+                            name: 'corporativo',
+                            itemId: 'corporativo',
                             labelWidth: 120,
                             boxLabel: ''
                         },
                         {
-                            xtype: 'checkboxfield',
+                            xtype: 'numberfield',
                             x: 10,
                             y: 220,
                             fieldLabel: 'Recargo Edad',
                             labelWidth: 120,
-                            boxLabel: ''
+                            itemId: 'recargoE',
+                            name: 'recargoE'
                         },
                         {
                             xtype: 'checkboxfield',
@@ -180,7 +280,9 @@ Ext.define('app.view.tab.productos', {
                             y: 70,
                             fieldLabel: 'Larga Estadias para mayores',
                             labelWidth: 120,
-                            boxLabel: ''
+                            boxLabel: '',
+                            name: 'largaestadialimi',
+                            itemId: 'largaestadialimi',
                         },
                         {
                             xtype: 'checkboxfield',
@@ -188,21 +290,18 @@ Ext.define('app.view.tab.productos', {
                             y: 120,
                             fieldLabel: 'Anuales Para Personas mayores',
                             labelWidth: 120,
-                            boxLabel: ''
-                        },
-                        {
-                            xtype: 'numberfield',
-                            x: 160,
-                            y: 190,
-                            width: 145,
-                            fieldLabel: ''
+                            boxLabel: '',
+                            name: 'anual',
+                            itemId: 'anual'
                         },
                         {
                             xtype: 'numberfield',
                             x: 660,
                             y: 10,
                             fieldLabel: 'Descuento',
-                            labelWidth: 120
+                            labelWidth: 120,
+                            name: 'descuento',
+                            itemId: 'descuento'
                         },
                         {
                             xtype: 'checkboxfield',
@@ -210,14 +309,19 @@ Ext.define('app.view.tab.productos', {
                             y: 10,
                             fieldLabel: 'Larga Estadia',
                             labelWidth: 120,
-                            boxLabel: ''
+                            boxLabel: '',
+                            name: 'largaestadia',
+                            itemId: 'largaestadia'
                         },
                         {
                             xtype: 'numberfield',
                             x: 480,
                             y: 10,
                             width: 145,
-                            fieldLabel: ''
+                            fieldLabel: '',
+                            name: 'largaestadiatarifa',
+                            itemId: 'largaestadiatarifa'
+
                         },
                         {
                             xtype: 'checkboxfield',
@@ -225,62 +329,57 @@ Ext.define('app.view.tab.productos', {
                             y: 40,
                             fieldLabel: 'Promo 2x1',
                             labelWidth: 120,
-                            boxLabel: ''
+                            boxLabel: '',
+                            name: 'dosporuno',
+                            itemId: 'dosporuno'
                         },
                         {
                             xtype: 'datefield',
                             x: 660,
                             y: 70,
                             fieldLabel: 'Inicio Promo',
-                            labelWidth: 120
+                            labelWidth: 120,
+                            name: 'iniciopromo',
+                            itemId: 'iniciopromo'
                         },
                         {
                             xtype: 'datefield',
                             x: 660,
                             y: 100,
                             fieldLabel: 'Fin Promo',
-                            labelWidth: 120
+                            labelWidth: 120,
+                            name: 'finpromo',
+                            itemId: 'finpromo'
                         },
                         {
                             xtype: 'numberfield',
                             x: 10,
                             y: 40,
                             fieldLabel: 'Limite de dias',
+                            itemId: 'limiteD',
+                            name: 'limiteD',
                             labelWidth: 120
                         },
                         {
-                            xtype: 'checkboxgroup',
-                            x: 10,
-                            y: 10,
-                            width: 250,
-                            fieldLabel: 'Modulos',
-                            labelWidth: 60,
-                            items: [
-                                {
-                                    xtype: 'checkboxfield',
-                                    boxLabel: 'Dias'
-                                },
-                                {
-                                    xtype: 'checkboxfield',
-                                    boxLabel: 'Semanas'
-                                }
-                            ]
-                        },
-                        {
-                            xtype: 'checkboxgroup',
+                            xtype: 'radiogroup',
                             x: 330,
                             y: 40,
                             width: 250,
-                            fieldLabel: 'Modulos',
-                            labelWidth: 60,
+                            fieldLabel: 'Modulo Larga Estadia',
+                            itemId: 'modulosdm',
+                            labelWidth: 140,
                             items: [
                                 {
-                                    xtype: 'checkboxfield',
-                                    boxLabel: 'Dias'
+                                    xtype: 'radiofield',
+                                    boxLabel: 'Dias',
+                                    name: 'modulodm',
+                                    inputValue: '0'
                                 },
                                 {
-                                    xtype: 'checkboxfield',
-                                    boxLabel: 'Semanas'
+                                    xtype: 'radiofield',
+                                    boxLabel: 'Semanas',
+                                    name: 'modulodm',
+                                    inputValue: '1'
                                 }
                             ]
                         }
@@ -291,20 +390,34 @@ Ext.define('app.view.tab.productos', {
                     title: 'Tarifas',
                     items: [
                         {
+                            xtype: 'textfield',
+                            itemId: 'productoSeleccionado',
+                            value: 'nada',
+                            hidden: true
+                        },
+                        {
                             xtype: 'gridpanel',
                             title: '',
+                            store: 'storeTarifasGrilla',
+                            itemId: 'tarifasGrilla',
                             columns: [
                                 {
-                                    xtype: 'numbercolumn',
-                                    dataIndex: 'string',
+                                    xtype: 'gridcolumn',
+                                    dataIndex: 'dias',
                                     text: 'Dias ',
-                                    flex: 1
+                                    flex: 1,
+                                    editor: {
+                                        xtype: 'textfield'
+                                    }
                                 },
                                 {
                                     xtype: 'gridcolumn',
-                                    dataIndex: 'number',
+                                    dataIndex: 'monto',
                                     text: 'Monto',
-                                    flex: 10
+                                    flex: 10,
+                                    editor: {
+                                        xtype: 'textfield'
+                                    }
                                 }
                             ],
                             dockedItems: [
@@ -315,7 +428,19 @@ Ext.define('app.view.tab.productos', {
                                         {
                                             xtype: 'button',
                                             icon: 'iconos/16x16/add.png',
-                                            text: 'Nuevo'
+                                            text: 'Nuevo',
+                                            handler: function () {
+                                                me = this;
+                                                tarifas = me.up("#tarifasGrilla");
+                                                store_tarifas = tarifas.getStore();
+                                                store_tarifas.load({
+                                                    params: {
+                                                        tipoTransaccion: 'nuevoFalso'
+                                                    }
+                                                });
+
+
+                                            }
                                         },
                                         {
                                             xtype: 'button',
@@ -327,7 +452,26 @@ Ext.define('app.view.tab.productos', {
                             ],
                             selModel: {
                                 selType: 'checkboxmodel'
-                            }
+                            },
+                            plugins: [
+                                Ext.create('Ext.grid.plugin.RowEditing', {
+                                    clicksToEdit: 2,
+                                    listeners: {
+                                        edit: function (editor, event, eOpts) {
+
+                                            var tipoTransaccion = event.record.data.codigo == 0 ? 'nuevo' : 'editar';
+                                            event.store.load({
+                                                params: {
+                                                    codigo: event.record.data.codigo,
+                                                    dias: event.record.data.dias,
+                                                    monto: event.record.data.monto,
+                                                    tipoTransaccion: tipoTransaccion
+                                                }
+                                            });
+                                        }
+                                    }
+
+                                })]
                         }
                     ]
                 },
