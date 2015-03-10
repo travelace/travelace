@@ -1,58 +1,58 @@
 <?php
 
+namespace Entity;
 
-
-use Doctrine\ORM\Mapping as ORM;
+//use Doctrine\Mapping as ORM;
 
 /**
  * Tblpromotoresagencia
  *
- * @ORM\Table(name="tblpromotoresagencia")
- * @ORM\Entity
+ * @Table(name="tblpromotoresagencia")
+ * @Entity
  */
 class Tblpromotoresagencia
 {
     /**
      * @var integer $id
      *
-     * @ORM\Column(name="id", type="integer", nullable=false)
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * @Column(name="id", type="integer", nullable=false)
+     * @Id
+     * @GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var integer $codagencia
      *
-     * @ORM\Column(name="codAgencia", type="integer", nullable=false)
+     * @Column(name="codAgencia", type="integer", nullable=false)
      */
     private $codagencia;
 
     /**
      * @var integer $codigousuario
      *
-     * @ORM\Column(name="codigoUsuario", type="integer", nullable=false)
+     * @Column(name="codigoUsuario", type="integer", nullable=false)
      */
     private $codigousuario;
 
     /**
      * @var float $comision
      *
-     * @ORM\Column(name="comision", type="float", nullable=false)
+     * @Column(name="comision", type="float", nullable=false)
      */
     private $comision;
 
     /**
      * @var float $comisiongrupo
      *
-     * @ORM\Column(name="comisionGrupo", type="float", nullable=false)
+     * @Column(name="comisionGrupo", type="float", nullable=false)
      */
     private $comisiongrupo;
 
     /**
      * @var string $principal
      *
-     * @ORM\Column(name="principal", type="string", length=20, nullable=false)
+     * @Column(name="principal", type="string", length=20, nullable=false)
      */
     private $principal;
 

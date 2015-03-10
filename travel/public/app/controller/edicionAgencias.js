@@ -26,20 +26,59 @@ Ext.define('app.controller.edicionAgencias', {
     control: {
         "#paisCombo": {
             select: 'cargaEstado'
+        },
+        "#estadoCombo": {
+            select: 'cargaCiudad'
+        },
+         "#agenciacorporativo": {
+            change: 'cargaAgenciaCorporativo',
+            select: 'agenciasCorporativa'
         }
+        
 
     },
     cargaEstado: function (dv, records, item, index, e) {
 
         var me = this;
         pais = records[0];
-        comboEstado = me.getEdicionagencias().down("#combopuertoorigen");
+        comboEstado = me.getEdicionagencias().down("#estadoCombo");
         estado_store = comboEstado.getStore();
         comboEstado = comboEstado.clearValue();
         estado_store.load({
             params: {
-                pais_origen_id: pais.get('id')
+                paisId: pais.get('id')
             }
         });
     },
+     cargaCiudad: function (dv, records, item, index, e) {
+
+        var me = this;
+        estado = records[0];
+        comboCiudad = me.getEdicionagencias().down("#ciudadCombo");
+        ciudado_store = comboCiudad.getStore();
+        comboCiudad = comboCiudad.clearValue();
+        ciudado_store.load({
+            params: {
+                estadoId: estado.get('id')
+            }
+        });
+    },
+    cargaAgenciaCorporativo: function (field, newValue, oldValue, eOpts) {
+        var me = this;
+        agencia = newValue;
+        console.log(oldValue+" "+newValue)
+        comboAgencia = me.getEdicionagencias().down("#agenciacorporativo");
+        Agencia_store = comboAgencia.getStore();
+        Agencia_store.load({
+            params: {
+                agencia: agencia
+            }
+        });
+    },
+    agenciasCorporativa:  function (dv, records, item, index, e) {
+        
+       agenciaId = records[0].get('id');
+       this.getEdicionagencias().down("#agenciacorporativoId").setValue(agenciaId);
+       
+    }
 });

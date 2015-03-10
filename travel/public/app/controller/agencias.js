@@ -37,6 +37,9 @@ Ext.define('app.controller.agencias', {
         "#editarAgencia": {
             click: 'editarAgencia'
         },
+        "#nuevaAgencia": {
+            click: 'nuevaAgencia'
+        },
         "#buscarAgencias": {
             click: 'buscarAgencias'
         },
@@ -46,12 +49,86 @@ Ext.define('app.controller.agencias', {
         "#checkcorporativo": {
             change: 'clickcorporativo'
         },
-         "#agenciasGrilla": {
+        "#agenciasGrilla": {
             select: 'cargarSucursales'
         }
-        
+
     },
     editarAgencia: function (button, e, eOpts) {
+        //this.getEdicionagencias().show();
+        var me = this;
+        var agenciaSelecionada = this.getAgencias().down("#agenciasGrilla").getSelectionModel().getSelection();
+        if (agenciaSelecionada.length < 1) {
+            Ext.Msg.alert('Error', 'Debe seleccionar una agencia.');
+        }
+        else if (agenciaSelecionada.length > 1) {
+            Ext.Msg.alert('Error', 'Debe seleccionar solo una agencia.');
+        } else {
+            me.getEdicionagencias().down("#codigo").setValue("");
+            Ext.Ajax.request({
+                url: './agencias/cargarAgencias/' + agenciaSelecionada[0].id,
+                success: function (response) {
+                    var respuesta = JSON.parse(response.responseText);
+
+                    me.getEdicionagencias().down("#codigo").setValue(respuesta.agencia[0].id);
+                    me.getEdicionagencias().down("#nombreAgencia").setValue(respuesta.agencia[0].nombreAgencia);
+                    me.getEdicionagencias().down("#loginOnline").setValue(respuesta.agencia[0].login);
+                    me.getEdicionagencias().down("#passwordOnline").setValue(respuesta.agencia[0].password);
+                    me.getEdicionagencias().down("#gruposCombo").setValue(respuesta.agencia[0].grupo);
+                    me.getEdicionagencias().down("#codigoSiebel").setValue(respuesta.agencia[0].codigoSiebel);
+                    me.getEdicionagencias().down("#paisCombo").store.load({
+                        callback: function (records, operation, success) {
+                            me.getEdicionagencias().down("#paisCombo").setValue(respuesta.agencia[0].paisId);
+                            me.getEdicionagencias().down("#estadoCombo").store.load({
+                                params: {paisId: respuesta.agencia[0].paisId}
+                                , callback: function (records, operation, success) {
+                                    me.getEdicionagencias().down("#estadoCombo").setValue(respuesta.agencia[0].estado);
+                                    me.getEdicionagencias().down("#ciudadCombo").store.load({
+                                        params: {estadoId: respuesta.agencia[0].estado}
+                                        , callback: function (records, operation, success) {
+                                            me.getEdicionagencias().down("#ciudadCombo").setValue(respuesta.agencia[0].cuidad);
+                                       
+                                           me.getEdicionagencias().down("#promotoresAgenciasGrilla").store.load({
+                                                  params: {agencia: respuesta.agencia[0].id}
+                                                  , callback: function (records, operation, success) { 
+                                                 
+                                                    me.getEdicionagencias().show();
+                                         }});  
+                                            
+                                        me.getEdicionagencias().down("#observaciones").setValue(respuesta.agencia[0].observaciones);
+                                        me.getEdicionagencias().down("#direccionAgencia").setValue(respuesta.agencia[0].ubicacion);
+                                        me.getEdicionagencias().down("#telefono1").setValue(respuesta.agencia[0].telefono1);
+                                        me.getEdicionagencias().down("#telefono2").setValue(respuesta.agencia[0].telefono2);
+                                        me.getEdicionagencias().down("#fax").setValue(respuesta.agencia[0].fax);
+                                        me.getEdicionagencias().down("#rifAgencia").setValue(respuesta.agencia[0].rif);
+                                        me.getEdicionagencias().down("#checkcorporativo").setValue(respuesta.agencia[0].corporativo);
+                                        me.getEdicionagencias().down("#freelanceAgencia").setValue(respuesta.agencia[0].free);
+                                        me.getEdicionagencias().down("#emailAgencia").setValue(respuesta.agencia[0].email);
+                                        me.getEdicionagencias().down("#empresaCombo").setValue(respuesta.agencia[0].facturacion);
+                                        me.getEdicionagencias().down("#facturacionCombo").setValue(respuesta.agencia[0].tipoFacturacion);
+                                        me.getEdicionagencias().down("#agenciacorporativo").setValue(respuesta.agencia[0].agenciaCorporativo);
+                                        me.getEdicionagencias().down("#agenciacorporativoId").setValue(respuesta.agencia[0].corporativo);
+                                        //me.getEdicionagencias().down("#promotorCombo").setValue(respuesta.agencia[0].promotor);
+                                        me.getEdicionagencias().down("#contactoAgencia").setValue(respuesta.agencia[0].contactoAgencia);
+                 
+                                            
+                                            
+                                            
+                                            
+                                        }}
+                                    );
+                                }}
+                            );
+
+                        }}
+                    );
+                },
+            });
+        }
+
+    },
+    nuevaAgencia: function (button, e, eOpts) {
+        this.getEdicionagencias().down("#codigo").setValue("");
         this.getEdicionagencias().show();
     },
     buscarAgencias: function (button, e, eOpts) {
@@ -84,30 +161,30 @@ Ext.define('app.controller.agencias', {
         console.log(newValue);
 
     },
-     cargarSucursales: function (dv, record, item, index, e) {
-        
+    cargarSucursales: function (dv, record, item, index, e) {
+
         var id = record.data.id;
         console.log(this.getAgencias().down("#sucursalGrilla"));
-        store_sucursal =  this.getAgencias().down("#sucursalGrilla").getStore();
-        
+        store_sucursal = this.getAgencias().down("#sucursalGrilla").getStore();
+
         store_sucursal.load({
             params: {
                 agencia: id,
                 tipoTransaccion: 'cargar'
             }
         });
-        
-        /*paisId = me.down("#paisSeleccionado");
-        paisId.setValue(id);
 
-        estado = me.down("#estado");
-        store_estado = estado.getStore();
-        store_estado.load({
-            params: {
-                pais_id: id,
-                tipoTransaccion: 'cargar'
-            }
-        });*/
-      }
+        /*paisId = me.down("#paisSeleccionado");
+         paisId.setValue(id);
+         
+         estado = me.down("#estado");
+         store_estado = estado.getStore();
+         store_estado.load({
+         params: {
+         pais_id: id,
+         tipoTransaccion: 'cargar'
+         }
+         });*/
+    }
 
 });

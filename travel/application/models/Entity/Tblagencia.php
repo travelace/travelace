@@ -24,7 +24,7 @@ class Tblagencia
     /**
      * @var string $nombreagencia
      *
-     * @Column(name="nombreAgencia", type="string", length=60, nullable=false)
+     * @Column(name="nombreAgencia", type="string", length=60)
      */
     private $nombreagencia;
 
@@ -50,13 +50,6 @@ class Tblagencia
     private $ubicacionagencia;
 
     /**
-     * @var string $sciudadagencia
-     *
-     * @Column(name="sciudadAgencia", type="string", length=60, nullable=false)
-     */
-    private $sciudadagencia;
-
-    /**
      * @var integer $ciudadagencia
      *
      * @Column(name="ciudadAgencia", type="integer", nullable=false)
@@ -76,7 +69,21 @@ class Tblagencia
      * @Column(name="telefonoAgencia", type="string", length=60, nullable=false)
      */
     private $telefonoagencia;
+    
+    /**
+     * @var string $telefonoagencia2
+     *
+     * @Column(name="telefonoagencia2", type="string", length=20, nullable=false)
+     */
+    private $telefonoagencia2;
 
+     /**
+     * @var string $fax
+     *
+     * @Column(name="fax", type="string", length=20, nullable=false)
+     */
+    private $fax;
+    
     /**
      * @var string $emailagencia
      *
@@ -120,13 +127,6 @@ class Tblagencia
     private $rifagencia;
 
     /**
-     * @var string $nitagencia
-     *
-     * @Column(name="nitAgencia", type="string", length=60, nullable=false)
-     */
-    private $nitagencia;
-
-    /**
      * @var boolean $isragencia
      *
      * @Column(name="isrAgencia", type="boolean", nullable=false)
@@ -148,18 +148,18 @@ class Tblagencia
     private $usuariomodificacion;
 
     /**
-     * @var boolean $acagciaAgcia
+     * @var boolean $observaciones
      *
-     * @Column(name="acagcia_agcia", type="boolean", nullable=false)
+     * @Column(name="observaciones", type="string",length=500, nullable=false)
      */
-    private $acagciaAgcia;
+    private $observaciones;
 
     /**
-     * @var boolean $acagteAgcia
+     * @var boolean $tipoFacturacion
      *
-     * @Column(name="acagte_agcia", type="boolean", nullable=false)
+     * @Column(name="tipoFacturacion", type="integer", nullable=false)
      */
-    private $acagteAgcia;
+    private $tipoFacturacion;
 
     /**
      * @var string $ciafactAgcia
@@ -209,6 +209,22 @@ class Tblagencia
      * @Column(name="codigosiebel", type="string", length=60, nullable=false)
      */
     private $codigosiebel;
+    
+    /**
+     * @var integer $corporativo
+     *
+     * @Column(name="corporativo", type="integer", nullable=false)
+     */
+    private $corporativo;
+    
+     /**
+     * @var integer $corporativoAgencia
+     *
+     * @Column(name="corporativoAgencia", type="integer", nullable=false)
+     */
+    private $corporativoAgencia;
+    
+    
 
     function getCodagencia() {
         return $this->codagencia;
@@ -230,10 +246,6 @@ class Tblagencia
         return $this->ubicacionagencia;
     }
 
-    function getSciudadagencia() {
-        return $this->sciudadagencia;
-    }
-
     function getCiudadagencia() {
         return $this->ciudadagencia;
     }
@@ -246,6 +258,10 @@ class Tblagencia
         return $this->telefonoagencia;
     }
 
+    function getTelefonoagencia2() {
+        return $this->telefonoagencia2;
+    }
+    
     function getEmailagencia() {
         return $this->emailagencia;
     }
@@ -270,10 +286,6 @@ class Tblagencia
         return $this->rifagencia;
     }
 
-    function getNitagencia() {
-        return $this->nitagencia;
-    }
-
     function getIsragencia() {
         return $this->isragencia;
     }
@@ -286,14 +298,10 @@ class Tblagencia
         return $this->usuariomodificacion;
     }
 
-    function getAcagciaAgcia() {
-        return $this->acagciaAgcia;
+    function getTipoFacturacion() {
+        return $this->tipoFacturacion;
     }
-
-    function getAcagteAgcia() {
-        return $this->acagteAgcia;
-    }
-
+    
     function getCiafactAgcia() {
         return $this->ciafactAgcia;
     }
@@ -322,6 +330,26 @@ class Tblagencia
         return $this->codigosiebel;
     }
 
+    function getObservaciones() {
+        return $this->observaciones;
+    }
+    
+    function getFax() {
+        return $this->fax;
+    }
+
+    function getCorporativo() {
+        return $this->corporativo;
+    }
+
+    function getCorporativoAgencia() {
+        return $this->corporativoAgencia;
+    }
+    
+    function setObservaciones($observaciones) {
+        $this->observaciones = $observaciones;
+    }
+    
     function setNombreagencia($nombreagencia) {
         $this->nombreagencia = $nombreagencia;
     }
@@ -338,10 +366,6 @@ class Tblagencia
         $this->ubicacionagencia = $ubicacionagencia;
     }
 
-    function setSciudadagencia($sciudadagencia) {
-        $this->sciudadagencia = $sciudadagencia;
-    }
-
     function setCiudadagencia($ciudadagencia) {
         $this->ciudadagencia = $ciudadagencia;
     }
@@ -354,6 +378,14 @@ class Tblagencia
         $this->telefonoagencia = $telefonoagencia;
     }
 
+    function setTelefonoagencia2($telefonoagencia2) {
+        $this->telefonoagencia2 = $telefonoagencia2;
+    }
+    
+    function setTipoFacturacion($tipoFacturacion) {
+        $this->tipoFacturacion = $tipoFacturacion;
+    }
+        
     function setEmailagencia($emailagencia) {
         $this->emailagencia = $emailagencia;
     }
@@ -366,20 +398,16 @@ class Tblagencia
         $this->promotoragencia = $promotoragencia;
     }
 
-    function setFechainicioagencia(date $fechainicioagencia) {
+    function setFechainicioagencia(\DateTime $fechainicioagencia) {
         $this->fechainicioagencia = $fechainicioagencia;
     }
 
-    function setUltimamodificacion(date $ultimamodificacion) {
+    function setUltimamodificacion(\DateTime $ultimamodificacion) {
         $this->ultimamodificacion = $ultimamodificacion;
     }
 
     function setRifagencia($rifagencia) {
         $this->rifagencia = $rifagencia;
-    }
-
-    function setNitagencia($nitagencia) {
-        $this->nitagencia = $nitagencia;
     }
 
     function setIsragencia($isragencia) {
@@ -393,15 +421,9 @@ class Tblagencia
     function setUsuariomodificacion($usuariomodificacion) {
         $this->usuariomodificacion = $usuariomodificacion;
     }
-
-    function setAcagciaAgcia($acagciaAgcia) {
-        $this->acagciaAgcia = $acagciaAgcia;
-    }
-
-    function setAcagteAgcia($acagteAgcia) {
-        $this->acagteAgcia = $acagteAgcia;
-    }
-
+    
+    
+    
     function setCiafactAgcia($ciafactAgcia) {
         $this->ciafactAgcia = $ciafactAgcia;
     }
@@ -430,4 +452,18 @@ class Tblagencia
         $this->codigosiebel = $codigosiebel;
     }
     
+    function setFax($fax) {
+        $this->fax = $fax;
+    }
+
+    function setCorporativo($corporativo) {
+        $this->corporativo = $corporativo;
+    }
+
+    function setCorporativoAgencia($corporativoAgencia) {
+        $this->corporativoAgencia = $corporativoAgencia;
+    }
+
+
+
 }

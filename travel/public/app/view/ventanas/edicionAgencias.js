@@ -16,7 +16,6 @@
 Ext.define('app.view.ventanas.edicionAgencias', {
     extend: 'Ext.window.Window',
     alias: 'widget.edicionagencias',
-
     requires: [
         'app.view.ventanas.edicionAgenciasViewModel',
         'Ext.form.field.Number',
@@ -29,265 +28,562 @@ Ext.define('app.view.ventanas.edicionAgencias', {
         'Ext.grid.column.Number',
         'Ext.grid.View'
     ],
-
     viewModel: {
         type: 'ventanasedicionagencias'
     },
-    border: false,
-    height: 546,
-    width: 1060,
-    layout: 'absolute',
     icon: 'iconos/16x16/script_edit.png',
     title: 'Creaci&oacute;n y Edici&oacute;n Agencias',
-
+    itemId: 'edicionAgenciaPrincipal',
     items: [
         {
-            xtype: 'textfield',
-            x: 10,
-            y: 10,
-            fieldLabel: 'C&oacute;digo',
-            labelWidth: 50,
-            width:110,
-            readOnly: true
-        },
-        {
-            xtype: 'textfield',
-            x: 130,
-            y: 10,
-            fieldLabel: 'C&oacute;digo Siebel',
-            labelWidth: 85,
-            width:175,
-        },
-        {
-            xtype: 'textfield',
-            x: 10,
-            y: 40,
-            fieldLabel: 'Nombre Agencia',
-            labelWidth: 120
-        },
-        {
-            xtype: 'textfield',
-            x: 330,
-            y: 10,
-            fieldLabel: 'Login Online',
-            labelWidth: 120
-        },
-        {
-            xtype: 'textfield',
-            x: 640,
-            y: 10,
-            fieldLabel: 'Password Online',
-            labelWidth: 120
-        },
-        {
-            xtype: 'combobox',
-            x: 330,
-            y: 40,
-            fieldLabel: 'Grupo Agencia',
-            labelWidth: 120
-        },
-        {
-            xtype: 'combobox',
-            x: 10,
-            y: 70,
-            fieldLabel: 'Pais',
-            labelWidth: 120,
-            displayField: 'pais',
-            valueField: 'id',
-            store: 'storePaisCombo',
-            name: 'pais',
-            itemId: 'paisCombo',
-        },
-        {
-            xtype: 'combobox',
-            x: 330,
-            y: 70,
-            fieldLabel: 'Estado',
-            labelWidth: 120
-        },
-        {
-            xtype: 'combobox',
-            x: 10,
-            y: 100,
-            fieldLabel: 'Ciudad',
-            labelWidth: 120
-        },
-        {
-            xtype: 'textareafield',
-            x: 10,
-            y: 380,
-            height: 80,
-            width: 610,
-            fieldLabel: 'Observaciones',
-            labelWidth: 120
-        },
-        {
-            xtype: 'textareafield',
-            x: 10,
-            y: 130,
-            height: 80,
-            width: 570,
-            fieldLabel: 'Direcci&oacute;n Fiscal',
-            labelWidth: 120
-        },
-        {
-            xtype: 'numberfield',
-            x: 10,
-            y: 220,
-            fieldLabel: 'Tel&eacute;fono Principal',
-            labelWidth: 120
-        },
-        {
-            xtype: 'numberfield',
-            x: 10,
-            y: 250,
-            fieldLabel: 'Fax',
-            labelWidth: 120
-        },
-        {
-            xtype: 'numberfield',
-            x: 330,
-            y: 220,
-            fieldLabel: 'Tel&eacute;fono 2',
-            labelWidth: 120
-        },
-        {
-            xtype: 'textfield',
-            x: 330,
-            y: 250,
-            fieldLabel: 'RIF',
-            labelWidth: 120
-        },
-        {
-            xtype: 'checkboxfield',
-            x: 330,
-            y: 310,
-            fieldLabel: 'ISRL',
-            labelWidth: 50,
-            boxLabel: ''
-        },
-        {
-            xtype: 'checkboxfield',
-            x: 420,
-            y: 310,
-            fieldLabel: 'IVA',
-            labelWidth: 50,
-            boxLabel: ''
-        },
-        {
-            xtype: 'checkboxfield',
-            x: 130,
-            y: 310,
-            itemId: 'checkcorporativo',
-            fieldLabel: 'corporativo',
-            labelWidth: 70,
-            boxLabel: ''
-        },
-        {
-            xtype: 'checkboxfield',
-            x: 10,
-            y: 310,
-            fieldLabel: 'Freelance',
-            labelWidth: 70,
-            boxLabel: ''
-        },
-        {
-            xtype: 'combobox',
-            x: 10,
-            y: 280,
-            fieldLabel: 'Facturar por',
-            labelWidth: 120
-        },
-        {
-            xtype: 'combobox',
-            x: 330,
-            y: 280,
-            fieldLabel: 'Tipo Facturaci&oacute;n',
-            labelWidth: 120
-        },
-        {
-            xtype: 'combobox',
-            x: 10,
-            y: 340,
-            hidden: true,
-            itemId: 'agenciacorporativo',
-            width: 295,
-            fieldLabel: 'Agencia Corporacion',
-            labelWidth: 130
-        },
-        {
-            xtype: 'gridpanel',
-            x: 640,
-            y: 40,
-            height: 420,
-            style: 'border: 2px solid #157FCC;',
-            width: 400,
-            animCollapse: false,
-            bodyBorder: true,
-            icon: 'iconos/16x16/box_add.png',
-            title: 'productos',
-            columns: [
+            xtype: 'form',
+            itemId: 'formContacto',
+            border: false,
+            height: 546,
+            width: 1060,
+            layout: {
+                type: 'absolute'
+            },
+            items: [
                 {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'string',
-                    text: 'Productos',
-                    flex: 2
+                    xtype: 'textfield',
+                    x: 10,
+                    y: 10,
+                    fieldLabel: 'C&oacute;digo',
+                    itemId: 'codigo',
+                    labelWidth: 50,
+                    width: 110,
+                    readOnly: true
                 },
                 {
-                    xtype: 'numbercolumn',
-                    dataIndex: 'number',
-                    text: 'CM. Agencia',
-                    flex: 2
+                    xtype: 'textfield',
+                    x: 130,
+                    y: 10,
+                    fieldLabel: 'C&oacute;digo Siebel',
+                    labelWidth: 85,
+                    width: 175,
+                    name: 'codigoSiebel',
+                    itemId: 'codigoSiebel'
                 },
                 {
-                    xtype: 'numbercolumn',
-                    text: 'CM. Agente',
-                    flex: 2
+                    xtype: 'textfield',
+                    x: 10,
+                    y: 40,
+                    fieldLabel: 'Nombre Agencia',
+                    labelWidth: 120,
+                    name: 'nombreAgencia',
+                    itemId: 'nombreAgencia',
+                    allowBlank: false,
+                    blankText: 'Debe ingresar el nombre de la Agencia.',
+                },
+                {
+                    xtype: 'textfield',
+                    x: 330,
+                    y: 10,
+                    fieldLabel: 'Login Online',
+                    labelWidth: 120,
+                    name: 'loginOnline',
+                    itemId: 'loginOnline'
+                },
+                {
+                    xtype: 'textfield',
+                    x: 640,
+                    y: 10,
+                    fieldLabel: 'Password Online',
+                    labelWidth: 120,
+                    name: 'passwordOnline',
+                    itemId: 'passwordOnline'
+                },
+                {
+                    xtype: 'combobox',
+                    x: 330,
+                    y: 40,
+                    fieldLabel: 'Grupo Agencia',
+                    labelWidth: 120,
+                    displayField: 'grupo',
+                    valueField: 'id',
+                    store: 'storeGruposCombo',
+                    name: 'grupoAgencia',
+                    itemId: 'gruposCombo',
+                },
+                {
+                    xtype: 'combobox',
+                    x: 10,
+                    y: 70,
+                    fieldLabel: 'Pais',
+                    labelWidth: 120,
+                    displayField: 'pais',
+                    valueField: 'id',
+                    store: 'storePaisCombo',
+                    name: 'paisAgencia',
+                    itemId: 'paisCombo',
+                },
+                {
+                    xtype: 'textfield',
+                    x: 330,
+                    y: 250,
+                    hidden: true,
+                    labelWidth: 120,
+                    value: "nada",
+                    name: 'paisId'
+                },
+                {
+                    xtype: 'combobox',
+                    queryMode: 'local',
+                    x: 330,
+                    y: 70,
+                    fieldLabel: 'Estado',
+                    labelWidth: 120,
+                    displayField: 'estado',
+                    valueField: 'id',
+                    store: 'storeEstadoCombo',
+                    name: 'estadoAgencia',
+                    itemId: 'estadoCombo',
+                },
+                {
+                    xtype: 'combobox',
+                    queryMode: 'local',
+                    x: 10,
+                    y: 100,
+                    fieldLabel: 'Ciudad',
+                    labelWidth: 120,
+                    displayField: 'ciudad',
+                    valueField: 'id',
+                    store: 'storeCiudadCombo',
+                    name: 'ciudadAgencia',
+                    itemId: 'ciudadCombo',
+                },
+                {
+                    xtype: 'textareafield',
+                    x: 10,
+                    y: 380,
+                    height: 80,
+                    width: 610,
+                    fieldLabel: 'Observaciones',
+                    labelWidth: 120,
+                    name: 'observaciones',
+                    itemId: 'observaciones'
+                },
+                {
+                    xtype: 'textareafield',
+                    x: 10,
+                    y: 130,
+                    height: 80,
+                    width: 570,
+                    fieldLabel: 'Direcci&oacute;n Fiscal',
+                    labelWidth: 120,
+                    name: 'direccionAgencia',
+                    itemId: 'direccionAgencia'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 10,
+                    y: 220,
+                    fieldLabel: 'Tel&eacute;fono Principal',
+                    labelWidth: 120,
+                    name: 'telefono1',
+                    itemId: 'telefono1'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 10,
+                    y: 250,
+                    fieldLabel: 'Fax',
+                    labelWidth: 120,
+                    itemId: 'fax',
+                    name: 'fax'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 330,
+                    y: 220,
+                    fieldLabel: 'Tel&eacute;fono 2',
+                    labelWidth: 120,
+                    itemId: 'telefono2',
+                    name: 'telefono2'
+                },
+                {
+                    xtype: 'textfield',
+                    x: 330,
+                    y: 250,
+                    fieldLabel: 'RIF',
+                    labelWidth: 120,
+                    itemId: 'rifAgencia',
+                    name: 'rifAgencia'
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 330,
+                    y: 310,
+                    fieldLabel: 'ISRL',
+                    labelWidth: 50,
+                    hidden: true,
+                    boxLabel: '',
+                    name: 'isrlAgencia'
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 420,
+                    y: 310,
+                    fieldLabel: 'IVA',
+                    hidden: true,
+                    labelWidth: 50,
+                    boxLabel: '',
+                    name: 'ivaAgencia'
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 130,
+                    y: 310,
+                    itemId: 'checkcorporativo',
+                    fieldLabel: 'corporativo',
+                    labelWidth: 70,
+                    boxLabel: '',
+                    name: 'esCorporativoAgencia',
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 10,
+                    y: 310,
+                    fieldLabel: 'Freelance',
+                    labelWidth: 70,
+                    boxLabel: '',
+                    name: 'freelanceAgencia',
+                    itemId: 'freelanceAgencia'
+                },
+                {
+                    xtype: 'textfield',
+                    x: 10,
+                    y: 280,
+                    fieldLabel: 'Email',
+                    labelWidth: 120,
+                    name: 'emailAgencia',
+                    itemId: 'emailAgencia'
+                },
+                {
+                    xtype: 'combobox',
+                    x: 330,
+                    y: 280,
+                    fieldLabel: 'Facturar por',
+                    labelWidth: 120,
+                    displayField: 'empresa',
+                    valueField: 'id',
+                    store: 'storeEmpresasCombo',
+                    name: 'empresaFactura',
+                    itemId: 'empresaCombo',
+                },
+                {
+                    xtype: 'combobox',
+                    x: 330,
+                    y: 310,
+                    fieldLabel: 'Tipo Facturaci&oacute;n',
+                    labelWidth: 120,
+                    displayField: 'facturacion',
+                    valueField: 'id',
+                    store: 'storeFacturacionCombo',
+                    name: 'facturacionAgencia',
+                    itemId: 'facturacionCombo',
+                },
+                {
+                    xtype: 'combobox',
+                    queryMode: 'local',
+                    anyMatch: true,
+                    x: 10,
+                    y: 340,
+                    hidden: true,
+                    itemId: 'agenciacorporativo',
+                    width: 295,
+                    fieldLabel: 'Agencia Corporacion',
+                    labelWidth: 130,
+                    displayField: 'nombreAgencia',
+                    valueField: 'nombreAgencia',
+                    store: 'storeAgenciasCombo',
+                },
+                {
+                    xtype: 'textfield',
+                    hidden: true,
+                    itemId: 'agenciacorporativoId',
+                    value: 0,
+                    name: 'corporativoAgencia'
+                },
+                /* {
+                 xtype: 'combobox',
+                 x: 10,
+                 y: 470,
+                 fieldLabel: 'Promotor',
+                 labelWidth: 120,
+                 displayField: 'promotor',
+                 valueField: 'id',
+                 store: 'storePromotorCombo',
+                 name: 'promotorAgencia',
+                 itemId: 'promotorCombo',
+                 },*/
+                {
+                    xtype: 'textfield',
+                    x: 10,
+                    y: 470,
+                    fieldLabel: 'Contacto Agencia',
+                    labelWidth: 120,
+                    name: 'contactoAgencia',
+                    itemId: 'contactoAgencia',
+                },
+                {
+                    xtype: 'gridpanel',
+                    x: 640,
+                    y: 40,
+                    height: 230,
+                    style: 'border: 2px solid #157FCC;',
+                    width: 400,
+                    animCollapse: false,
+                    bodyBorder: true,
+                    icon: 'iconos/16x16/box_add.png',
+                    title: 'productos',
+                    store: 'storeProductosAgenciasGrilla',
+                    itemId: 'productosAgenciasGrilla',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'string',
+                            text: 'Productos',
+                            flex: 2,
+                            editor: {
+                                xtype: 'combobox',
+                                //store:'storeProductosCombo',
+                                displayField: 'producto',
+                                valueField: 'id'
+                            }
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            dataIndex: 'number',
+                            text: 'CM. Agencia',
+                            flex: 2,
+                            editor: {
+                                xtype: 'numberfield'
+                            }
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            text: 'CM. Agente',
+                            flex: 2,
+                            editor: {
+                                xtype: 'numberfield'
+                            }
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    width: '',
+                                    icon: 'iconos/16x16/add.png',
+                                    text: 'Nuevo',
+                                    handler: function () {
+                                        me = this;
+                                        console.log(me.up("#paisesGrilla"))
+                                        pais = me.up("#paisesGrilla");
+                                        store_pais = pais.getStore();
+                                        store_pais.load({
+                                            params: {
+                                                tipoTransaccion: 'nuevoFalso'
+                                            }
+                                        });
+
+
+                                    }
+                                },
+                                {
+                                    xtype: 'button',
+                                    icon: 'iconos/16x16/delete.png',
+                                    text: 'Eliminar'
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: 'gridpanel',
+                    x: 640,
+                    y: 275,
+                    height: 230,
+                    style: 'border: 2px solid #157FCC;',
+                    width: 400,
+                    animCollapse: false,
+                    bodyBorder: true,
+                    icon: 'iconos/16x16/user_add.png',
+                    title: 'Promotores',
+                    store: 'storePromotoresAgenciasGrilla',
+                    itemId: 'promotoresAgenciasGrilla',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'promotor',
+                            text: 'Promotor',
+                            flex: 2,
+                            editor: {
+                                xtype: 'combobox',
+                                store: 'storePromotorCombo',
+                                displayField: 'promotor',
+                                valueField: 'id'
+                            }
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            dataIndex: 'comision',
+                            text: 'CM.',
+                            flex: 2,
+                            editor: {
+                                xtype: 'numberfield'
+                            }
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            dataIndex: 'grupo',
+                            text: 'CM. Grupo',
+                            flex: 2,
+                            editor: {
+                                xtype: 'numberfield'
+                            }
+                        },
+                        {
+                            xtype: 'booleancolumn',
+                            dataIndex: 'principal',
+                            text: 'Principal',
+                            flex: 2,
+                            trueText: 'si',
+                            falseText: 'no',
+                            editor: {
+                                xtype: 'checkboxfield'
+                            },
+                            renderer: function (value) {
+                                return value == 0 ? "" : "<img src='iconos/16x16/accept.png' />";
+                            }
+                        }
+                    ],
+                    dockedItems: [
+                        {
+                            xtype: 'toolbar',
+                            dock: 'top',
+                            items: [
+                                {
+                                    xtype: 'button',
+                                    width: '',
+                                    icon: 'iconos/16x16/add.png',
+                                    text: 'Nuevo',
+                                    handler: function () {
+                                        me = this;
+                                        var agencia = me.up("#edicionAgenciaPrincipal").down("#codigo").getValue();
+                                        promotorGrilla = me.up("#promotoresAgenciasGrilla");
+                                        store_promotor = promotorGrilla.getStore();
+                                        store_promotor.load({
+                                            params: {
+                                                agencia: agencia,
+                                                tipoTransaccion: 'nuevoFalso'
+                                            }
+                                        });
+
+
+                                    }
+                                },
+                                {
+                                    xtype: 'button',
+                                    icon: 'iconos/16x16/delete.png',
+                                    text: 'Eliminar',
+                                    handler: function () {
+                                        me = this;
+                                        var agencia = me.up("#edicionAgenciaPrincipal").down("#codigo").getValue()
+                                        var valor = me.up("#promotoresAgenciasGrilla").getSelectionModel().getSelection();
+                                        var resuldatos = [];
+                                        var store =me.up("#promotoresAgenciasGrilla").getStore();
+                                        for (i = 0; i < valor.length; i++) {
+
+                                            resuldatos[i] = valor[i].data.id;
+                                            store.load({
+                                                params: {
+                                                    id: resuldatos[i],
+                                                    agencia: agencia,
+                                                    tipoTransaccion: 'eliminar'
+                                                },
+                                            });
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ],
+                    selModel: {
+                        selType: 'checkboxmodel'
+                    },
+                    plugins: [
+                        {
+                            ptype: 'rowediting',
+                            listeners: {
+                                edit: function (editor, event, eOpts) {
+                                    var tipoTransaccion = event.record.data.id == 0 ? 'nuevo' : 'editar';
+                                    event.store.load({
+                                        params: {
+                                            id: event.record.data.id,
+                                            promotor: event.record.data.promotor,
+                                            agencia: event.record.data.agencia,
+                                            comision: event.record.data.comision,
+                                            grupo: event.record.data.grupo,
+                                            principal: event.record.data.principal,
+                                            tipoTransaccion: tipoTransaccion
+                                        }
+                                    });
+
+                                }
+                            }
+                        }
+                    ]
                 }
             ],
             dockedItems: [
                 {
                     xtype: 'toolbar',
-                    dock: 'top',
+                    x: 158,
+                    y: 394,
+                    dock: 'bottom',
+                    height: 40,
                     items: [
                         {
                             xtype: 'button',
-                            width: '',
-                            icon: 'iconos/16x16/add.png',
-                            text: 'Nuevo'
+                            icon: 'iconos/16x16/disk.png',
+                            scale: 'medium',
+                            text: 'Guardar',
+                            handler: function (button) {
+                                console.log(this.up('form'));
+                                var form = this.up('form').getForm();
+
+                                if (form.isValid()) {
+                                    form.submit({
+                                        method: 'POST',
+                                        url: './agencias/guardarAgencias/',
+                                        waitMsg: 'Enviando datos ...',
+                                        success: function (form, action) {
+                                        },
+                                        failure: function () {
+                                            Ext.Msg.alert('Fallo', 'Hay un error en el envio de datos');
+                                            return;
+                                        }
+                                    });
+                                } else {
+                                    Ext.Msg.alert('Fallo', 'Falta llenar datos en el formulario');
+                                }
+
+                            }
                         },
                         {
                             xtype: 'button',
-                            icon: 'iconos/16x16/delete.png',
-                            text: 'Eliminar'
+                            icon: 'iconos/16x16/arrow_up.png',
+                            scale: 'medium',
+                            text: 'Actualizar Online'
                         }
                     ]
                 }
-            ]
-        }
+            ]}
     ],
-    dockedItems: [
-        {
-            xtype: 'toolbar',
-            x: 158,
-            y: 394,
-            dock: 'bottom',
-            height: 40,
-            items: [
-                {
-                    xtype: 'button',
-                    icon: 'iconos/16x16/disk.png',
-                    scale: 'medium',
-                    text: 'Guardar'
-                },
-                {
-                    xtype: 'button',
-                    icon: 'iconos/16x16/arrow_up.png',
-                    scale: 'medium',
-                    text: 'Actualizar Online'
-                }
-            ]
-        }
-    ]
-
 });

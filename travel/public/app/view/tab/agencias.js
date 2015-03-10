@@ -92,12 +92,8 @@ Ext.define('app.view.tab.agencias', {
                             xtype: 'button',
                             width: '',
                             icon: 'iconos/16x16/add.png',
+                            itemId: 'nuevaAgencia',
                             text: 'Nuevo'
-                        },
-                        {
-                            xtype: 'button',
-                            icon: 'iconos/16x16/delete.png',
-                            text: 'Eliminar'
                         },
                         {
                             xtype: 'textfield',

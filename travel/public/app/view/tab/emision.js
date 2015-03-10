@@ -128,121 +128,10 @@ Ext.define('app.view.tab.emision', {
                 }
             ]
         },
-        {
-            xtype: 'fieldset',
-            x: 10,
-            y: 150,
-            height: 160,
-            width: 770,
-            layout: 'absolute',
-            title: 'Producto',
-            items: [
                 {
-                    xtype: 'combobox',
-                    x: 0,
-                    y: 10,
-                    fieldLabel: 'Producto'
-                },
-                {
-                    xtype: 'combobox',
-                    x: 0,
-                    y: 70,
-                    fieldLabel: 'Destino'
-                },
-                {
-                    xtype: 'combobox',
-                    x: 300,
-                    y: 10,
-                    fieldLabel: 'Tipo Producto'
-                },
-                {
-                    xtype: 'checkboxfield',
-                    x: 590,
-                    y: 10,
-                    fieldLabel: 'Mayores',
-                    boxLabel: ''
-                },
-                {
-                    xtype: 'combobox',
-                    x: -1,
-                    y: 40,
-                    fieldLabel: 'Tipo de moneda'
-                },
-                {
-                    xtype: 'combobox',
-                    x: 300,
-                    y: 40,
-                    fieldLabel: 'Servicio Adicional'
-                },
-                {
-                    xtype: 'numberfield',
-                    x: 0,
-                    y: 100,
-                    fieldLabel: 'Descuento'
-                }
-            ]
-        },
-        {
-            xtype: 'fieldset',
-            x: 10,
-            y: 320,
-            height: 160,
-            width: 770,
-            layout: 'absolute',
-            title: 'Tarifas y comisiones',
-            items: [
-                {
-                    xtype: 'numberfield',
-                    x: 0,
-                    y: 10,
-                    fieldLabel: 'Tarifa $'
-                },
-                {
-                    xtype: 'numberfield',
-                    x: 0,
-                    y: 70,
-                    width: 275,
-                    fieldLabel: 'Agencia Comision',
-                    labelWidth: 120
-                },
-                {
-                    xtype: 'numberfield',
-                    x: 0,
-                    y: 100,
-                    width: 275,
-                    fieldLabel: 'Agente Comision',
-                    labelWidth: 120
-                },
-                {
-                    xtype: 'numberfield',
-                    x: 300,
-                    y: 10,
-                    fieldLabel: 'Tarifa Bsf.'
-                },
-                {
-                    xtype: 'numberfield',
-                    x: 300,
-                    y: 70,
-                    fieldLabel: 'Importe'
-                },
-                {
-                    xtype: 'numberfield',
-                    x: 300,
-                    y: 100,
-                    fieldLabel: 'Importe'
-                },
-                {
-                    xtype: 'combobox',
-                    x: 0,
-                    y: 40,
-                    fieldLabel: 'Agente'
-                }
-            ]
-        },
-        {
             xtype: 'gridpanel',
             x: 10,
-            y: 490,
+            y: 150,
             height: 220,
             style: 'border: 2px solid #157FCC;',
             width: 770,
@@ -282,11 +171,177 @@ Ext.define('app.view.tab.emision', {
                             xtype: 'button',
                             icon: 'iconos/16x16/arrow_up.png',
                             text: 'Importar'
+                        },
+                        {
+                            xtype: 'tbspacer',
+                            flex: 2
+                        },
+                        {
+                            xtype: 'textfield',
+                            fieldLabel: 'Numero de pasajeros',
+                            labelWidth: 140
                         }
                     ]
                 }
             ]
+        },
+        {
+            xtype: 'fieldset',
+            x: 10,
+            y: 380,
+            height: 110,
+            width: 770,
+            layout: 'absolute',
+            title: 'Producto',
+            items: [
+                {
+                    xtype: 'combobox',
+                    x: 0,
+                    y: 10,
+                    fieldLabel: 'Producto'
+                },
+                {
+                    xtype: 'combobox',
+                    x: 0,
+                    y: 40,
+                    fieldLabel: 'Destino'
+                },
+                 {
+                    xtype: 'checkboxfield',
+                    x: 300,
+                    y: 10,
+                    fieldLabel: 'Normal',
+                    labelWidth: 50,
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'label',
+                    x: 380,
+                    y: 14,
+                    text: 'Anual:'
+                },
+                
+                {
+                    xtype: 'checkboxfield',
+                    x: 420,
+                    y: 10,
+                    fieldLabel: '15',
+                    labelWidth: 20,
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 465,
+                    y: 10,
+                    fieldLabel: '30',
+                    labelWidth: 20,
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 515,
+                    y: 10,
+                    fieldLabel: '60',
+                    labelWidth: 20,
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 565,
+                    y: 10,
+                    fieldLabel: '90',
+                    labelWidth: 20,
+                    boxLabel: ''
+                },
+                {
+                    xtype: 'checkboxfield',
+                    x: 630,
+                    y: 10,
+                    fieldLabel: 'Mayores',
+                    boxLabel: '',
+                    labelWidth: 60,
+                },
+
+                {
+                    xtype: 'combobox',
+                    x: 300,
+                    y: 40,
+                    fieldLabel: 'Servicio Adicional'
+                },
+                
+            ]
+        },
+        {
+            xtype: 'fieldset',
+            x: 10,
+            y: 500,
+            height: 200,
+            width: 770,
+            layout: 'absolute',
+            title: 'Tarifas y comisiones',
+            items: [
+                                {
+                    xtype: 'combobox',
+                    x: 0,
+                    y: 10,
+                    fieldLabel: 'Modalidad de pago',
+                    width: 275,
+                    labelWidth: 120,
+                },{
+                    xtype: 'numberfield',
+                    x: 300,
+                    y: 10,
+                    fieldLabel: 'Descuento'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 0,
+                    y: 40,
+                    fieldLabel: 'Tarifa $'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 0,
+                    y: 100,
+                    width: 275,
+                    fieldLabel: 'Agencia Comision',
+                    labelWidth: 120
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 0,
+                    y: 130,
+                    width: 275,
+                    fieldLabel: 'Agente Comision',
+                    labelWidth: 120
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 300,
+                    y: 40,
+                    fieldLabel: 'Tarifa Bsf.'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 300,
+                    y: 100,
+                    fieldLabel: 'Importe'
+                },
+                {
+                    xtype: 'numberfield',
+                    x: 300,
+                    y: 130,
+                    fieldLabel: 'Importe'
+                },
+                {
+                    xtype: 'combobox',
+                    x: 0,
+                    y: 70,
+                    fieldLabel: 'Agente'
+                }
+            ]
         }
+
     ]
 
 });

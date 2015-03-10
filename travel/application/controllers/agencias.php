@@ -76,7 +76,6 @@ class Agencias extends CI_Controller {
             $estados = $this->em->getRepository('Entity\Tblestados')->find($agencia->getEstadoagencia());
             $pais = $this->em->getRepository('Entity\Tblpais')->find($estados->getCodpais());
             $ciudad = $this->em->getRepository('Entity\Tblciudades')->find($agencia->getCiudadagencia());
-
             $data[] = array(
                 "id" => $agencia->getCodagencia(),
                 "direccion" => utf8_encode($agencia->getUbicacionagencia()),
@@ -98,6 +97,116 @@ class Agencias extends CI_Controller {
                 ->set_content_type('application/json')
                 ->set_output(json_encode(array('totalCount' => count($data), 'sucursal' => $data)));
     }
+    
+     public function agenciasCombo() {
+        $agencias = $this->em->getRepository('Entity\Tblagencia')->createQueryBuilder('agencia')
+                ->where('agencia.nombrecompleto like :nombreAgencia')
+                ->andWhere('agencia.sucursal = 0')
+                ->setParameter('nombreAgencia', "%".$this->input->get("agencia")."%")
+                ->setMaxResults(50)
+                ->getQuery()
+                ->getResult();
+
+        $data = array();
+        foreach ($agencias as $agencia) {
+            $data[] = array(
+                
+                "nombreAgencia" => utf8_encode($agencia->getNombrecompleto()),
+                "id" => $agencia->getCodagencia(),
+            );
+        }
+
+        $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('totalCount' => count($data), 'agencia' => $data)));
+    
+         
+     }
+     
+      public function guardarAgencias() {
+      
+        $agencias = new Entity\Tblagencia();
+        $agencias->setNombrecompleto($this->input->post("nombreAgencia"));
+        $agencias->setLogin($this->input->post("loginOnline"));
+        $agencias->setPassword($this->input->post("passwordOnline"));
+        $agencias->setCodigosiebel($this->input->post("codigoSiebel"));
+        $agencias->setGroupoagencia($this->input->post("grupoAgencia"));
+        $agencias->setEstadoagencia($this->input->post("estadoAgencia"));
+        $agencias->setCiudadagencia($this->input->post("ciudadAgencia"));
+        $agencias->setObservaciones($this->input->post("observaciones"));
+        $agencias->setUbicacionagencia($this->input->post("direccionAgencia"));
+        $agencias->setTelefonoagencia($this->input->post("telefono1"));
+        $agencias->setTelefonoagencia2($this->input->post("telefono2"));
+        $agencias->setFax($this->input->post("fax"));
+        $agencias->setRifagencia($this->input->post("rifAgencia"));
+        $agencias->setEmailagencia($this->input->post("emailAgencia"));
+        $agencias->setCorporativo($this->input->post("esCorporativoAgencia"));
+        $agencias->setFreeagencia($this->input->post("freelanceAgencia"));
+        $agencias->setCiafactAgcia($this->input->post("empresaFactura"));
+        $agencias->setTipoFacturacion($this->input->post("facturacionAgencia"));
+        $agencias->setCorporativoAgencia($this->input->post("corporativoAgencia"));
+        $agencias->setPromotoragencia($this->input->post("promotorAgencia"));
+        $agencias->setFechainicioagencia(new \DateTime("now"));
+        $agencias->setUltimamodificacion(new \DateTime("now"));
+        $agencias->setIsragencia(0);
+        $agencias->setSucursal(0);
+        $agencias->setSucursalagencia(0);
+        $agencias->setUsuariomodificacion(1);
+        $agencias->setEsagencia(1);
+        $agencias->setNombreagencia("");
+        $agencias->setContactoagencia($this->input->post("contactoAgencia"));
+        $this->em->persist($agencias);
+        $this->em->flush();
+        
+        
+    }
+    public function  cargarAgencias($agen){
+     $agencias = $this->em->getRepository('Entity\Tblagencia')->find($agen);
+     $data = array();
+     $estados = $this->em->getRepository('Entity\Tblestados')->find($agencias->getEstadoagencia());
+     $pais = $this->em->getRepository('Entity\Tblpais')->find($estados->getCodpais());
+     
+     $data[] = array(
+       "id" => $agencias->getCodagencia(),
+       "nombreAgencia" => $agencias->getNombrecompleto(),
+       "login" => $agencias->getLogin(),
+       "password" => $agencias->getPassword(),
+       "codigoSiebel" => $agencias->getCodigosiebel(),
+       "grupo" => $agencias->getGroupoagencia(),
+       "paisId" => $estados->getCodpais(),
+       "pais" =>  $pais->getNombrepais(),
+       "estado" => $agencias->getEstadoagencia(),
+       "cuidad" => $agencias->getCiudadagencia(),
+       "observaciones" => $agencias->getObservaciones(),
+       "ubicacion" => $agencias->getUbicacionagencia(),
+       "telefono1" => $agencias->getTelefonoagencia(),
+       "telefono2" => $agencias->getTelefonoagencia2(),
+       "fax" => $agencias->getFax(),
+       "rif" => $agencias->getRifagencia(),
+       "email" => $agencias->getEmailagencia(),
+       "corporativo" => $agencias->getCorporativo(),
+       "free" => $agencias->getFreeagencia(),
+       "facturacion" => $agencias->getCiafactAgcia(),
+       "tipoFacturacion" => $agencias->getTipoFacturacion(),
+       "agenciaCorporativo" => $agencias->getCorporativoAgencia(),
+       "promotor" => $agencias->getPromotoragencia(),
+       "fechaInicio" => $agencias->getFechainicioagencia(),
+       "fechaUltima" => $agencias->getUltimamodificacion(),
+       "isr" => $agencias->getIsragencia(),
+       "sucursal" => $agencias->getSucursal(),
+       "sucursalAgencia" => $agencias->getSucursalagencia(),
+       "usuarioModificacion" => $agencias->getUsuariomodificacion(),
+       "esagencia" => $agencias->getEsagencia(),
+       "nombreAgenciaCorto" => $agencias->getNombreagencia(),
+       "contactoAgencia" => $agencias->getContactoagencia(),
+      );
+        
+         $this->output
+                ->set_content_type('application/json')
+                ->set_output(json_encode(array('totalCount' => count($data), 'agencia' => $data)));
+        
+    }
+        
 
 }
 
